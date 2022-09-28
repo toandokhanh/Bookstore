@@ -29,11 +29,11 @@
             <div class="mt-4">
                 <x-input-label for="gender" :value="__('Gender')" /> <br>
                 <div class="flex gap-[6px] -mt-3">
-                    <input class="ml-2" type="radio" id="female" name="var" value="0">
+                    <input class="ml-2" type="radio" id="female" name="gender" value="0">
                     <label for="female">Female</label><br>
-                    <input class="ml-2 " type="radio" id="male" name="var" value="1">
+                    <input class="ml-2 " type="radio" id="male" name="gender" value="1">
                     <label for="male">Male</label><br>
-                    <input class="ml-2" type="radio" id="other" name="var" value="2">
+                    <input class="ml-2" type="radio" id="other" name="gender" value="2">
                     <label for="other">Other</label><br>
                 </div>
             </div>

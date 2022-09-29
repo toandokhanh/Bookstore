@@ -32,7 +32,9 @@
 
                 <x-input-error :messages="$errors->get('password')" class="mt-2" />
             </div>
-
+            <div class="mt-4">
+                <input size="1" type="text" name="role" id="role" value="1" hidden>
+            </div>
             <!-- Remember Me -->
             <div class="block mt-4">
                 <label for="remember_me" class="inline-flex items-center">

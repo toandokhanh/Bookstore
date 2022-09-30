@@ -78,7 +78,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - npm install
 - npm run dev
 * * *
-### TailwindCss
+### Tailwind Css
 - npm run dev
 * * *
 ### Artisan list 

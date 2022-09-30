@@ -28,10 +28,11 @@ class ConfirmablePasswordController extends Controller
      */
     public function store(Request $request)
     {
+        $customer = 1; // phân quyền 1 là khách hàng
         if (! Auth::guard('web')->validate([
             'email' => $request->user()->email,
             'password' => $request->password,
-            'role' => $request->role,
+            'role' => $request->role == $customer,
         ])) {
             throw ValidationException::withMessages([
                 'password' => __('auth.password'),

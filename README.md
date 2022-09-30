@@ -76,3 +76,28 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 - npm run dev
 ### tailwindcss
 - npm run dev
+### php artisan list 
+- php artisan down  => dừng chương trình để upload phiên bản mới
+- php artisan up => chạy lại chương trình
+- 
+### buổi 1 (30/09/2022)
+- Route là gì 
+    - route web 
+        - Router::get($path, $callback)
+        - Router::post($path, $callback)
+        - Router::put($path, $callback)
+        - Router::patch($path, $callback)
+        - Router::delete($path, $callback)
+        - Router::options($path, $callback)
+        - Router::match($methods, $path, $callback) => nhận request với nhiều phương thức được khai báo trong $methods
+        - Router::redirect($path, $redirectTo,$status) => nhận request sau đó chuyển hướng tới $redirectTo
+        - Router::view($path,$viewName ,$data) => nhận vào request sau đó render view
+        - Router::prefix('path_prefix)->group($callback) => nhóm các route với prefix xác định => thường dùng để phân quyền khá là quan trọng
+        
+
+
+
+
+    - route api
+    - route console
+    - route channal

@@ -64,24 +64,34 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+<<<<<<< HEAD
 
 ### serve
+=======
+* * *
+### Serve
+>>>>>>> ed518d698c7e0a53de59225836adc62736a2f364
 - php artisan serve
-### database
+* * *
+### Database
 - php artisan migrate:refresh
+* * *
 ### Laravel Breeze
 - composer require laravel/breeze --dev
 - php artisan breeze:install
 - php artisan migrate
 - npm install
 - npm run dev
-### tailwindcss
+* * *
+### Tailwind Css
 - npm run dev
-### php artisan list 
+* * *
+### Artisan list 
 - php artisan down  => dừng chương trình để upload phiên bản mới
 - php artisan up => chạy lại chương trình
 - 
-### buổi 1 (30/09/2022)
+* * *
+### Buổi 1 (30/09/2022)
 - Route là gì 
     - route web 
         - Router::get($path, $callback)
@@ -94,11 +104,14 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         - Router::redirect($path, $redirectTo,$status) => nhận request sau đó chuyển hướng tới $redirectTo
         - Router::view($path,$viewName ,$data) => nhận vào request sau đó render view
         - Router::prefix('path_prefix)->group($callback) => nhóm các route với prefix xác định => thường dùng để phân quyền khá là quan trọng
+<<<<<<< HEAD
 
 
 
 
 
+=======
+>>>>>>> ed518d698c7e0a53de59225836adc62736a2f364
     - route api
     - route console
     - route channal

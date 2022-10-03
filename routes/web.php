@@ -13,21 +13,25 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home');
-});
+
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
-
+//chưa đăng nhập
+    Route::get('/', function () {
+        return view('home');
+    })->name('/');
 
 Route::group(['middleware' => 'auth'], function(){ 
+    
+    //đã đăng nhập
     Route::get('/dashboard', function () {
         return view('dashboard');
     })->name('dashboard');
-    
-    Route::view('profile', 'profile')->name('profile');
+    //hồ sơ của user
+    Route::view('/profile', 'profile')->name('profile');
+    // Route::put('profile', [])->name('profile.update');
 });
 // Route::get('/index.php/dashboard', function () {
 //     return "Chucs";

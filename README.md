@@ -63,15 +63,8 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-<<<<<<< HEAD
+The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT)
 
-### serve
-=======
-* * *
-### Serve
->>>>>>> ed518d698c7e0a53de59225836adc62736a2f364
-- php artisan serve
 * * *
 ### Database
 - php artisan migrate:refresh
@@ -104,14 +97,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         - Router::redirect($path, $redirectTo,$status) => nhận request sau đó chuyển hướng tới $redirectTo
         - Router::view($path,$viewName ,$data) => nhận vào request sau đó render view
         - Router::prefix('path_prefix)->group($callback) => nhóm các route với prefix xác định => thường dùng để phân quyền khá là quan trọng
-<<<<<<< HEAD
-
-
-
-
-
-=======
->>>>>>> ed518d698c7e0a53de59225836adc62736a2f364
     - route api
     - route console
     - route channal

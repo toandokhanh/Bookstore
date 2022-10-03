@@ -11,7 +11,7 @@
 
             <!-- Name -->
             <div>
-                <x-input-label for="name" :value="__('Name')" />
+                <x-input-label for="name" :value="__('Tên')" />
 
                 <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" :value="old('name')" required autofocus />
 
@@ -27,19 +27,19 @@
                 <x-input-error :messages="$errors->get('email')" class="mt-2" />
             </div>
             <div class="mt-4">
-                <x-input-label for="gender" :value="__('Gender')" /> <br>
+                <x-input-label for="gender" :value="__('Giới tính')" /> <br>
                 <div class="flex gap-[6px] -mt-3">
                     <input class="ml-2" type="radio" id="female" name="gender" value="0">
-                    <label for="female">Female</label><br>
+                    <label class="text-[14px]" for="female">Nữ </label><br>
                     <input class="ml-2 " type="radio" id="male" name="gender" value="1">
-                    <label for="male">Male</label><br>
+                    <label class="text-[14px]" for="male">Nam</label><br>
                     <input class="ml-2" type="radio" id="other" name="gender" value="2">
-                    <label for="other">Other</label><br>
+                    <label class="text-[14px]" for="other">Khác</label><br>
                 </div>
             </div>
             <!-- Password -->
             <div class="mt-4">
-                <x-input-label for="password" :value="__('Password')" />
+                <x-input-label for="password" :value="__('Mật khẩu')" />
 
                 <x-text-input id="password" class="block mt-1 w-full"
                                 type="password"
@@ -51,7 +51,7 @@
 
             <!-- Confirm Password -->
             <div class="mt-4">
-                <x-input-label for="password_confirmation" :value="__('Confirm Password')" />
+                <x-input-label for="password_confirmation" :value="__('Xác nhận lại mật khẩu')" />
 
                 <x-text-input id="password_confirmation" class="block mt-1 w-full"
                                 type="password"
@@ -64,11 +64,11 @@
             </div>
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
-                    {{ __('Already registered?') }}
+                    {{ __('Bạn đã có tài khoản?') }}
                 </a>
 
                 <x-primary-button class="ml-4">
-                    {{ __('Register') }}
+                    {{ __('Đăng ký') }}
                 </x-primary-button>
             </div>
             

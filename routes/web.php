@@ -17,12 +17,19 @@ Route::get('/', function () {
     return view('home');
 });
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
+// Route::get('/dashboard', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
 
-require __DIR__.'/auth.php';
 
+Route::group(['middleware' => 'auth'], function(){ 
+    Route::get('/dashboard', function () {
+        return view('dashboard');
+    })->name('dashboard');
+    
+    Route::view('profile', 'profile')->name('profile');
+});
 // Route::get('/index.php/dashboard', function () {
 //     return "Chucs";
 // });
+require __DIR__.'/auth.php';

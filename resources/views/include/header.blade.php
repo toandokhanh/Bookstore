@@ -1,3 +1,4 @@
+@vite('resources/css/app.css')
 <!DOCTYPE HTML>
 <head>
 <title>Store Website</title>
@@ -89,23 +90,7 @@
 }
 </style>
 {{-- style dangnhap dangky --}}
-<style>
-	.loginn{
-		color:#000;
-		font-size: 13px;
-		line-height: 200px;
-		font-weight: 600;
-		
-		margin-right: 30px;
-	}
-	.registerr{
-		color:#000;
-		font-size: 13px;
-		line-height: 200px;
-		font-weight: 600;
-		
-	}
-</style>
+
 </head>
 <body>
 <div class="header__top">
@@ -127,37 +112,36 @@
                 </div>
                 <div class="header__top__stacked">
 					@if (Route::has('login'))
-					<div class="hidden fixed top-0 right-0 px-6 py-4 sm:block">
+					<div class="">
 						@auth
-							<a href="{{ url('/dashboard') }}" class="Dashboard text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+							<a href="{{ url('/dashboard') }}" class="hidden Dashboard text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
 						@else
-						<ion-icon class="header__top__stacked__icon" name="log-out-outline"></ion-icon><a href="{{ route('login') }}" class="loginn">Đăng nhập</a>
-				
+							<a class="mr-6"  href="{{ route('login') }}"><ion-icon class="header__top__stacked__icon" name="log-out-outline"></ion-icon>Đăng nhập</a>
 							@if (Route::has('register'))
-							<ion-icon class="header__top__stacked__icon" name="person-outline"></ion-icon><a href="{{ route('register') }}" class="registerr">Đăng ký</a>
+							<a href="{{ route('register') }}"><ion-icon class="header__top__stacked__icon" name="person-outline"></ion-icon>Đăng ký</a>
 							@endif
 						@endauth
 					</div>
 					@endif
                     {{-- <div class="wishlist"><ion-icon class=" header__top__stacked__icon" name="heart-outline"></ion-icon><a style="color: black;" href="../../shop_mvcoop/topbrands.php">Yêu thích</a></div> --}}
                     {{-- <div class="myAccount"><ion-icon class="header__top__stacked__icon" name="person-circle-outline"></ion-icon><a style="color: black;" href="../../shop_mvcoop/login.php">Tài khoản</a></div> --}}
-                    <div class="checkout"><ion-icon class="header__top__stacked__icon" name="send-outline"></ion-icon><a style="color: black;" href="../../shop_mvcoop/login.php">Thanh toán</a></div>
+                    <div class="checkout mr-3"><a href=""><ion-icon class=" header__top__stacked__icon" name="send-outline"></ion-icon>Thanh toán</a></div>
                 </div>
             </div>
   <div class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href="/"><img src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="" /></a>
+				<a href=""><img src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form>
-				    	<input type="text" value="Nhập tên sách hoặc tác giả bạn muốn tìm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input type="submit" value="TÌM KIẾM">
+				    	<input type="text" value="Nhập tên sách hoặc tác giả bạn muốn tìm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input class="bottom-0" type="submit" value="TÌM KIẾM">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
-					<div class="cart">
-						<a style="color: black; display: flex; justify-content: center; align-items: center;" href="../cart.php"><span style="color: red; font-size: 12px; font-weight: 600;">99+</span> <ion-icon class="cart__icon" name="cart-outline"></ion-icon> </a> 
+					<div class="cart"><a href="#"><x-icon-cart class="bg-red-100"/></a>
+						{{-- <a style="color: black; display: flex; justify-content: center; align-items: center;" href="../cart.php"><span style="color: red; font-size: 12px; font-weight: 600;">99+</span> <ion-icon class="cart__icon" name="cart-outline"></ion-icon> </a>  --}}
 					   <!-- <a href="../cart.php" title="View my shopping cart" rel="nofollow">
 								<span class="cart_title"></span>
 								<span style="color: red; font-size: 13px;" class="no_product">99+</span> -->

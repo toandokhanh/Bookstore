@@ -64,7 +64,15 @@ If you discover a security vulnerability within Laravel, please send an e-mail t
 ## License
 
 The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT)
-
+* * *
+### Update schedule
+|  #  | Update                                                                                                               | Date                                                                        |
+| :-: | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| 01  | [login](#)                               | [25/09/2022](#)               |
+| 02  | [register](#)                               | [27/09/2022](#)               |
+| 03  | [fix-bug-account](#)                               | [28/09/2022](#)               |
+| 04  | [update-homepage-public](#)                               | [29/09/2022](#)               |
+| 05  | [update-profile](#)                               | [03/10/2022](#)               |
 * * *
 ### Database
 - php artisan migrate:refresh

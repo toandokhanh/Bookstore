@@ -73,6 +73,7 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
 | 03  | fix-bug-account                              | 28/09/2022            |
 | 04  | update-homepage-public                               | 29/09/2022         |
 | 05  | update-profile                             | 03/10/2022            |
+| 06  | update admin home page                             | 05/10/2022            |
 * * *
 ### Database
 - php artisan migrate:refresh

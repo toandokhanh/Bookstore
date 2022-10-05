@@ -97,6 +97,11 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
         - Router::redirect($path, $redirectTo,$status) => nhận request sau đó chuyển hướng tới $redirectTo
         - Router::view($path,$viewName ,$data) => nhận vào request sau đó render view
         - Router::prefix('path_prefix)->group($callback) => nhóm các route với prefix xác định => thường dùng để phân quyền khá là quan trọng
+        - Route::view('$path, $viewName, $data): nhận request sau đó render view
+        - Route::get('path/{thamso}', $callback): lấy tham sô tự động trên url
+        - Route::get('path/{thamso}', $callback)->where('thamso',$pattern): Ràng buộc thamso với biểu thức chính quy
+        - Route::get($path, $callback)->name('route_name'); đặt tên route để thuận tiện việc gọi url sau này
     - route api
     - route console
     - route channal
+

@@ -114,7 +114,7 @@
 					@if (Route::has('login'))
 					<div class="">
 						@auth
-							<a href="{{ url('/dashboard') }}" class="hidden Dashboard text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a>
+							{{-- <a href="{{ url('/dashboard') }}" class="hidden Dashboard text-sm text-gray-700 dark:text-gray-500 underline">Dashboard</a> --}}
 						@else
 							<a class="mr-6"  href="{{ route('login') }}"><ion-icon class="header__top__stacked__icon" name="log-out-outline"></ion-icon>Đăng nhập</a>
 							@if (Route::has('register'))
@@ -131,7 +131,7 @@
   <div class="wrap">
 		<div class="header_top">
 			<div class="logo">
-				<a href=""><img src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="" /></a>
+				<a href="{{ route('/') }}"><img src="http://wp.acmeedesign.com/bookstore/wp-content/uploads/2016/01/logo_green.png" alt="" /></a>
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">
@@ -155,11 +155,11 @@
  </div>
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
-	  <li><a href="index.php">Trang chủ</a></li>
-	  <li><a href="products.php">Sản phẩm</a> </li>
-	  <li><a href="topbrands.php">Bán chạy</a></li>
-	  <li><a href="cart.php">Đơn hàng</a></li>
-	  <li><a href="contact.php">Liên hệ</a> </li>
+	  <li><a href="{{ route('/') }}">Trang chủ</a></li>
+	  <li><a href="{{ route('products') }}">Sản phẩm</a> </li>
+	  <li><a href="{{ route('topbrands') }}">Bán chạy</a></li>
+	  <li><a href="{{ route('cart') }}">Đơn hàng</a></li>
+	  <li><a href="{{ route('contact') }}">Liên hệ</a> </li>
 	  <div class="clear"></div>
 	</ul>
 </div>

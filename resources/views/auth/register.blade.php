@@ -1,7 +1,7 @@
 <x-guest-layout>
     <x-auth-card>
         <x-slot name="logo">
-            <a href="/">
+            <a href="{{ route('/') }}">
                 <x-application-logo-new class="w-20 h-20 fill-current  text-gray-500" />
             </a>
         </x-slot>
@@ -60,7 +60,7 @@
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
             <div class="mt-4">
-                <input size="1" type="text" name="role" id="role" value="1" hidden>
+                <input size="1" type="text" name="role" id="role" value="1" class="hidden">
             </div>
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

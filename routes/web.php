@@ -19,15 +19,36 @@ use Illuminate\Support\Facades\Route;
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 //chưa đăng nhập
-    Route::get('/', function () {
-        return view('home');
-    })->name('/');
-
+Route::get('/', function () {
+    return view('home');
+})->name('/');
+Route::get('/products', function () {
+    return view('products');
+})->name('products');
+Route::get('/topbrands', function () {
+    return view('topbrands');
+})->name('topbrands');
+Route::get('/cart', function () {
+    return view('cart');
+})->name('cart');
+Route::get('/contact', function () {
+    return view('contact');
+})->name('contact');
+Route::get('/detail', function () {
+    return view('detail');
+})->name('detail');
+// Route::get('/productbycart', function () {
+//     return view('productbycart');
+// })->name('productbycart');
+//admin
+Route::get('/domain-admin', function () {
+    return view('admin.home');
+})->name('admin');
 Route::group(['middleware' => 'auth'], function(){ 
     
     //đã đăng nhập
     Route::get('/dashboard', function () {
-        return view('dashboard');
+        return view('home');
     })->name('dashboard');
     //hồ sơ của user
     Route::view('/profile', 'profile')->name('profile');
@@ -36,4 +57,10 @@ Route::group(['middleware' => 'auth'], function(){
 // Route::get('/index.php/dashboard', function () {
 //     return "Chucs";
 // });
+
+// test 
+Route::get('/{slug}-{id}.html', function ($slug, $id) {
+    return "Slug:$slug <br> Id: $id";
+});
+// Route::get('/produ
 require __DIR__.'/auth.php';

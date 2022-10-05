@@ -56,9 +56,9 @@
                 
             </div>
         </form>
-        {{-- <div class="mt-4 text-[13px] text-center">
+        <div class="mt-4 text-[13px] text-center">
             <p>Nếu bạn chưa có tài khoản hãy sữ dụng tài khoản bên dưới để xem nội dung của nhiều thể loại sách tại Book Store</p>
             <p>Email: demo@localhost.com - Mật khẩu: demo@localhost.com</p>
-        </div> --}}
+        </div>
     </x-auth-card>
 </x-guest-layout>

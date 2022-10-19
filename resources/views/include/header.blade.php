@@ -160,6 +160,7 @@
 	  <li><a href="{{ route('topbrands') }}">Bán chạy</a></li>
 	  <li><a href="{{ route('cart') }}">Đơn hàng</a></li>
 	  <li><a href="{{ route('contact') }}">Liên hệ</a> </li>
+	  {{-- <li><a href="{{ route('contact') }}">Về chúng tôi</a> </li> --}}
 	  <div class="clear"></div>
 	</ul>
 </div>

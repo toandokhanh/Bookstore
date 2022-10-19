@@ -1,6 +1,6 @@
 
 
- @if (isset(Auth::user()->name))
+ @if (isset(Auth::user()->use_name))
  <x-app-layout>
     {{-- <h1>da dang nhap</h1> --}}
     @include('include.header')

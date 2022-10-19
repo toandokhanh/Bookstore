@@ -1,5 +1,5 @@
 
-    @if (isset(Auth::user()->name))
+    @if (isset(Auth::user()->use_name))
     <x-app-layout>
             @include('include.header')
             <div class="main">

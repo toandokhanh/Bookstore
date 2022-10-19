@@ -2,37 +2,37 @@
     <div class="box sidemenu">
         <div class="block" id="section-menu">
             <ul class="section menu">
-               <li><a class="menuitem">Site Option</a>
+               <li><a class="menuitem">Tùy chọn trang web</a>
                     <ul class="submenu">
-                        <li><a href="titleslogan.php">Title & Slogan</a></li>
-                        <li><a href="social.php">Social Media</a></li>
-                        <li><a href="copyright.php">Copyright</a></li>
+                        <li><a href="titleslogan.php">Tiêu đề & Khẩu hiệu</a></li>
+                        <li><a href="social.php">Truyền thông xã hội</a></li>
+                        <li><a href="copyright.php">Bản quyền</a></li>
                         
                     </ul>
                 </li>
 				
-                 <li><a class="menuitem">Update Pages</a>
+                 <li><a class="menuitem">Cập nhật trang</a>
                     <ul class="submenu">
-                        <li><a>About Us</a></li>
-                        <li><a>Contact Us</a></li>
+                        <li><a>Về chúng tôi</a></li>
+                        <li><a>Liên hệ</a></li>
                     </ul>
                 </li>
-				<li><a class="menuitem">Slider Option</a>
+				<li><a class="menuitem">Tùy chọn thanh trượt</a>
                     <ul class="submenu">
-                        <li><a href="addslider.php">Add Slider</a> </li>
-                        <li><a href="sliderlist.php">Slider List</a> </li>
+                        <li><a href="addslider.php">Thêm thanh trượt</a> </li>
+                        <li><a href="sliderlist.php">Danh sách thanh trượt</a> </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Category Option</a>
+                <li><a class="menuitem">Danh mục</a>
                     <ul class="submenu">
-                        <li><a href="addcat.php">Add Category</a> </li>
-                        <li><a href="catlist.php">Category List</a> </li>
+                        <li><a href="addcat.php">Thêm danh mục</a> </li>
+                        <li><a href="catlist.php">Danh sách danh mục</a> </li>
                     </ul>
                 </li>
-                <li><a class="menuitem">Product Option</a>
+                <li><a class="menuitem">Tùy chọn sản phẩm</a>
                     <ul class="submenu">
-                        <li><a href="addproduct.php">Add Product</a> </li>
-                        <li><a href="productlist.php">Product List</a> </li>
+                        <li><a href="addproduct.php">Thêm sản phẩm</a> </li>
+                        <li><a href="productlist.php">Danh sách sản phẩm</a> </li>
                     </ul>
                 </li>
             </ul>

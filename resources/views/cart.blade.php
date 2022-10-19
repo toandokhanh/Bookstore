@@ -1,4 +1,4 @@
-@if (isset(Auth::user()->name))
+@if (isset(Auth::user()->use_name))
     <x-app-layout>
     
             @include('include.header')
@@ -124,6 +124,7 @@
 	 
 @else
     @include('include.header')
+    {{-- @include('include.slider') --}}
 <div class="main">
     <div class="content">
     	<div class="cartoption">		

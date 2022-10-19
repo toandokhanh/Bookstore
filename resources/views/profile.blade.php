@@ -25,7 +25,7 @@
                         <div>
                             <x-input-label for="name" :value="__('Tên')" />
     
-                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ Auth::user()->name }}" required autofocus />
+                            <x-text-input id="name" class="block mt-1 w-full" type="text" name="name" value="{{ Auth::user()->use_name }}" required />
                         </div>
                 
                         <!-- Email Address -->
@@ -46,6 +46,16 @@
                             </div>
                         </div> --}}
                         <!-- Password -->
+                        <div class="mt-6">
+                            <x-input-label for="address" :value="__('Địa chỉ')" />
+                
+                            <x-text-input id="address" class="block mt-1 w-full" type="text" name="address" value="{{ Auth::user()->address }}"  required />
+                        </div>
+                        <div class="mt-6">
+                        <x-input-label for="phone" :value="__('Số điện thoại')" />
+                
+                        <x-text-input id="phone" class="block mt-1 w-full" type="text" name="phone" value="{{ Auth::user()->phone }}"  required />
+                    </div>
                         <div class="mt-6">
                             <x-input-label for="password" :value="__('Mật khẩu')" />
                 
@@ -70,7 +80,7 @@
                             <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">
                                 {{ __('Bạn đã có tài khoản?') }}
                             </a>
-                
+                            
                             <x-primary-button class="ml-4">
                                 {{ __('Cập nhật') }}
                             </x-primary-button>

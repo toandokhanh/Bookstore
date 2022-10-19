@@ -1,4 +1,4 @@
-@if (isset(Auth::user()->name))
+@if (isset(Auth::user()->use_name))
     <x-app-layout>
     	@include('include.header')
 		<div class="main">
@@ -19,7 +19,7 @@
 								<form class="text-[20px]" method="POST" action="">
 									<div>
 										<span><label>Họ và Tên</label></span>
-										<span ><input type="text" value="{{ Auth::user()->name }} "></span>
+										<span ><input type="text" value="{{ Auth::user()->use_name }} "></span>
 									</div>
 									<div>
 										<span><label>Email</label></span>

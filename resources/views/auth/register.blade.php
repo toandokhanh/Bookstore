@@ -60,7 +60,15 @@
                 <x-input-error :messages="$errors->get('password_confirmation')" class="mt-2" />
             </div>
             <div class="mt-4">
-                <input size="1" type="text" name="role" id="role" value="1" class="hidden">
+                <input size="1" type="text" name="role" id="role" value="1" class="" hidden >
+            </div>
+            <div class="mt-4">
+                <x-input-label for="address" :value="__('Địa chỉ')" />
+                <input type="text" name="address" id="address" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" required>
+            </div>
+            <div class="mt-4">
+                <x-input-label for="phone" :value="__('Số điện thoại')" />
+                <input type="text" name="phone" id="phone" class="rounded-md shadow-sm border-gray-300 focus:border-indigo-300 focus:ring focus:ring-indigo-200 focus:ring-opacity-50 block mt-1 w-full" required>
             </div>
             <div class="flex items-center justify-end mt-4">
                 <a class="underline text-sm text-gray-600 hover:text-gray-900" href="{{ route('login') }}">

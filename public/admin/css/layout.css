@@ -82,7 +82,7 @@ h1 a {
 #branding a{color:#A1EAFF; font-weight:normal;}
 #branding a:hover{color:#fff;}
 
-#branding a:before{content:" | "; color:#fff;}
+/* #branding a:before{content:" | "; color:#fff;} */
 
 #branding ul, #branding ul li{margin:0px; padding:0px; }
 #branding li{padding:0px 0px 0px 0px !important;}

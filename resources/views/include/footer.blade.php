@@ -2,6 +2,7 @@
 <br>
 <br>
    <div class="footer">
+
    	  <div class="wrapper">	
 		 <br>
 					<br>

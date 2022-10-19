@@ -22,6 +22,7 @@ Route::get('/hi', function () {
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
+
 //chưa đăng nhập
 Route::get('/', function () {
 return view('home');
@@ -45,18 +46,7 @@ Route::get('/detail', function () {
 // Route::get('/productbycart', function () {
 //     return view('productbycart');
 // })->name('productbycart');
-//admin
-Route::prefix('ad')->group(function(){
-    //đã đăng nhập
-    Route::get('', function () {
-        return view('admin.home');
-    })->name('admin');
-    //trang đăng nhập
-    Route::get('/login', function () {
-        return view('admin.login');
-    })->name('admin-login');
-    Route::post('/login', [AdminController::class, 'loginPost'])->name('admin-loginPost');
-});
+
 
 Route::group(['middleware' => 'auth'], function(){ 
     //đã đăng nhập
@@ -68,7 +58,30 @@ Route::group(['middleware' => 'auth'], function(){
     // Route::put('profile', [])->name('profile.update');
 });
 
-// 
+
+
+
+
+//admin
+Route::prefix('ad')->group(function(){
+    //đã đăng nhập
+    Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin');
+
+    //trang đăng nhập
+    Route::get('/login', function () {
+        return view('admin.login');
+    })->name('admin-login');
+    Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
+    //đăng xuất
+    Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
+
+});
+
+
+
+
+
+
 // Route::get('/produ
 require __DIR__.'/auth.php';
 

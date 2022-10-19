@@ -3,7 +3,17 @@
 <head>
 <meta charset="utf-8">
 <title>Login admin</title>
-    <link rel="stylesheet" type="text/css" href="../admin/css/stylelogin.css" media="screen" />
+<link rel="stylesheet" type="text/css" href="../admin/css/stylelogin.css" media="screen" />
+<style>
+	.bug{
+		color:red;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		z-index: 1000000000000;
+		margin-top: -450px
+	}
+	</style>	
 </head>
 <body>
     <br><br><br><br>
@@ -25,7 +35,7 @@
 				<input type="password" placeholder="Mật khẩu" required="" name="password"/>
 			</div>
 			<div>
-				<input type="text" value="2" name="role" hidden/>
+				<input type="text" value="2" name="role" hidden />
 			</div>
 			<div class="flex justify-center items-center">
 				<input class="" type="submit" value="Log in" />

@@ -48,9 +48,9 @@
                         <img src="../admin/img/img-profile.jpg" alt="Profile Pic" /></div>
                     <div class="floatleft marginleft10">
                         <ul class="inline-ul floatleft">
-                            <li>Xin chào Admin</li>
+                            <li>Xin chào {{ Auth::guard('admin')->user()->use_name; }}</li>
                             <span class="text-[#fff]">|</span>
-                            <li><a href="#">Đăng xuất</a></li>
+                            <li><a href={{ route('admin-logout') }}>Đăng xuất</a></li>
                         </ul>
                     </div>
                 </div>

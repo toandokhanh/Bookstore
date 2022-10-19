@@ -1,7 +1,9 @@
 <?php
-
+use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\AdminController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -13,14 +15,16 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-
+Route::get('/hi', function () {
+    return view('welcome');
+});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
 // })->middleware(['auth', 'verified'])->name('dashboard');
 //chưa đăng nhập
 Route::get('/', function () {
-    return view('home');
+return view('home');
 })->name('/');
 Route::get('/products', function () {
     return view('products');
@@ -37,15 +41,24 @@ Route::get('/contact', function () {
 Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
+
 // Route::get('/productbycart', function () {
 //     return view('productbycart');
 // })->name('productbycart');
 //admin
-Route::get('/domain-admin', function () {
-    return view('admin.home');
-})->name('admin');
+Route::prefix('ad')->group(function(){
+    //đã đăng nhập
+    Route::get('', function () {
+        return view('admin.home');
+    })->name('admin');
+    //trang đăng nhập
+    Route::get('/login', function () {
+        return view('admin.login');
+    })->name('admin-login');
+    Route::post('/login', [AdminController::class, 'loginPost'])->name('admin-loginPost');
+});
+
 Route::group(['middleware' => 'auth'], function(){ 
-    
     //đã đăng nhập
     Route::get('/dashboard', function () {
         return view('home');
@@ -54,13 +67,20 @@ Route::group(['middleware' => 'auth'], function(){
     Route::view('/profile', 'profile')->name('profile');
     // Route::put('profile', [])->name('profile.update');
 });
-// Route::get('/index.php/dashboard', function () {
-//     return "Chucs";
-// });
 
-// test 
-Route::get('/{slug}-{id}.html', function ($slug, $id) {
-    return "Slug:$slug <br> Id: $id";
-});
+// 
 // Route::get('/produ
 require __DIR__.'/auth.php';
+
+Route::get('/welcomee', function () {
+    return view('welcome');
+});
+
+// test 
+//Route::get('/{slug}-{id}.html', function ($slug, $id) {
+//     return "Slug:$slug <br> Id: $id";
+// });
+// Route::prefix('test')->group(function(){
+//     Route::get('/welcome',[ProductController::class, 'index'])->name('test');
+//     Route::post('/welcome',[ProductController::class, 'add'])->name('handle');
+// });

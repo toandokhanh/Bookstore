@@ -28,19 +28,21 @@ class ConfirmablePasswordController extends Controller
      */
     public function store(Request $request)
     {
-        $customer = 1; // phân quyền 1 là khách hàng
+        // $customer = 1;
+        // $staff = 2; 
+        // var_dump($request->role); exit();
         if (! Auth::guard('web')->validate([
             'email' => $request->user()->email,
             'password' => $request->password,
-            'role' => $request->role == $customer,
+            'role' => $request->role,
         ])) {
             throw ValidationException::withMessages([
                 'password' => __('auth.password'),
             ]);
         }
-
         $request->session()->put('auth.password_confirmed_at', time());
 
         return redirect()->intended(RouteServiceProvider::HOME);
+        // return redirect()->intended(RouteServiceProvider::admin);
     }
 }

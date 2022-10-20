@@ -11,7 +11,7 @@ class AdminController extends Controller
 {
     //
     public function LoginPost(Request $request){
-        $credentials = $request->only('email', 'password', 'role');
+        $credentials = $request->only('email', 'password');
         if(Auth::guard('admin')->attempt($credentials)){
             return redirect()->route('admin');
             exit();

@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('accounts', function (Blueprint $table) {
             $table->id();
-            $table->tinyInteger('cart_id')->nullable();
+            $table->tinyInteger('cart_id')->unique()->nullable();
             $table->string('use_name');
             $table->string('address')->nullable();
             $table->string('phone')->nullable();

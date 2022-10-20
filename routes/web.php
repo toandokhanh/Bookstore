@@ -4,6 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
+use App\Http\Controllers\Admin\ListingController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -74,6 +75,8 @@ Route::prefix('ad')->group(function(){
     Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
     //đăng xuất
     Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
+
+    Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
 
 });
 

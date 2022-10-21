@@ -31,7 +31,7 @@
                 </li>
                 <li><a class="menuitem">Tùy chọn sản phẩm</a>
                     <ul class="submenu">
-                        <li><a href={{ route('listing-index',['model'=>'AddProduct'])}}>Thêm sản phẩm</a> </li>
+                        <li><a href={{ route('listing-addproduct')}}>Thêm sản phẩm</a> </li>
                         <li><a href={{ route('listing-index',['model'=>'Product'])}}>Danh sách sản phẩm</a> </li>
                     </ul>
                 </li>

@@ -27,7 +27,11 @@
 									</div>
 									<div>
 										<span><label>Số điện thoại</label></span>
-										<span><input type="text" value=""></span>
+										<span><input type="text" value="{{ Auth::user()->phone }}"></span>
+									</div>
+									<div>
+										<span><label>Địa chỉ</label></span>
+										<span><input type="text" value="{{ Auth::user()->address }}"></span>
 									</div>
 									<div>
 										<span><label>Lời nhắn</label></span>
@@ -45,9 +49,9 @@
 										<p>xxx, An Khánh, Ninh Kiều, Cần Thơ </p>
 										<p>12/09/2002</p>
 										<p>VIỆT NAM</p>
-								<p>Phone:(+84) 0916814948</p>
-								<p>Fax: (+84) 0335000275</p>
-								<p>Email: <span>toanb2012046@student.ctu.edu.vns</span></p>
+								<p>Phone:(+84) 09168149xx</p>
+								<p>Fax: (+84) 03350002xx</p>
+								<p>Email: <span>toanb2012046@student.ctu.edu.vn</span></p>
 								<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
 						</div>
 						</div>

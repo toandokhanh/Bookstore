@@ -75,6 +75,7 @@ Route::prefix('ad')->group(function(){
     Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
     //đăng xuất
     Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
+    Route::get('/listing/addproduct', [ListingController::class, 'addproduct'])->name('listing-addproduct');
 
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
 

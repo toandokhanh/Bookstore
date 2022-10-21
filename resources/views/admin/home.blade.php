@@ -8,7 +8,7 @@
       <div class="box round first ">
           <h2 class=""> Bộ điều khiển</h2>
           <div class="block">               
-            Chào mừng {{ Auth::guard('admin')->user()->use_name; }} đến với trang quản trị của Bookstore       
+            Chào mừng đến với trang quản trị của Bookstore       
           </div>
       </div>
   </div>

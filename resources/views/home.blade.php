@@ -1,5 +1,6 @@
 {{-- chưa đăng nhập
 {{-- @include('include.account') --}}
+
  @if (isset(Auth::user()->use_name))
  <x-app-layout>
     {{-- <h1>da dang nhap</h1> --}}
@@ -15,5 +16,4 @@
     @include('include.slider')
     @include('include.main')
     @include('include.footer')
-    chao cc
 @endif

@@ -1,3 +1,28 @@
+
+.describe, .product_name{
+		/* width: 230px; */
+		height: 39px;
+		display: block;
+		display: -webkit-box;
+		-webkit-box-orient: vertical;
+		-webkit-line-clamp: 1;
+		overflow: hidden;
+		}
+.product_name{
+	height: 20px;
+}
+@media only screen and (max-width: 640px)  {
+	.product_name{
+	height: 30px;
+	}
+	.grid_1_of_4:nth-child(12) { 
+		display:none;
+	} 
+}
+
+.grid_1_of_4:nth-child(12) { 
+		margin-top: -385px; 
+} 
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

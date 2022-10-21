@@ -118,12 +118,6 @@ The Laravel framework is open-sourced software licensed under the [MIT license](
     - route api
     - route console
     - route channal
-<<<<<<< HEAD
 
 - HTTP Request 
-    - 
-=======
-    
-- HTTP Request 
-    - 
->>>>>>> eba8e7b936b1ebd2492d65ba73b3a1a3ff5235d2
+

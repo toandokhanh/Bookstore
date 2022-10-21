@@ -14,9 +14,15 @@ class ListingController extends Controller
         $records = $model::paginate(100);
         // var_dump($records); exit;
         $adminUser = Auth::guard('admin')->user();
-        return view('admin.listing', [
-            'user' => $adminUser,
-            'records'=> $records,
-        ]);
+        if(Auth::guard('admin')->check()){
+            return view('admin.listing', [
+                'user' => $adminUser,
+                'records'=> $records,
+            ]);
+        }else{
+            return redirect()->route('admin-login');
+        }
+
+
     }
 }

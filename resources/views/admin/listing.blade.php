@@ -1,3 +1,4 @@
+
 @include('admin.include.header')
 @include('admin.include.slidebar')
 
@@ -8,72 +9,32 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>Serial No.</th>
-							<th>Category Name</th>
-							<th>Action</th>
+							<th>Stt</th>
+							<th>Tên sản phẩm</th>
+							<th>Giá</th>
+							<th>kích thước</th>
+							<th>Người dịch</th>
+							<th>Hình ảnh</th>
+							<th>Năm phát hành</th>
+							<th>Số trang</th>
+							<th>HÀNH ĐỘNG</th>
 						</tr>
 					</thead>
 					<tbody>
+						<?php foreach($records as $record){ ?>
 						<tr class="odd gradeX">
-							<td>01</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
+							<td>{{ $record->id }}</td>
+							<td>{{ $record->product_name }}</td>
+							<td>{{ $record->product_price }}</td>
+							<td>{{ $record->size }}</td>
+							<td>{{ $record->translater }} </td>
+							<td><img height="30" width="30" src="{{ $record->image }}"></td>
+							<td>{{ $record->year_of_manufacture }}</td>
+							<td>{{ $record->number_of_pages }}</td>
+							<td><a href="">Sửa</a> || <a href="">Xóa</a></td>
 						</tr>
-						<tr class="even gradeC">
-							<td>02</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>03</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>04</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-							<tr class="odd gradeX">
-							<td>05</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>06</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="odd gradeX">
-							<td>07</td>
-							<td>Internet</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-						<tr class="even gradeC">
-							<td>08</td>
-							<td>Explorer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-                        <tr class="even gradeC">
-							<td>09</td>
-							<td>Developer </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-                        <tr class="even gradeC">
-							<td>10</td>
-							<td>Developer1</td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-                        <tr class="even gradeC">
-							<td>11</td>
-							<td>Developer2 </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
-                        <tr class="even gradeC">
-							<td>12</td>
-							<td>Developer3 </td>
-							<td><a href="">Edit</a> || <a href="">Delete</a></td>
-						</tr>
+						<?php };?>
+
 					</tbody>
 				</table>
                </div>

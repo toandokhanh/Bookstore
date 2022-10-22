@@ -9,28 +9,53 @@
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
-							<th>ID</th>
-							<th>Tên sản phẩm</th>
-							<th>Giá</th>
-							{{-- <th>kích thước</th> --}}
-							{{-- <th>Người dịch</th> --}}
-							<th>Hình ảnh</th>
-							{{-- <th>Năm xuất bản</th> --}}
-							{{-- <th>Số trang</th> --}}
-							<th>HÀNH ĐỘNG</th>
+							<?php foreach($configs as $config) {?>
+								<th>{{ $config['name'] }}</th>
+							<?php } ?>
+							<th >HÀNH ĐỘNG</th>
 						</tr>
 					</thead>
 					<tbody>
 						<?php foreach($records as $record){ ?>
 						<tr class="odd gradeX">
-							<td>{{ $record->id }}</td>
-							<td>{{ $record->product_name }}</td>
-							<td>{{ $record->product_price }}</td>
-							{{-- <td>{{ $record->size }}</td> --}}
-							{{-- <td>{{ $record->translater }} </td> --}}
-							<td><img height="50" width="50" src="{{ $record->image }}"></td>
-							{{-- <td>{{ $record->year_of_manufacture }}</td> --}}
-							{{-- <td>{{ $record->number_of_pages }}</td> --}}
+							<?php foreach($configs as $config) {?>
+								<?php switch ($config['type']) {
+									case 'text':?>
+										<td>{{ $record[$config['field']] }}</td>
+										<?php 
+										break;
+									case 'image':?>
+										<td><img width="50" height="50" src="{{ $record[$config['field']] }}" alt=""></td>
+										<?php
+										break;
+									case 'number':?>
+										<td>{{ number_format($record[$config['field']], 0, '.', '.'). " VND" }}</td>
+									<?php
+										break;	
+									case 'role':?>
+									<?php switch ($record[$config['field']]) {
+										case '1':
+											?>
+											<td>Khách hàng</td>
+											<?php 
+											break;
+										case '2':
+											?>
+											<td>Nhân viên</td>
+											<?php 
+											break;
+										case '3':
+											?>
+											<td>Quản trị viên</td>
+											<?php 
+											break;
+									}?>
+
+									<?php
+									break;	
+								}?>
+							
+							<?php } ?>
 							<td><a href="">Sửa</a> || <a href="">Xóa</a></td>
 						</tr>
 						<?php };?>

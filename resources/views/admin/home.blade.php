@@ -1,5 +1,5 @@
 @if (Auth::guard('admin')->user()->role === 1)
-  @include('errors.404')
+  @include('errors.404a')
   <h6>{{ Auth::guard('admin')->user()->role }}</h6>
 @else
   @include('admin.include.header')

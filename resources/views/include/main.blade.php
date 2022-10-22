@@ -23,7 +23,7 @@
 				 <p class="describe">
 					{{ $product->describe }}
 				 </p>
-				 <p><span class="price">{{ $product->product_price }}</span></p>
+				 <p><span class="price">{{ number_format($product->product_price, 0, '.', '.'). " VND" }}</span></p>
 				 <!-- https://www.fahasa.com/kiep-nao-ta-cung-tim-thay-nhau-tai-ban-2022.html -->
 				 <div class="button"><span><a href={{ route('detail') }} class="details">Thông tin chi tiết</a></span></div>
 			</div>

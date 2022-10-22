@@ -75,8 +75,13 @@ Route::prefix('ad')->group(function(){
     Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
     //đăng xuất
     Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
+    //thêm sản phẩm admin
     Route::get('/listing/addproduct', [ListingController::class, 'addproduct'])->name('listing-addproduct');
-
+    // thêm danh mục admin
+    Route::get('/listing/addcatetory', [ListingController::class, 'addcatetory'])->name('listing-addcatetory');
+    //thêm người dùng admin
+    Route::get('/listing/adduser', [ListingController::class, 'adduser'])->name('listing-adduser');
+    //select admin ...
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
 
 });

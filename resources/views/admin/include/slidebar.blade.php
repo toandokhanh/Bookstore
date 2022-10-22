@@ -25,8 +25,8 @@
                 </li>
                 <li><a class="menuitem">Danh mục</a>
                     <ul class="submenu">
-                        <li><a href="#addcat">Thêm danh mục</a> </li>
-                        <li><a href="#catlist">Danh sách danh mục</a> </li>
+                        <li><a href={{ route('listing-addcatetory')}}>Thêm danh mục</a> </li>
+                        <li><a href={{ route('listing-index',['model'=>'Catetorys'])}}>Danh sách danh mục</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Tùy chọn sản phẩm</a>
@@ -36,7 +36,7 @@
                     </ul>
                 </li>
                 @if (Auth::guard('admin')->user()->role === 3)
-                     <li><a class="menuitem">Quản lý nhân viên <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
+                     <li><a class="menuitem">Quản lý người dùng <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
                         <lord-icon
                             src="https://cdn.lordicon.com/dnmvmpfk.json"
                             trigger="loop"
@@ -45,8 +45,9 @@
                             style="width:22px;height:22px;margin-left:10px;">
                         </lord-icon></a>
                     <ul class="submenu">
-                        <li><a href="#addstaff">Thêm nhân viên</a> </li>
-                        <li><a href="#stafflist">Danh sách nhân viên</a> </li>
+                        {{--  --}}
+                        <li><a href={{ route('listing-adduser')}}>Thêm Người dùng</a> </li>
+                        <li><a href={{ route('listing-index',['model'=>'User'])}}>Danh sách Người dùng</a> </li>
                     </ul>
                 </li>
                 @endif

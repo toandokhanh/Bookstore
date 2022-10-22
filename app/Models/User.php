@@ -48,4 +48,49 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-}
+    public function listingConfig(){
+        return array(
+            array(
+                'field'=>'id',
+                'name'=>'ID',
+                'type'=>'text'
+            ),
+            
+            array(
+                'field'=>'use_name',
+                'name'=>'Tên Người dùng',
+                'type'=>'text'
+            ),  
+            array(
+                'field'=>'phone',
+                'name'=>'Số điện thoại',
+                'type'=>'text'
+            ), 
+            array(
+                'field'=>'address',
+                'name'=>'Địa chỉ',
+                'type'=>'text'
+            ), 
+            array(
+                'field'=>'email',
+                'name'=>'Email',
+                'type'=>'text'
+            ),
+            array(
+                'field'=>'role',
+                'name'=>'Phân quyền',
+                'type'=>'role'
+            ),
+            // array(
+            //     'field'=>'updated_at',
+            //     'name'=>'Ngày cập nhật',
+            //     'type'=>'text'
+            // ),
+            // array(
+            //     'field'=>'creacted_at',
+            //     'name'=>'Ngày tạo',
+            //     'type'=>'text'
+            // ),
+        );
+    }
+}   

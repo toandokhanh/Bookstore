@@ -40,4 +40,16 @@ class AdminController extends Controller
             return redirect()->route('admin-login');
         }
     }
+    public function Feedback(Request $request){
+        $credentials = $request->only('use_name', 'email');
+        if(Auth::guard('admin')->attempt($credentials)){
+            return redirect()->route('admin-feedback');
+            exit();
+        }else{
+            return view('admin.login').
+            "<span class='bug'>Thông tin đăng nhập không đúng !</span>"; 
+            exit();
+        
+        }
+    }
 }

@@ -77,6 +77,11 @@ Route::prefix('ad')->group(function(){
     Route::get('/profile', [AdminController::class, 'Profile'])->name('admin-profile');
     //đăng xuất
     Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
+    //phản hồi
+    Route::get('/feedback', function(){
+        return view('admin.feedback');
+    })->name('admin-feedback');
+    // Route::post('/feedback', [AdminController::class, 'Feedback'])->name('admin-feedback');
     //thêm sản phẩm admin
     Route::get('/listing/addproduct', [ListingController::class, 'addproduct'])->name('listing-addproduct');
     // thêm danh mục admin
@@ -87,7 +92,7 @@ Route::prefix('ad')->group(function(){
     Route::get('/listing/addslider', [ListingController::class, 'addslider'])->name('listing-addslider');
     //select admin ...
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
-
+ 
 });
 
 

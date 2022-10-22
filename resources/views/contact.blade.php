@@ -16,7 +16,7 @@
 						<div class="col span_2_of_3">
 						<div class="contact-form">
 							<h2>Liên hệ với chúng tôi</h2>
-								<form class="text-[20px]" method="POST" action="">
+								<form class="text-[20px]" method="POST" action="{{ route('admin-feedback') }}">
 									<div>
 										<span><label>Họ và Tên</label></span>
 										<span ><input type="text" value="{{ Auth::user()->use_name }} "></span>
@@ -38,7 +38,7 @@
 										<span><textarea> </textarea></span>
 									</div>
 								<div>
-										<span><input type="submit" value="GỨI"></span>
+										<span><input type="submit" value="Gửi"></span>
 								</div>
 								</form>
 						</div>

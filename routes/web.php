@@ -73,6 +73,8 @@ Route::prefix('ad')->group(function(){
         return view('admin.login');
     })->name('admin-login');
     Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
+    //trang cá nhân
+    Route::get('/profile', [AdminController::class, 'Profile'])->name('admin-profile');
     //đăng xuất
     Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
     //thêm sản phẩm admin
@@ -81,6 +83,8 @@ Route::prefix('ad')->group(function(){
     Route::get('/listing/addcatetory', [ListingController::class, 'addcatetory'])->name('listing-addcatetory');
     //thêm người dùng admin
     Route::get('/listing/adduser', [ListingController::class, 'adduser'])->name('listing-adduser');
+    //thêm thanh trượt
+    Route::get('/listing/addslider', [ListingController::class, 'addslider'])->name('listing-addslider');
     //select admin ...
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
 

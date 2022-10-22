@@ -62,8 +62,8 @@
         </div>
         <div class="grid_12">
             <ul class="nav main">
-                <li class="ic-dashboard"><a href=""><span>Bộ điều khiển</span></a> </li>
-                <li class="ic-form-style"><a href=""><span>Hồ sơ cá nhân</span></a></li>
+                <li class="ic-dashboard"><a href={{ route('admin') }}><span>Bộ điều khiển</span></a> </li>
+                <li class="ic-form-style"><a href={{ route('admin-profile') }}><span>Hồ sơ cá nhân</span></a></li>
 				<li class="ic-typography"><a href=""><span>Đổi mật khẩu</span></a></li>
 				<li class="ic-grid-tables"><a href=""><span>Phản hồi</span></a></li>
                 {{-- <li class="ic-charts"><a href=""><span>Quản trị viên Bookstore</span></a></li>   --}}

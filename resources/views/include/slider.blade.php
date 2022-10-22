@@ -1,4 +1,8 @@
-
+<div hidden >{{ $sliders = DB::table('sliders')
+    ->whereIn('id', [1,2,3,4])	
+    ->get()
+    ;}}
+</div>
 	<div class="header_bottom">
 		<div class="header_bottom_left">
 			<div class="section group">
@@ -53,10 +57,9 @@
 			<section class="slider">
 				  <div class="flexslider">
 					<ul class="slides">
-						<li><img src="https://muasachhay.vn/wp-content/uploads/2021/11/bo-sach-lich-su-chau-phi-858x450.jpg" alt=""/></li>
-						<li><img src="https://muasachhay.vn/wp-content/uploads/2021/11/Bo-Mon-qua-linh-hon-FB-2-1.jpg" alt=""/></li>
-						<li><img src="https://muasachhay.vn/wp-content/uploads/2021/11/banner-20210413012456.png" alt=""/></li>
-						<li><img src="https://bookbuy.vn/Res/Images/Album/08b04a48-6845-4e41-8079-50427a0e2f02.jpg?w=880&scale=both&h=320&mode=crop" alt=""/></li>
+						<?php foreach ($sliders as $slider) { ?>
+						<li><img src={{ $slider->slider_image }} alt=""/></li>
+						<?php }?>
 				    </ul>
 				  </div>
 	      </section>

@@ -49,4 +49,11 @@ class ListingController extends Controller
             return redirect()->route('admin-login');
         }
     }
+    public function addslider(Request $request){
+        if(Auth::guard('admin')->check()){
+            return view('admin.addslider');
+        }else{
+            return redirect()->route('admin-login');
+        }
+    }
 }

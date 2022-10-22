@@ -33,4 +33,11 @@ class AdminController extends Controller
         Auth::guard('admin')->logout();
         return redirect()->route('admin-login');
     }
+    public function Profile(){
+        if(Auth::guard('admin')->check()){
+            return view('admin.profile');
+        }else{
+            return redirect()->route('admin-login');
+        }
+    }
 }

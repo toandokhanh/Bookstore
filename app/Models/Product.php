@@ -30,11 +30,11 @@ class Product extends Model
                 'name'=>'Hình ảnh',
                 'type'=>'image'
             ),
-            // array(
-            //     'field'=>'updated_at',
-            //     'name'=>'Ngày cập nhật',
-            //     'type'=>'text'
-            // ),
+            array(
+                'field'=>'year_of_manufacture',
+                'name'=>'Năm xuất bản',
+                'type'=>'text'
+            ),
             // array(
             //     'field'=>'creacted_at',
             //     'name'=>'Ngày tạo',

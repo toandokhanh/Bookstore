@@ -1,3 +1,5 @@
+
+
 <div class="grid_2">
     <div class="box sidemenu">
         <div class="block" id="section-menu">
@@ -20,7 +22,7 @@
 				<li><a class="menuitem">Tùy chọn thanh trượt</a>
                     <ul class="submenu">
                         <li><a href="#addslider">Thêm thanh trượt</a> </li>
-                        <li><a href="#sliderlist">Danh sách thanh trượt</a> </li>
+                        <li><a href={{ route('listing-index',['model'=>'Slider'])}}>Danh sách thanh trượt</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Danh mục</a>

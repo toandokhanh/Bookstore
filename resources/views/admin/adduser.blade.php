@@ -1,10 +1,23 @@
+<div hidden >{{ $roles = DB::table('roles')
+    ->get()
+    ;}}
+</div>
+<style>
+    .suc{
+        position: absolute;
+        top:160px;
+        color: green;
+        left: 640px;
+    }
+</style>
 @include('admin.include.header')
 @include('admin.include.slidebar')<div class="grid_10">
     <div class="grid_10">
         <div class="box round first grid">
             <h2>Thêm Người dùng</h2>
             <div class="block">               
-             <form action="" method="post" enctype="multipart/form-data">
+             <form action={{ route('listing-store-adduser') }} method="post" enctype="multipart/form-data">
+                @csrf
                 <table class="form">
                    
                     <tr>
@@ -12,7 +25,7 @@
                             <label>Tên người dùng</label>
                         </td>
                         <td>
-                            <input name="" type="text" placeholder="Nhập tên người dùng" class="medium" />
+                            <input required name="use_name" type="text" placeholder="Nhập tên người dùng" class="medium" />
                         </td>
                     </tr>
                     
@@ -21,7 +34,7 @@
                             <label>Địa chỉ</label>
                         </td>
                         <td>
-                            <textarea width='100px' class="tinymce"></textarea>
+                            <textarea required name="address" width='100px' class="tinymce"></textarea>
     
                         </td>
                     </tr>
@@ -30,7 +43,10 @@
                             <label>Số điện thoại</label>
                         </td>
                         <td>
-                            <input type="text" placeholder="Nhập vào số điện thoại người dùng ..." class="medium" />
+                            <input required name="phone" type="text" placeholder="Nhập vào số điện thoại người dùng ..." class="medium @error('product_price') is-invalid @enderror" />
+                            @error('phone')
+                            <div style="color: red" class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
@@ -38,7 +54,10 @@
                             <label>Email</label>
                         </td>
                         <td>
-                            <input type="text" placeholder="Nhập email người dùng để đăng nhập..." class="medium" />
+                            <input required name="email" type="text" placeholder="Nhập email người dùng để đăng nhập..." class="medium @error('product_price') is-invalid @enderror" />
+                            @error('email')
+                            <div style="color: red" class="alert alert-danger">{{ $message }}</div>
+                            @enderror
                         </td>
                     </tr>
                     <tr>
@@ -46,7 +65,7 @@
                             <label>Giới tính</label>
                         </td>
                         <td>
-                            <select id="select" name="select">
+                            <select required name="gender" id="select" name="select">
                                 <option>Chọn giới tính</option>
                                 <option value="0">Nữ</option>
                                 <option value="1">Nam</option>
@@ -59,15 +78,27 @@
                             <label>Phân quyền</label>
                         </td>
                         <td>
-                            <select id="select" name="select">
+                            <select required name="role" id="select" name="select">
                                 <option>Chọn quyền</option>
-                                <option value="1">Khách hàng</option>
-                                <option value="2">Nhân viên</option>
-                                <option value="3">Quản trị viên</option>
+                                @foreach ($roles as $role)
+                                    <option value="{{ $role->id }}">{{ $role->role_name }}</option>
+                                @endforeach
                             </select>
                         </td>
                     </tr>
                     <tr>
+                        <tr>
+                            <td>
+                                <label>Mật khẩu</label>
+                            </td>
+                            <td>
+                                <input required name="password" type="password" class="medium @error('product_price') is-invalid @enderror" />
+                                @error('password')
+                                <div style="color: red" class="alert alert-danger">{{ $message }}</div>
+                                @enderror
+                            </td>
+                            
+                        </tr>
                         <td></td>
                         <td>
                             <input type="submit" name="submit" Value="Thêm" />

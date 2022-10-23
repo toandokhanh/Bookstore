@@ -83,15 +83,18 @@ Route::prefix('ad')->group(function(){
     })->name('admin-feedback');
     // Route::post('/feedback', [AdminController::class, 'Feedback'])->name('admin-feedback');
     //thêm sản phẩm admin
-    Route::get('/listing/addproduct', [ListingController::class, 'addproduct'])->name('listing-addproduct');
+    Route::get('/listing/addproduct', [ProductController::class, 'addproduct'])->name('listing-addproduct');
+    Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store');
     // thêm danh mục admin
-    Route::get('/listing/addcatetory', [ListingController::class, 'addcatetory'])->name('listing-addcatetory');
+    Route::get('/listing/addcatetory', [ProductController::class, 'addcatetory'])->name('listing-addcatetory');
     //thêm người dùng admin
-    Route::get('/listing/adduser', [ListingController::class, 'adduser'])->name('listing-adduser');
+    Route::get('/listing/adduser', [ProductController::class, 'adduser'])->name('listing-adduser');
     //thêm thanh trượt
-    Route::get('/listing/addslider', [ListingController::class, 'addslider'])->name('listing-addslider');
+    Route::get('/listing/addslider', [ProductController::class, 'addslider'])->name('listing-addslider');
     //select admin ...
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
+
+    // Route::post('/editing/{model}', [ProductController::class, 'index'])->name('editing-index');
  
 });
 

@@ -12,7 +12,7 @@
                             <label>Tên người dùng</label>
                         </td>
                         <td>
-                            <input type="text" placeholder="Nhập tên người dùng" class="medium" />
+                            <input name="" type="text" placeholder="Nhập tên người dùng" class="medium" />
                         </td>
                     </tr>
                     

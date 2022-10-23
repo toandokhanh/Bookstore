@@ -12,11 +12,16 @@
                         
                     </ul>
                 </li>
-				
-                 <li><a class="menuitem">Cập nhật trang</a>
+                <li><a class="menuitem">Tác giả</a>
                     <ul class="submenu">
-                        <li><a>Về chúng tôi</a></li>
-                        <li><a>Liên hệ</a></li>
+                        <li><a>Thêm Tác giả</a></li>
+                        <li><a href="{{ route('listing-index',['model'=>'Author'])}}">Danh nhà Tác giả </a></li>
+                    </ul>
+                </li>
+                 <li><a class="menuitem">Nhà xuất bản</a>
+                    <ul class="submenu">
+                        <li><a>Thêm nhà xuất bản</a></li>
+                        <li><a href="{{ route('listing-index',['model'=>'Publisher'])}}">Danh nhà xuất bản</a></li>
                     </ul>
                 </li>
 				<li><a class="menuitem">Tùy chọn thanh trượt</a>
@@ -34,7 +39,7 @@
                 <li><a class="menuitem">Tùy chọn sản phẩm</a>
                     <ul class="submenu">
                         <li><a href={{ route('listing-addproduct')}}>Thêm sản phẩm</a> </li>
-                        <li><a href={{ route('listing-index',['model'=>'Product'])}}>Danh sách sản phẩm</a> </li>
+                        <li><a href={{ route('listing-index',['model'=>'Products'])}}>Danh sách sản phẩm</a> </li>
                     </ul>
                 </li>
                 @if (Auth::guard('admin')->user()->role === 3)

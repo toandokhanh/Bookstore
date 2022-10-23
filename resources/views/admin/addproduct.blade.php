@@ -1,18 +1,40 @@
+
+<div hidden >{{ $catetorys = DB::table('catetorys')
+    ->get()
+    ;}}
+    {{ $publishers = DB::table('publishers')
+    ->get()
+    ;}}
+    {{ $authors = DB::table('authors')
+    ->get()
+    ;}}
+</div>
 @include('admin.include.header')
 @include('admin.include.slidebar')
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Thêm sản phẩm</h2>
         <div class="block">               
-         <form action="" method="post" enctype="multipart/form-data">
+         <form action="{{ route('listing-store')}}" method="post" enctype="multipart/form-data" >
+            @csrf
+            @if (isset($title))
+                <span>{{ $title }}</span>
+            @endif
             <table class="form">
-               
+                <tr>
+                    <td>
+                        <label hidden>Mã người tạo</label>
+                    </td>
+                    <td>
+                            <input hidden name="ac_id" type="text" value="{{ Auth::guard('admin')->user()->id; }}" class="medium" />   
+                    </td>
+                </tr>
                 <tr>
                     <td>
                         <label>Tên sản phẩm</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Nhập tên sản phẩm" class="medium" />
+                        <input required name="product_name" type="text" placeholder="Nhập tên sản phẩm" class="medium" />
                     </td>
                 </tr>
 				<tr>
@@ -20,11 +42,26 @@
                         <label>Thể loại</label>
                     </td>
                     <td>
-                        <select id="select" name="select">
+                        <select  name="cate_id" id="select" >
                             <option>Chọn thể loại sách</option>
-                            <option value="1">Công nghệ thông tin</option>
-                            <option value="2">Kinh tế</option>
-                            <option value="3">Khoa học</option>
+                            @foreach ($catetorys as $catetory)
+                                <option value="{{ $catetory->id }}">{{ $catetory->cate_name }}</option>   
+                            @endforeach
+                            
+                        </select>
+                    </td>
+                </tr>
+				<tr>
+                    <td>
+                        <label>Nhà xuất bản</label>
+                    </td>
+                    <td>
+                        <select  name="publisher_id" id="select" >
+                            <option>Chọn nhà xuất bản</option>
+                            @foreach ($publishers as $publisher)
+                            <option  value="{{ $publisher->id }}">{{ $publisher->publisher_name }}</option>
+                            @endforeach
+
                         </select>
                     </td>
                 </tr>
@@ -33,21 +70,20 @@
                         <label>Tác giả</label>
                     </td>
                     <td>
-                        <select id="select" name="select">
+                        <select  name="author_id" id="select" >
                             <option>Chọn tác giả</option>
-                            <option value="1">Tác giả 1</option>
-                            <option value="2">Tác giả 2</option>
-                            <option value="3">Tác giả 3</option>
+                            @foreach ($authors as $author)
+                            <option value="{{ $author->id }}">{{ $author->author_name }}</option>
+                            @endforeach
                         </select>
                     </td>
                 </tr>
-				
 				 <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
                         <label>Mô tả</label>
                     </td>
                     <td>
-                        <textarea width='100px' class="tinymce"></textarea>
+                        <textarea required name="describe" width='100px' class="tinymce"></textarea>
 
                     </td>
                 </tr>
@@ -56,7 +92,10 @@
                         <label>Giá</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Nhập vào giá sản phẩm ..." class="medium" />
+                        <input  name="product_price" type="text" placeholder="Nhập vào giá sản phẩm ..." class="medium @error('product_price') is-invalid @enderror" />
+                        @error('product_price')
+                            <div style="color: red" class="alert alert-danger">{{ $message }}</div>
+                        @enderror
                     </td>
                 </tr>
                 <tr>
@@ -64,7 +103,7 @@
                         <label>Kích thước</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Nhập kích thước sản phẩm..." class="medium" />
+                        <input  name="size" type="text" placeholder="Nhập kích thước sản phẩm..." class="medium" />
                     </td>
                 </tr>
                 <tr>
@@ -72,7 +111,7 @@
                         <label>Người dịch</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Nhập tên người dịch sách..." class="medium" />
+                        <input  name="translater" type="text" placeholder="Nhập tên người dịch sách..." class="medium" />
                     </td>
                 </tr>
                 <tr>
@@ -80,7 +119,7 @@
                         <label>Hình mô tả</label>
                     </td>
                     <td>
-                        <input type="file" />
+                        <input  type="file" id="image" name="image" class="medium"/>
                     </td>
                 </tr>
                 <tr>
@@ -88,7 +127,7 @@
                         <label>Năm xuất bản</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Nhập vào năm xuất bản..." class="medium" />
+                        <input  name="year_of_manufacture" type="text" placeholder="Nhập vào năm xuất bản..." class="medium" />
                     </td>
                 </tr>
                 <tr>
@@ -96,22 +135,9 @@
                         <label>Số trang</label>
                     </td>
                     <td>
-                        <input type="text" placeholder="Nhập vào số trang..." class="medium" />
+                        <input  name="number_of_pages" type="text" placeholder="Nhập vào số trang..." class="medium" />
                     </td>
                 </tr>
-				{{-- <tr>
-                    <td>
-                        <label>Product Type</label>
-                    </td>
-                    <td>
-                        <select id="select" name="select">
-                            <option>Select Type</option>
-                            <option value="1">Featured</option>
-                            <option value="2">Non-Featured</option>
-                        </select>
-                    </td>
-                </tr> --}}
-
 				<tr>
                     <td></td>
                     <td>

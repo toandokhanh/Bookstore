@@ -28,32 +28,5 @@ class ListingController extends Controller
 
 
     }
-    public function addproduct(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.addproduct');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
-    public function addcatetory(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.addcatetory');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
-    public function adduser(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.adduser');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
-    public function addslider(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.addslider');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
+   
 }

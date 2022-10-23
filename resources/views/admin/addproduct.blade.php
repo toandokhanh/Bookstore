@@ -1,4 +1,12 @@
 
+<style>
+    .suc{
+        position: absolute;
+        top:160px;
+        color: green;
+        left: 640px;
+    }
+</style>
 <div hidden >{{ $catetorys = DB::table('catetorys')
     ->get()
     ;}}

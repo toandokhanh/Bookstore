@@ -29,13 +29,7 @@ class ProductController extends Controller
             return redirect()->route('admin-login');
         }
     }
-    public function adduser(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.adduser');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
+
     public function addslider(Request $request){
         if(Auth::guard('admin')->check()){
             return view('admin.addslider');
@@ -101,7 +95,8 @@ class ProductController extends Controller
         $model->{'year_of_manufacture'} = $request->input('year_of_manufacture');
         $model->{'number_of_pages'} = $request->input('number_of_pages');
         $model->save();
-        return view('admin.listing')."<span class='suc'>Thêm sách thành công</span>";exit;
+        return view('admin.addproduct')."<span class='suc'>Thêm sách thành công</span>";
+        exit;
     }
     /**
      * Display the specified resource.

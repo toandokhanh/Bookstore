@@ -2,6 +2,7 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\Usercontroller;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Admin\ListingController;
@@ -88,7 +89,8 @@ Route::prefix('ad')->group(function(){
     // thêm danh mục admin
     Route::get('/listing/addcatetory', [ProductController::class, 'addcatetory'])->name('listing-addcatetory');
     //thêm người dùng admin
-    Route::get('/listing/adduser', [ProductController::class, 'adduser'])->name('listing-adduser');
+    Route::get('/listing/adduser', [Usercontroller::class, 'adduser'])->name('listing-adduser');
+    Route::post('/listing/adduser', [Usercontroller::class, 'store'])->name('listing-store-adduser');
     //thêm thanh trượt
     Route::get('/listing/addslider', [ProductController::class, 'addslider'])->name('listing-addslider');
     //select admin ...

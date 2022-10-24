@@ -22,21 +22,8 @@ class ProductController extends Controller
             return redirect()->route('admin-login');
         }
     }
-    public function addcatetory(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.addcatetory');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
+    
 
-    public function addslider(Request $request){
-        if(Auth::guard('admin')->check()){
-            return view('admin.addslider');
-        }else{
-            return redirect()->route('admin-login');
-        }
-    }
     public function index(Request $request)
     {
         //

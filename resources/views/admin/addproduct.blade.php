@@ -25,6 +25,7 @@
         <div class="block">               
          <form action="{{ route('listing-store')}}" method="post" enctype="multipart/form-data" >
             @csrf
+            @method('PUT')
             @if (isset($title))
                 <span>{{ $title }}</span>
             @endif
@@ -91,7 +92,7 @@
                         <label>Mô tả</label>
                     </td>
                     <td>
-                        <textarea required name="describe" width='100px' class="tinymce"></textarea>
+                        <textarea rows="5" cols="66" required name="describe" width='100px' class="tinymce"></textarea>
 
                     </td>
                 </tr>

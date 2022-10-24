@@ -1,17 +1,26 @@
+<style>
+    .suc{
+        position: absolute;
+        top:160px;
+        color: green;
+        left: 640px;
+    }
+</style>
 @include('admin.include.header')
 @include('admin.include.slidebar')<div class="grid_10">
     <div class="grid_10">
         <div class="box round first grid">
             <h2 style="height: 50px">Thêm thanh trượt</h2>
         <div style="margin-top: -170px" class="block">               
-             <form action="addslider.php" method="post" enctype="multipart/form-data">
+             <form action={{ route('listing-store-addslider') }} method="post" enctype="multipart/form-data" >
+                @csrf
                 <table class="form">     
                     <tr>
                         <td>
                             <label>Tên thanh trượt</label>
                         </td>
                         <td>
-                            <input type="text" name="title" placeholder="Nhập tên thanh trượt..." class="medium" />
+                            <input name="slider_name" type="text" name="title" placeholder="Nhập tên thanh trượt..." class="medium" />
                         </td>
                     </tr>           
         
@@ -20,7 +29,7 @@
                             <label>Thêm ảnh</label>
                         </td>
                         <td>
-                            <input type="file" name="image"/>
+                            <input name="slider_image" type="file" name="image"/>
                         </td>
                     </tr>
                    

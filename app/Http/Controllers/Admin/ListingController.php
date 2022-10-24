@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-
+use App\Models\Products;
 class ListingController extends Controller
 {
     //
@@ -27,6 +27,21 @@ class ListingController extends Controller
         }
 
 
+    }
+    public function edit(Products $products, $id){
+        return view('admin.editproduct',[
+            'id' => $id
+        ], compact('products'));
+    }
+    public function update(Request $request, Products $products){
+        $products->update($request->all());
+        dd($request->all());exit;
+        return redirect()->route('listing-index',['model'=>'Products'])->with('thongbao','Cập nhật sản phẩm thành công');
+    }
+
+    public function delete(Products $products, $id){
+        $products->delete(); 
+        return redirect()->route('listing-index',['model'=>'Products'])->with('thongbao','Xóa sản phẩm thành công');
     }
    
 }

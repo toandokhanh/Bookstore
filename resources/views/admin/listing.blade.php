@@ -4,7 +4,7 @@
 
         <div class="grid_10">
             <div class="box round first grid">
-                <h2>Danh sách sản phẩm</h2>
+                <h2>Danh sách</h2>
                 <div class="block">        
                     <table class="data display datatable" id="example">
 					<thead>
@@ -50,16 +50,15 @@
 											<?php 
 											break;
 									}?>
-
 									<?php
 									break;	
 								}?>
 							
 							<?php } ?>
-							<td><a href="">Sửa</a> || <a href="">Xóa</a></td>
+							<td><a href="{{ route('listing-edit',['id'=>$record['id']]) }}">Sửa</a> || <a href="{{ route('listing-delete',['id'=>$record['id']]) }}">Xóa</a></td>
 						</tr>
 						<?php };?>
-
+						
 					</tbody>
 				</table>
                </div>
@@ -68,7 +67,6 @@
 <script type="text/javascript">
 	$(document).ready(function () {
 	    setupLeftMenu();
-
 	    $('.datatable').dataTable();
 	    setSidebarHeight();
 	});

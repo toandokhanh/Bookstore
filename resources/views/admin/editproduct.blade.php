@@ -1,4 +1,5 @@
 
+
 <style>
     .suc{
         position: absolute;
@@ -16,19 +17,21 @@
     {{ $authors = DB::table('authors')
     ->get()
     ;}}
+    {{ $products = DB::table('products')
+    ->where('id', [$id])
+    ->get()
+    ;}}
 </div>
+
 @include('admin.include.header')
 @include('admin.include.slidebar')
 <div class="grid_10">
     <div class="box round first grid">
-        <h2>Thêm sản phẩm</h2>
+        <h2>Sửa sản phẩm</h2>
         <div class="block">               
-         <form action="{{ route('listing-store')}}" method="post" enctype="multipart/form-data" >
+         <form action="{{ route('listing-update')}}" method="post" enctype="multipart/form-data" >
             @csrf
             @method('PUT')
-            @if (isset($title))
-                <span>{{ $title }}</span>
-            @endif
             <table class="form">
                 <tr>
                     <td>
@@ -43,7 +46,10 @@
                         <label>Tên sản phẩm</label>
                     </td>
                     <td>
-                        <input required name="product_name" type="text" placeholder="Nhập tên sản phẩm" class="medium" />
+                        @foreach ($products as $product) 
+                        
+                        <input required name="product_name" type="text" value="{{$product->product_name }}" placeholder="Nhập tên sản phẩm" class="medium" />
+                        
                     </td>
                 </tr>
 				<tr>
@@ -51,9 +57,12 @@
                         <label>Thể loại</label>
                     </td>
                     <td>
-                        <select  name="cate_id" id="select" >
+                        <select required name="cate_id" id="select" >
                             <option>Chọn thể loại sách</option>
                             @foreach ($catetorys as $catetory)
+                                @if ($catetory->id === $product->cate_id)
+                                <option  selected value="{{ $product->cate_id }}">{{ $catetory->cate_name }}</option>   
+                                @endif
                                 <option value="{{ $catetory->id }}">{{ $catetory->cate_name }}</option>   
                             @endforeach
                             
@@ -65,9 +74,12 @@
                         <label>Nhà xuất bản</label>
                     </td>
                     <td>
-                        <select  name="publisher_id" id="select" >
+                        <select required  name="publisher_id" id="select" >
                             <option>Chọn nhà xuất bản</option>
                             @foreach ($publishers as $publisher)
+                            @if ($publisher->id === $product->publisher_id)
+                                <option selected value="{{ $product->publisher_id }}">{{ $publisher->publisher_name }}</option>   
+                            @endif
                             <option  value="{{ $publisher->id }}">{{ $publisher->publisher_name }}</option>
                             @endforeach
 
@@ -79,9 +91,12 @@
                         <label>Tác giả</label>
                     </td>
                     <td>
-                        <select  name="author_id" id="select" >
+                        <select required name="author_id" id="select" >
                             <option>Chọn tác giả</option>
                             @foreach ($authors as $author)
+                            @if ($author->id === $product->author_id)
+                                <option selected value="{{ $product->author_id }}">{{ $author->author_name }}</option>   
+                            @endif
                             <option value="{{ $author->id }}">{{ $author->author_name }}</option>
                             @endforeach
                         </select>
@@ -92,8 +107,7 @@
                         <label>Mô tả</label>
                     </td>
                     <td>
-                        <textarea rows="5" cols="66" required name="describe" width='100px' class="tinymce"></textarea>
-
+                        <textarea rows="5" cols="66" aria-valuemax="123" required name="describe" width='100px' class="tinymce">{{ $product->describe }}</textarea>
                     </td>
                 </tr>
 				<tr>
@@ -101,7 +115,7 @@
                         <label>Giá</label>
                     </td>
                     <td>
-                        <input  name="product_price" type="text" placeholder="Nhập vào giá sản phẩm ..." class="medium @error('product_price') is-invalid @enderror" />
+                        <input value="{{ $product->product_price }}" name="product_price" type="text" placeholder="Nhập vào giá sản phẩm ..." class="medium @error('product_price') is-invalid @enderror" />
                         @error('product_price')
                             <div style="color: red" class="alert alert-danger">{{ $message }}</div>
                         @enderror
@@ -112,7 +126,7 @@
                         <label>Kích thước</label>
                     </td>
                     <td>
-                        <input  name="size" type="text" placeholder="Nhập kích thước sản phẩm..." class="medium" />
+                        <input value="{{ $product->size }}" name="size" type="text" placeholder="Nhập kích thước sản phẩm..." class="medium" />
                     </td>
                 </tr>
                 <tr>
@@ -120,23 +134,36 @@
                         <label>Người dịch</label>
                     </td>
                     <td>
-                        <input  name="translater" type="text" placeholder="Nhập tên người dịch sách..." class="medium" />
+                        <input value="{{ $product->translater }}" name="translater" type="text" placeholder="Nhập tên người dịch sách..." class="medium" />
                     </td>
                 </tr>
                 <tr>
                     <td>
-                        <label>Hình mô tả</label>
+                        <label>Link Hình mô tả</label>
                     </td>
                     <td>
-                        <input  type="file" id="image" name="image" class="medium"/>
+                        {{-- <img width="160px" height="160px" src="{{ $product->image }}" alt=""> --}}
+                        {{-- <input type="file" id="image" name="image" class="medium" value="C:\test.txts"/> --}}
+                        <input size="72px" type="text" name="testcase" value= "{{ $product->image }}">
                     </td>
+                    {{-- <td>
+                        <input  type="file" id="image" name="image" class="medium"/>
+                    </td> --}}
                 </tr>
+                {{-- <tr>
+                    <td>
+                        <label>Hình mô tả ban đầu</label>
+                    </td>
+                    <td>
+                        <img width="160px" height="160px" src="{{ $product->image }}" alt="">
+                    </td>
+                </tr> --}}
                 <tr>
                     <td>
                         <label>Năm xuất bản</label>
                     </td>
                     <td>
-                        <input  name="year_of_manufacture" type="text" placeholder="Nhập vào năm xuất bản..." class="medium" />
+                        <input value="{{ $product->year_of_manufacture }}" name="year_of_manufacture" type="text" placeholder="Nhập vào năm xuất bản..." class="medium" />
                     </td>
                 </tr>
                 <tr>
@@ -144,8 +171,9 @@
                         <label>Số trang</label>
                     </td>
                     <td>
-                        <input  name="number_of_pages" type="text" placeholder="Nhập vào số trang..." class="medium" />
+                        <input value="{{ $product->number_of_pages }}" name="number_of_pages" type="text" placeholder="Nhập vào số trang..." class="medium" />
                     </td>
+                    @endforeach
                 </tr>
 				<tr>
                     <td></td>

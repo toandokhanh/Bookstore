@@ -6,6 +6,10 @@ use App\Http\Controllers\Admin\Usercontroller;
 use App\Http\Controllers\Admin\AdminController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 use App\Http\Controllers\Admin\ListingController;
+use App\Http\Controllers\Admin\CatetoryController;
+use App\Http\Controllers\Admin\AuthorController;
+use App\Http\Controllers\Admin\PublisherController;
+use App\Http\Controllers\Admin\SliderController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -87,15 +91,25 @@ Route::prefix('ad')->group(function(){
     Route::get('/listing/addproduct', [ProductController::class, 'addproduct'])->name('listing-addproduct');
     Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store');
     // thêm danh mục admin
-    Route::get('/listing/addcatetory', [ProductController::class, 'addcatetory'])->name('listing-addcatetory');
-    //thêm người dùng admin
+    Route::get('/listing/addcatetory', [CatetoryController::class, 'addcatetory'])->name('listing-addcatetory');
+    Route::post('/listing/addcatetory', [CatetoryController::class, 'store'])->name('listing-store-addcatetory');
+    //thêm người dùng 
     Route::get('/listing/adduser', [Usercontroller::class, 'adduser'])->name('listing-adduser');
     Route::post('/listing/adduser', [Usercontroller::class, 'store'])->name('listing-store-adduser');
+    //Thêm tác giả
+    Route::get('/listing/addauthor', [AuthorController::class, 'addauthor'])->name('listing-addauthor');
+    Route::post('/listing/addauthor', [AuthorController::class, 'store'])->name('listing-store-addauthor');
+    //Thêm nhà xuất bản
+    Route::get('/listing/addpublisher', [PublisherController::class, 'addpublisher'])->name('listing-addpublisher');
+    Route::post('/listing/addpublisher', [PublisherController::class, 'store'])->name('listing-store-addpublisher');
     //thêm thanh trượt
-    Route::get('/listing/addslider', [ProductController::class, 'addslider'])->name('listing-addslider');
+    Route::get('/listing/addslider', [SliderController::class, 'addslider'])->name('listing-addslider');
+    Route::post('/listing/addslider', [SliderController::class, 'store'])->name('listing-store-addslider');
     //select admin ...
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
-
+    Route::get('/listing/edit/{id}', [ListingController::class, 'edit'])->name('listing-edit');
+    Route::put('/listing/update', [ListingController::class, 'update'])->name('listing-update');;
+    Route::get('/listing/delete/{id}', [ListingController::class, 'delete'])->name('listing-delete');
     // Route::post('/editing/{model}', [ProductController::class, 'index'])->name('editing-index');
  
 });

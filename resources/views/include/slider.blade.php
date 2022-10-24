@@ -1,5 +1,4 @@
 <div hidden >{{ $sliders = DB::table('sliders')
-    ->whereIn('id', [1,2,3,4])	
     ->get()
     ;}}
 </div>

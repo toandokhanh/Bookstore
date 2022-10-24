@@ -14,13 +14,13 @@
                 </li>
                 <li><a class="menuitem">Tác giả</a>
                     <ul class="submenu">
-                        <li><a>Thêm Tác giả</a></li>
+                        <li><a href="{{ route('listing-addauthor')}}">Thêm Tác giả</a></li>
                         <li><a href="{{ route('listing-index',['model'=>'Author'])}}">Danh nhà Tác giả </a></li>
                     </ul>
                 </li>
                  <li><a class="menuitem">Nhà xuất bản</a>
                     <ul class="submenu">
-                        <li><a>Thêm nhà xuất bản</a></li>
+                        <li><a href="{{ route('listing-addpublisher')}}">Thêm nhà xuất bản</a></li>
                         <li><a href="{{ route('listing-index',['model'=>'Publisher'])}}">Danh nhà xuất bản</a></li>
                     </ul>
                 </li>

@@ -9,14 +9,20 @@
 @include('admin.include.header')
 @include('admin.include.slidebar')<div class="grid_10">
     <div class="box round first grid">
-        <h2 style="height: 50px">Thêm danh mục</h2>
+        <h2 style="height: 50px">Thêm nhà xuất bản</h2>
        <div style="margin-top: -130px; margin-left: 0px;" class="block copyblock"> 
-         <form action="{{ route('listing-store-addcatetory')}}" method="post" enctype="multipart/form-data" >
+         <form action="{{ route('listing-store-addpublisher')}}" method="post" enctype="multipart/form-data" >
             @csrf
             <table class="form">					
+                
                 <tr>
                     <td>
-                        <input required name="cate_name" type="text" placeholder="Nhập vào danh mục cần thêm..." class="medium" />
+                        <input required name="publisher_name" type="text" placeholder="Nhập vào tên nhà xuất bản..." class="medium" />
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input required name="publishers_address" type="text" placeholder="Nhập vào địa chỉ của nhà xuất bản..." class="medium" />
                     </td>
                 </tr>
                 <tr> 

@@ -25,17 +25,16 @@
         <div class="block">               
          <form action="{{ route('listing-store')}}" method="post" enctype="multipart/form-data" >
             @csrf
-            @method('PUT')
             @if (isset($title))
                 <span>{{ $title }}</span>
             @endif
             <table class="form">
                 <tr>
                     <td>
-                        <label hidden>Mã người tạo</label>
+                        <label hidden >Mã người tạo</label>
                     </td>
                     <td>
-                            <input hidden name="ac_id" type="text" value="{{ Auth::guard('admin')->user()->id; }}" class="medium" />   
+                            <input hidden  name="ac_id" type="text" value="{{ Auth::guard('admin')->user()->id; }}" class="medium" />   
                     </td>
                 </tr>
                 <tr>

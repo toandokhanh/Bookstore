@@ -6,21 +6,28 @@
         left: 640px;
     }
 </style>
+<div hidden >
+    {{ $sliders = DB::table('sliders')
+    ->where('id', [$id])
+    ->get()
+    ;}}
+</div>
 @include('admin.include.header')
 @include('admin.include.slidebar')<div class="grid_10">
     <div class="grid_10">
         <div class="box round first grid">
-            <h2 style="height: 50px">Thêm thanh trượt</h2>
+            <h2 style="height: 50px">Chỉnh sửa thanh trượt</h2>
         <div style="margin-top: -170px" class="block">           
-             <form action={{ route('listing-store-addslider') }} method="post" enctype="multipart/form-data" >
+             <form action={{ route('listing-update-slider',['id'=>$id])}} method="post" enctype="multipart/form-data" >
                 @csrf
+                @foreach ($sliders as $slider)
                 <table class="form">     
                     <tr>
                         <td>
                             <label>Tên thanh trượt</label>
                         </td>
                         <td>
-                            <input name="slider_name" type="text" name="title" placeholder="Nhập tên thanh trượt..." class="medium" />
+                            <input required value="{{ $slider->slider_name	 }}" name="slider_name" type="text" name="title" placeholder="Nhập tên thanh trượt..." class="medium" />
                         </td>
                     </tr>           
         
@@ -29,7 +36,7 @@
                             <label>Thêm ảnh</label>
                         </td>
                         <td>
-                            <input name="slider_image" type="file" name="image"/>
+                            <input value="{{ $slider->slider_image }}" name="slider_image" type="text" name="image" class="medium"/>
                         </td>
                     </tr>
                    
@@ -40,6 +47,7 @@
                         </td>
                     </tr>
                 </table>
+                @endforeach
                 </form>
             </div>
         </div>

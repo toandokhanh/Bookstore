@@ -29,7 +29,12 @@ class Author extends Model
                 'field'=>'nationality',
                 'name'=>'Quốc tịch',
                 'type'=>'text'
-            ),      
+            ),     
+            array(
+                'field'=>'table',
+                'name'=>'Author',
+                'type'=>'text'
+            ),   
         );
     }
 }

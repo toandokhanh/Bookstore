@@ -1,4 +1,5 @@
 <h1 align="center"> ĐỒ ÁN PHÁT TRIỂN HỆ THỐNG WEB - CT299</h1>
+<h5 align="center">Giảng viên hướng dẫn: TS. Nguyễn Thanh Hải </h5>
 
 <p align="center">
     <img src="https://www.freepnglogos.com/uploads/php-logo-png/php-logo-html-css-php-mysql-logo-png-transparent-14.png"height="80" width="250" alt="Laravel Logo">

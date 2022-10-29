@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\Author;
 use Illuminate\Http\Request;
 
 class AuthorController extends Controller
@@ -57,6 +58,7 @@ class AuthorController extends Controller
         exit;
     }
 
+
     /**
      * Display the specified resource.
      *
@@ -86,9 +88,21 @@ class AuthorController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+      /// update tác giả
+    public function update(Request $request, $id){
+        $authors = new Author;
+        $authors = Author::find($id);
+        $validate = $request->validate([
+            'author_name' => 'required',
+            'year_of_birth' => 'required|numeric|min:4',
+            'nationality' => 'required'
+        ]);
+        $authors->{'author_name'} = $request->input('author_name');
+        $authors->{'year_of_birth'} = $request->input('year_of_birth');
+        $authors->{'nationality'} = $request->input('nationality');
+        $authors->update();
+        $authors->save();
+        return redirect()->route('listing-index',['model'=>'Author'])->with('thongbao','Cập nhật thông tin tác giả thành công');
     }
 
     /**

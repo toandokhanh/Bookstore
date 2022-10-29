@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\catetorys;
 use Illuminate\Http\Request;
 class CatetoryController extends Controller
 {
@@ -82,9 +83,17 @@ class CatetoryController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+       //update Catetory
+       public function update(Request $request, $id){
+        $catetorys = new catetorys;
+        $catetorys = Catetorys::find($id);
+        $validate = $request->validate([
+            'cate_name' => 'required',
+        ]);
+        $catetorys->{'cate_name'} = $request->input('cate_name');
+        $catetorys->update();
+        $catetorys->save();
+        return redirect()->route('listing-index',['model'=>'Catetorys'])->with('thongbao','Cập nhật thông tin danh mục thành công');
     }
 
     /**

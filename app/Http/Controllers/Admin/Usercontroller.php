@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
@@ -91,9 +92,28 @@ class Usercontroller extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+    public function update(Request $request, $id){
+        $users = new User;
+        $users = User::find($id);
+        $validate = $request->validate([
+            'use_name' => 'required',
+            'address' => 'required',
+            'phone' => 'required|numeric|min:10',
+            'email' => 'required|email',
+            'gender' => 'required|numeric',
+            'role' => 'required|numeric',
+            'password' => 'required'
+        ]);
+        $users->{'use_name'} = $request->input('use_name');
+        $users->{'address'} = $request->input('address');
+        $users->{'phone'} = $request->input('phone');
+        $users->{'email'} = $request->input('email');
+        $users->{'gender'} = $request->input('gender');
+        $users->{'role'} = $request->input('role');
+        $users->{'password'} = $request->input('password');
+        $users->update();
+        $users->save();
+        return redirect()->route('listing-index',['model'=>'User'])->with('thongbao','Cập nhật thông tin Người dùng thành công');
     }
 
     /**

@@ -120,13 +120,30 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Products $products, $id)
-    {
+    //update sản phẩm
+    public function update(Request $request, $id){
+        // return "hi"; exit;
         $validate = $request->validate([
             'product_price' => 'required|numeric'
         ]);
-        $products->update($request->all());
-        dd($request->all());exit;
+        // dd($id);
+        $products = new Products;
+        $products = Products::find($id);
+        $products->{'ac_id'} = $request->input('ac_id');
+        $products->{'product_name'} = $request->input('product_name');
+        $products->{'image'} = $request->input('product_image');
+        $products->{'cate_id'} = $request->input('cate_id');
+        $products->{'publisher_id'} = $request->input('publisher_id');
+        $products->{'author_id'} = $request->input('author_id');
+        $products->{'describe'} = $request->input('describe');
+        $products->{'product_price'} = $request->input('product_price');
+        $products->{'size'} = $request->input('size');
+        $products->{'translater'} = $request->input('translater');
+        $products->{'year_of_manufacture'} = $request->input('year_of_manufacture');
+        $products->{'number_of_pages'} = $request->input('number_of_pages');
+        // dd($products->all());
+        $products->update();
+        $products->save();
         return redirect()->route('listing-index',['model'=>'Products'])->with('thongbao','Cập nhật sản phẩm thành công');
     }
 

@@ -5,7 +5,7 @@
     <img src="https://cdn.sussmanconsultants.com/wp-content/uploads/2018/09/logo-laravel.png" height="100" width="250" alt="Laravel Logo">
 </p>
 
-<h4>Các ngôn ngữ được sữ dụng</h4>
+<h4>Những ngôn ngữ được sữ dụng</h4>
 <ul>
     <li>PHP</li>
     <li>HTMl</li>
@@ -13,7 +13,7 @@
     <li>Javascript</li>
     <li>MySql</li>
 </ul>
-<h4>Các công nghệ được sữ dụng</h4>
+<h4>Những tính năng và công nghệ được sữ dụng</h4>
 <ul>
     <li>Laravel</li>
     <li>Jquery</li>

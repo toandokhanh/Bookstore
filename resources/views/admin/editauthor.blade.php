@@ -17,7 +17,7 @@
     <div class="box round first grid">
         <h2 style="height: 50px">Cập nhật thông tin tác giả</h2>
        <div style="margin-top: -70px; margin-left: 0px;" class="block copyblock"> 
-         <form action="{{ route('listing-update-author',['id'=>$id])}}" method="post" enctype="multipart/form-data" >
+         <form action={{ route('update-author',['id'=>$id])  }} method="POST" enctype="multipart/form-data" >
             @csrf
             <table class="form">	
                 @foreach ($authors as $author) 				

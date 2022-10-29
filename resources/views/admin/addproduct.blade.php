@@ -23,7 +23,7 @@
     <div class="box round first grid">
         <h2>Thêm sản phẩm</h2>
         <div class="block">               
-         <form action="{{ route('listing-store')}}" method="post" enctype="multipart/form-data" >
+         <form action="{{ route('listing-store-addproduct')}}" method="post" enctype="multipart/form-data" >
             @csrf
             @if (isset($title))
                 <span>{{ $title }}</span>

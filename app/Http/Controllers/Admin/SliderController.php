@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Models\slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
@@ -91,9 +92,20 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+   
+    // update Slider
+    public function update(Request $request, $id){
+        $sliders = new slider;
+        $sliders = Slider::find($id);
+        $validate = $request->validate([
+            'slider_name' => 'required',
+            'slider_image' => 'required',
+        ]);
+        $sliders->{'slider_name'} = $request->input('slider_name');
+        $sliders->{'slider_image'} = $request->input('slider_image');
+        $sliders->update();
+        $sliders->save();
+        return redirect()->route('listing-index',['model'=>'Slider'])->with('thongbao','Cập nhật thông tin thanh trượt thành công');
     }
 
     /**

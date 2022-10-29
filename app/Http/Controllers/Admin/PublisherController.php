@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
+use App\Models\Publisher;
 use Illuminate\Http\Request;
 
 class PublisherController extends Controller
@@ -86,9 +87,19 @@ class PublisherController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
-    {
-        //
+        // update nhà xuát bản
+    public function update(Request $request, $id){
+        $publishers = new Publisher;
+        $publishers = Publisher::find($id);
+        $validate = $request->validate([
+            'publisher_name' => 'required',
+            'publishers_address' => 'required'
+        ]);
+        $publishers->{'publisher_name'} = $request->input('publisher_name');
+        $publishers->{'publishers_address'} = $request->input('publishers_address');
+        $publishers->update();
+        $publishers->save();
+        return redirect()->route('listing-index',['model'=>'Publisher'])->with('thongbao','Cập nhật thông tin Nhà xuất bản thành công');
     }
 
     /**

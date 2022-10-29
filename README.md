@@ -59,6 +59,7 @@
 | 17  | [Database](https://github.com/toanvippro/boookstore_laravel/commit/b66b585832a2dd99ccd5f56d39e80cd6f9ce9e83)               |24/10/2022            |
 | 18  | [CURD Admin](https://github.com/toanvippro/boookstore_laravel/commit/cea25a901e8dfe02d2d01506490d559ac9cf5975)               |29/10/2022            |
 | 19  | [Readme](https://github.com/toanvippro/boookstore_laravel/commit/fa0618dac0695e134d23fe1e4869d768267b4e27)               |29/10/2022            |
+| 20  | [CURD Admin](https://github.com/toanvippro/boookstore_laravel/commit/fa0618dac0695e134d23fe1e4869d768267b4e27)               |29/10/2022            |
 * * *
 ### Database
 - php artisan migrate:refresh

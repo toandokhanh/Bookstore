@@ -78,54 +78,63 @@ Route::prefix('ad')->group(function(){
         return view('admin.login');
     })->name('admin-login');
     Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
-    //trang cá nhân
+
+    //trang thông tin cá nhân của admin
     Route::get('/profile', [AdminController::class, 'Profile'])->name('admin-profile');
+
     //đăng xuất
     Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
-    //phản hồi
+
+    //phản hồi của khách hành trả vè admin
     Route::get('/feedback', function(){
         return view('admin.feedback');
     })->name('admin-feedback');
-    // Route::post('/feedback', [AdminController::class, 'Feedback'])->name('admin-feedback');
-    //thêm sản phẩm admin
+
+    //quản lý sản phẩm
     Route::get('/listing/addproduct', [ProductController::class, 'addproduct'])->name('listing-addproduct');
-    Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store');
-    // thêm danh mục admin
+    Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store-addproduct');
+    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('listing-update-product');
+    //ok
+
+    // Quản lý danh mục
     Route::get('/listing/addcatetory', [CatetoryController::class, 'addcatetory'])->name('listing-addcatetory');
     Route::post('/listing/addcatetory', [CatetoryController::class, 'store'])->name('listing-store-addcatetory');
-    //thêm người dùng 
+    Route::post('/catetory/update/{id}', [CatetoryController::class, 'update'])->name('listing-update-catetory');
+    //ok
+
+    //Quản lý người dùng 
     Route::get('/listing/adduser', [Usercontroller::class, 'adduser'])->name('listing-adduser');
     Route::post('/listing/adduser', [Usercontroller::class, 'store'])->name('listing-store-adduser');
-    //Thêm tác giả
+    Route::post('/user/update/{id}', [Usercontroller::class, 'update'])->name('listing-update-user');
+    //ok
+
+    //Quản lý tác giả
     Route::get('/listing/addauthor', [AuthorController::class, 'addauthor'])->name('listing-addauthor');
     Route::post('/listing/addauthor', [AuthorController::class, 'store'])->name('listing-store-addauthor');
-    //Thêm nhà xuất bản
+    Route::post('author/update/{id}', [AuthorController::class, 'update'])->name('update-author');
+    //ok
+
+
+    //Quản lý nhà xuất bản
     Route::get('/listing/addpublisher', [PublisherController::class, 'addpublisher'])->name('listing-addpublisher');
     Route::post('/listing/addpublisher', [PublisherController::class, 'store'])->name('listing-store-addpublisher');
+    Route::post('/publisher/update/{id}', [PublisherController::class, 'update'])->name('listing-update-publisher');
+    //ok
+
+
     //thêm thanh trượt
     Route::get('/listing/addslider', [SliderController::class, 'addslider'])->name('listing-addslider');
     Route::post('/listing/addslider', [SliderController::class, 'store'])->name('listing-store-addslider');
-    //select admin ...
+    Route::post('/slider/update/{id}', [SliderController::class, 'update'])->name('listing-update-slider');
+    //ok
+
+    //select tất cả các bảng từ csld đổ lên trang admin thông qua model các bảng
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
-    //edit admin
+    //edit
     Route::get('/listing/edit/{model}/{id}', [ListingController::class, 'edit'])->name('listing-edit');
-    //update author
-    Route::post('/listing/update/{id}', [ListingController::class, 'updateAuthor'])->name('listing-update-author');
-    //update publisher
-    Route::post('/listing/update/{id}', [ListingController::class, 'updatePublisher'])->name('listing-update-publisher');
-    //update slider
-    Route::post('/listing/update/{id}', [ListingController::class, 'updateSlider'])->name('listing-update-slider');
-    //update catetory
-    Route::post('/listing/update/{id}', [ListingController::class, 'updateCatetory'])->name('listing-update-catetory');
-    //update product
-    Route::post('/listing/update/{id}', [ListingController::class, 'updateProduct'])->name('listing-update-product');
-    //update User
-    Route::post('/listing/update/{id}', [ListingController::class, 'updateUser'])->name('listing-update-user');
     //delete
     Route::get('/listing/delete/{model}/{id}', [ListingController::class, 'delete'])->name('listing-delete');
-    // Route::resource('products', ProductController::class);
-    // Route::post('/editing/{model}', [ProductController::class, 'index'])->name('editing-index');
- 
+    
 });
 
 

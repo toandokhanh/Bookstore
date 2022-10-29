@@ -21,6 +21,7 @@
     <li>Laravel Breeze</li>
     <li>lordicon</li>   
     <li>Github</li>   
+    <li>Notion</li>   
 </ul>
 <h4>Nguồn tham khảo</h4>
 <ul>

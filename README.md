@@ -22,6 +22,17 @@
     <li>lordicon</li>   
     <li>Github</li>   
 </ul>
+<h4>Nguồn tham khảo</h4>
+<ul>
+    <li><a href="https://laravel.com/">Laravel</a></li>  
+    <li><a href="https://www.youtube.com/playlist?list=PL8y3hWbcppt2nWBglaxrQm_A5sRjstdnK">Hoang An unicode</a></li>  
+    <li><a href="https://www.youtube.com/watch?v=iSsFV9hmxDk&t=4622s">Học laravel cơ bản 3 tiếng</a></li>  
+    <li><a href="https://www.youtube.com/watch?v=NJy-LuemNww&list=PLzrVYRai0riRnmKWhDEYixPDLs3CCk2lO">Học laravel của Khoa Phạm</a></li>  
+    <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>  
+    <li><a href="https://viblo.asia/questions">Viblo</a></li>  
+    <li><a href="https://docs.google.com/document/d/1wAZIA48LzvGLFMF3uposRs82h2dnQ34NNUMXgX3-Wiw/edit">Bài thực hành 6 của Thầy Nguyễn Thanh Hải</a></li>  
+
+</ul>
 <h4>Lịch cập nhật các chức năng </h4>
 
 

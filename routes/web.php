@@ -107,9 +107,23 @@ Route::prefix('ad')->group(function(){
     Route::post('/listing/addslider', [SliderController::class, 'store'])->name('listing-store-addslider');
     //select admin ...
     Route::get('/listing/{model}', [ListingController::class, 'index'])->name('listing-index');
-    Route::get('/listing/edit/{id}', [ListingController::class, 'edit'])->name('listing-edit');
-    Route::put('/listing/update', [ListingController::class, 'update'])->name('listing-update');;
-    Route::get('/listing/delete/{id}', [ListingController::class, 'delete'])->name('listing-delete');
+    //edit admin
+    Route::get('/listing/edit/{model}/{id}', [ListingController::class, 'edit'])->name('listing-edit');
+    //update author
+    Route::post('/listing/update/{id}', [ListingController::class, 'updateAuthor'])->name('listing-update-author');
+    //update publisher
+    Route::post('/listing/update/{id}', [ListingController::class, 'updatePublisher'])->name('listing-update-publisher');
+    //update slider
+    Route::post('/listing/update/{id}', [ListingController::class, 'updateSlider'])->name('listing-update-slider');
+    //update catetory
+    Route::post('/listing/update/{id}', [ListingController::class, 'updateCatetory'])->name('listing-update-catetory');
+    //update product
+    Route::post('/listing/update/{id}', [ListingController::class, 'updateProduct'])->name('listing-update-product');
+    //update User
+    Route::post('/listing/update/{id}', [ListingController::class, 'updateUser'])->name('listing-update-user');
+    //delete
+    Route::get('/listing/delete/{model}/{id}', [ListingController::class, 'delete'])->name('listing-delete');
+    // Route::resource('products', ProductController::class);
     // Route::post('/editing/{model}', [ProductController::class, 'index'])->name('editing-index');
  
 });

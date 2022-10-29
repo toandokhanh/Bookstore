@@ -29,9 +29,9 @@
     <div class="box round first grid">
         <h2>Sửa sản phẩm</h2>
         <div class="block">               
-         <form action="{{ route('listing-update')}}" method="post" enctype="multipart/form-data" >
+         <form action="{{ route('listing-update-product',['id'=>$id])}}" method="post" enctype="multipart/form-data" >
             @csrf
-            @method('PUT')
+            {{-- @method('put') --}}
             <table class="form">
                 <tr>
                     <td>
@@ -139,12 +139,10 @@
                 </tr>
                 <tr>
                     <td>
-                        <label>Link Hình mô tả</label>
+                        <label>Hình mô tả</label>
                     </td>
                     <td>
-                        {{-- <img width="160px" height="160px" src="{{ $product->image }}" alt=""> --}}
-                        {{-- <input type="file" id="image" name="image" class="medium" value="C:\test.txts"/> --}}
-                        <input size="72px" type="text" name="testcase" value= "{{ $product->image }}">
+                        <input  name="product_image" size="72px" type="text" value= "{{ $product->image }}">
                     </td>
                     {{-- <td>
                         <input  type="file" id="image" name="image" class="medium"/>

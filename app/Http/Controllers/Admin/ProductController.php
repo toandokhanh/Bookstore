@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Redis;
 use App\Http\Controllers\Controller;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Http\File;
 use Illuminate\Support\Facades\Storage;
@@ -26,9 +27,8 @@ class ProductController extends Controller
 
     public function index(Request $request)
     {
-        //
-        
-        // return view('welcome');
+        $data['products'] = Products::orderBy('id','desc')->paginate(5);
+        return view('admin.', $data);
 
     }
     public function add(Request $request){
@@ -44,7 +44,7 @@ class ProductController extends Controller
      */
     public function create()
     {
-        //
+        return redirect()->route('listing-index',['model'=>'Products']);
     }
 
     /**
@@ -55,6 +55,7 @@ class ProductController extends Controller
      */
     public function store(Request $request)
     {
+        // var_dump($request->all());
         $model = 'App\Models\Products';
         $model = new $model;
         
@@ -82,7 +83,9 @@ class ProductController extends Controller
         $model->{'year_of_manufacture'} = $request->input('year_of_manufacture');
         $model->{'number_of_pages'} = $request->input('number_of_pages');
         $model->save();
-        return view('admin.addproduct')."<span class='suc'>Thêm sách thành công</span>";
+        return redirect()->route('listing-index',['model'=>'Products'])
+        ->with('success','Thêm sản phẩm thành công');
+        // view('admin.addproduct')."<span class='suc'>Thêm sách thành công</span>";
         exit;
     }
     /**
@@ -91,9 +94,10 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function show(Products $product)
     {
         //
+        return view('admin.listing',['model'=>'Products'],compact('product'));
     }
 
     /**
@@ -104,7 +108,9 @@ class ProductController extends Controller
      */
     public function edit($id)
     {
-        //
+        return view('admin.editproduct',[
+            'id' => $id
+        ], compact('products'));
     }
 
     /**
@@ -114,9 +120,14 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(Request $request, Products $products, $id)
     {
-        //
+        $validate = $request->validate([
+            'product_price' => 'required|numeric'
+        ]);
+        $products->update($request->all());
+        dd($request->all());exit;
+        return redirect()->route('listing-index',['model'=>'Products'])->with('thongbao','Cập nhật sản phẩm thành công');
     }
 
     /**
@@ -127,6 +138,7 @@ class ProductController extends Controller
      */
     public function destroy($id)
     {
-        //
+        Products::where('id', $id)->delete();
+        return redirect()->route('listing-index',['model'=>'Products'])->with('thongbao','Xóa sản phẩm thành công');
     }
 }

@@ -11,7 +11,7 @@
     <div class="grid_10">
         <div class="box round first grid">
             <h2 style="height: 50px">Thêm thanh trượt</h2>
-        <div style="margin-top: -170px" class="block">               
+        <div style="margin-top: -170px" class="block">           
              <form action={{ route('listing-store-addslider') }} method="post" enctype="multipart/form-data" >
                 @csrf
                 <table class="form">     

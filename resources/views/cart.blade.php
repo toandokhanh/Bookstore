@@ -33,61 +33,6 @@
                                         <td><a href="">X</a></td>
                                     </tr>
                                     
-                                    <tr>
-                                        <td>Tên sách</td>
-                                        <td><img src="./image_books/home/1.jpg" alt=""/></td>
-                                        <td>20000 VNĐ</td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <input type="number" name="" value="1"/>
-                                                <input type="submit" name="submit" value="Update"/>
-                                            </form>
-                                        </td>
-                                        <td>20000 VNĐ</td>
-                                        <td><a href="">X</a></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td>Tên sách</td>
-                                        <td><img src="./image_books/home/1.jpg" alt=""/></td>
-                                        <td>20000 VNĐ</td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <input type="number" name="" value="1"/>
-                                                <input type="submit" name="submit" value="Update"/>
-                                            </form>
-                                        </td>
-                                        <td>20000 VNĐ</td>
-                                        <td><a href="">X</a></td>
-                                    </tr>
-                                    <tr>
-                                        <td>Tên sách</td>
-                                        <td><img src="./image_books/home/1.jpg" alt=""/></td>
-                                        <td>20000 VNĐ</td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <input type="number" name="" value="1"/>
-                                                <input type="submit" name="submit" value="Update"/>
-                                            </form>
-                                        </td>
-                                        <td>20000 VNĐ</td>
-                                        <td><a href="">X</a></td>
-                                    </tr>
-                                    
-                                    <tr>
-                                        <td>Tên sách</td>
-                                        <td><img src="./image_books/home/1.jpg" alt=""/></td>
-                                        <td>20000 VNĐ</td>
-                                        <td>
-                                            <form action="" method="post">
-                                                <input type="number" name="" value="1"/>
-                                                <input type="submit" name="submit" value="Update"/>
-                                            </form>
-                                        </td>
-                                        <td>20000 VNĐ</td>
-                                        <td><a href="">X</a></td>
-                                    </tr>
-                                    
                                 </table>
                                 <table style="float:right;text-align:left;font-size: 15px;" width="40%"> <br>
                                     <tr>
@@ -156,74 +101,19 @@
 								<td><a href="">X</a></td>
 							</tr>
 							
-							<tr>
-								<td>Tên sách</td>
-								<td><img src="./image_books/home/1.jpg" alt=""/></td>
-								<td>20000 VNĐ</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
-									</form>
-								</td>
-								<td>20000 VNĐ</td>
-								<td><a href="">X</a></td>
-							</tr>
-							
-							<tr>
-								<td>Tên sách</td>
-								<td><img src="./image_books/home/1.jpg" alt=""/></td>
-								<td>20000 VNĐ</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
-									</form>
-								</td>
-								<td>20000 VNĐ</td>
-								<td><a href="">X</a></td>
-							</tr>
-							<tr>
-								<td>Tên sách</td>
-								<td><img src="./image_books/home/1.jpg" alt=""/></td>
-								<td>20000 VNĐ</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
-									</form>
-								</td>
-								<td>20000 VNĐ</td>
-								<td><a href="">X</a></td>
-							</tr>
-							
-							<tr>
-								<td>Tên sách</td>
-								<td><img src="./image_books/home/1.jpg" alt=""/></td>
-								<td>20000 VNĐ</td>
-								<td>
-									<form action="" method="post">
-										<input type="number" name="" value="1"/>
-										<input type="submit" name="submit" value="Update"/>
-									</form>
-								</td>
-								<td>20000 VNĐ</td>
-								<td><a href="">X</a></td>
-							</tr>
-							
 						</table>
 						<table style="float:right;text-align:left;font-size: 15px;" width="40%"> <br>
 							<tr>
 								<th>- TỔNG PHỤ	 : </th>
-								<td>210000 VNĐ</td>
+								<td>VND</td>
 							</tr>
 							<tr>
 								<th>- PHÍ VAT : </th>
-								<td>31500 VNĐ</td>
+								<td>VNĐ</td>
 							</tr>
 							<tr>
 								<th>- TỔNG CỘNG:</th>
-								<td style="color: red">241500 VNĐ </td>
+								<td style="color: red">VNĐ </td>
 							</tr>
 					   </table>
 					</div>

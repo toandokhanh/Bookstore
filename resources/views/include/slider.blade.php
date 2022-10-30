@@ -7,7 +7,7 @@
 			<div class="section group">
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="#"> <img src="image_books/book/slide1.jpg" alt="" /></a>
+						 <a href="#"> <img src="../image_books/book/slide1.jpg" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
 						<h2>coyote</h2>
@@ -17,7 +17,7 @@
 			   </div>			
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="#"><img src="image_books/book/slide2.jpg" alt=""></a>
+						  <a href="#"><img src="../image_books/book/slide2.jpg" alt=""></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h2>Friends</h2>
@@ -29,7 +29,7 @@
 			<div class="section group">
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						 <a href="#"> <img src="image_books/book/slide3.jpg" alt="" /></a>
+						 <a href="#"> <img src="../image_books/book/slide3.jpg" alt="" /></a>
 					</div>
 				    <div class="text list_2_of_1">
 						<h2>Rising</h2>
@@ -39,7 +39,7 @@
 			   </div>			
 				<div class="listview_1_of_2 images_1_of_2">
 					<div class="listimg listimg_2_of_1">
-						  <a href="#"><img src="image_books/book/slide4.jpg" alt="" /></a>
+						  <a href="#"><img src="../image_books/book/slide4.jpg" alt="" /></a>
 					</div>
 					<div class="text list_2_of_1">
 						  <h2>Franzs</h2>

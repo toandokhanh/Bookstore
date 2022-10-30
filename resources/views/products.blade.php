@@ -1,11 +1,5 @@
+
 @vite('resources/css/app.css')
-	
-<div hidden >{{ $products = DB::table('products')
-	// ->whereIn('id', [1,2,3,4])	
-	->get()
-	;}}
-	
-</div> 
 @if (isset(Auth::user()->use_name))
 		<x-app-layout>
 			@include('include.header')
@@ -15,15 +9,19 @@
 				<div class="content">
 					<div class="content_top">
 						<div class="heading">
-						<h3>Trang chủ</h3>
+							@if(isset($cate_name))
+								<h3>{{ $cate_name }}</h3>
+							@else
+								<h3>Trang chủ</h3>
+							@endif
 						</div>
 						<div class="clear"></div>
 					</div>
 					<div class="section group sm:ml-20 ">
-						<?php foreach($products as $product){?>
+						@foreach($products as $product)
 						<div class="grid_1_of_4 images_1_of_4 ">
 							<a href="#"><img src={{ $product->image }} alt="" /></a>
-							<h2 class="product_name"">	
+							<h2 class="product_name">	
 										{{ $product->product_name }}
 							</h2>
 							<p class="describe">
@@ -33,7 +31,7 @@
 							<!-- https://www.fahasa.com/kiep-nao-ta-cung-tim-thay-nhau-tai-ban-2022.html -->
 							<div class="button"><span><a href={{ route('detail-product',['id'=>$product->id]) }} class="details">Thông tin chi tiết</a></span></div>
 						</div>
-						<?php };?>
+						@endforeach
 					</div>
 				</div>
 			</div>
@@ -44,7 +42,8 @@
 			@include('include.footer')
 		</x-app-layout>
 	 
-@else
+@else	
+
 			@include('include.header')
 			@include('include.slider')
 			<div class="main">
@@ -56,7 +55,7 @@
 						<div class="clear"></div>
 					</div>
 					<div class="section group sm:ml-20 ">
-						<?php foreach($products as $product){?>
+						@foreach($products as $product)
 						<div class="grid_1_of_4 images_1_of_4 ">
 							<a href="#"><img src={{ $product->image }} alt="" /></a>
 							<h2 class="product_name"">	
@@ -69,7 +68,7 @@
 							<!-- https://www.fahasa.com/kiep-nao-ta-cung-tim-thay-nhau-tai-ban-2022.html -->
 							<div class="button"><span><a href={{ route('detail-product',['id'=>$product->id]) }} class="details">Thông tin chi tiết</a></span></div>
 						</div>
-						<?php };?>
+						@endforeach
 					</div>
 				</div>
 			</div>

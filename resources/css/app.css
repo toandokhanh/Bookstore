@@ -21,8 +21,9 @@
 }
 
 .grid_1_of_4:nth-child(12) { 
-		margin-top: -385px; 
+		margin-top: -410px; 
 } 
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;

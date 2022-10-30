@@ -10,6 +10,7 @@
 		<x-app-layout>
 			@include('include.header')
 			@include('include.slider')
+			
 				<div class="main">
 				<div class="content">
 					<div class="content_top">
@@ -66,7 +67,7 @@
 							</p>
 							<p><span class="price">{{ number_format($product->product_price, 0, '.', '.'). " VND" }}</span></p>
 							<!-- https://www.fahasa.com/kiep-nao-ta-cung-tim-thay-nhau-tai-ban-2022.html -->
-							<div class="button"><span><a href={{ route('detail') }} class="details">Thông tin chi tiết</a></span></div>
+							<div class="button"><span><a href={{ route('detail-product',['id'=>$product->id]) }} class="details">Thông tin chi tiết</a></span></div>
 						</div>
 						<?php };?>
 					</div>

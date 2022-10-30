@@ -34,9 +34,6 @@ Route::get('/hi', function () {
 Route::get('/', function () {
 return view('home');
 })->name('/');
-Route::get('/products', function () {
-    return view('products');
-})->name('products');
 Route::get('/topbrands', function () {
     return view('topbrands');
 })->name('topbrands');
@@ -49,7 +46,12 @@ Route::get('/contact', function () {
 Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
-Route::get('/detail/{id}', [ProductUserController::class, 'detail'])->name('detail-product');
+//select ra tất cẩ sản phẩm
+Route::get('/products', [ProductUserController::class, 'index'])->name('products');
+// select sản phẩm theo danh mục
+Route::get('/products/cate{id}', [ProductUserController::class, 'productsCate'])->name('productsCate');
+//select chi tiết từng sản phẩm
+Route::get('/detail/product{id}', [ProductUserController::class, 'detail'])->name('detail-product');
 // Route::get('/productbycart', function () {
 //     return view('productbycart');
 // })->name('productbycart');

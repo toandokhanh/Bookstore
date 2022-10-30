@@ -1,3 +1,6 @@
+<div hidden>
+	{{ $catetorys = DB::table('catetorys')->get() }}
+</div>
 @vite('resources/css/app.css')
 <!DOCTYPE HTML>
 <head>
@@ -88,6 +91,9 @@
 		margin-left:-120px;
 		padding: 0;
 	}
+a #catetorys::hover{
+	background-color: #0c0c0c;
+}
 }
 </style>
 {{-- style dangnhap dangky --}}
@@ -157,7 +163,30 @@
 <div class="menu">
 	<ul id="dc_mega-menu-orange" class="dc_mm-orange">
 	  <li><a href="{{ route('/') }}">Trang chủ</a></li>
-	  <li><a href="{{ route('products') }}">Sản phẩm</a> </li>
+	  {{-- <li><a href="{{ route('products') }}">Sản phẩm</a> </li> --}}
+	  <li><div class="dropdown">
+		<button class="dropbtn">
+			<a href="{{ route('products') }}">Sản phẩm 
+				<ion-icon name="chevron-down-outline"></ion-icon>
+			</a>
+		</button>
+		<div class="dropdown-content">
+			@foreach ($catetorys as $catetory)
+				<a 
+				id="catetorys"
+				style="
+				font-size: 13px;
+				font-weight: none;
+				color: #fff;
+				text-decoration: none;
+				background-color:#1a8849;
+				display: block;
+				text-align: end;
+				"
+				href="{{ route('productsCate', $catetory->id) }}">{{ $catetory->cate_name }}</a>
+			@endforeach
+		</div>
+	  </div></li>
 	  <li><a href="{{ route('topbrands') }}">Bán chạy</a></li>
 	  <li><a href="{{ route('cart') }}">Đơn hàng</a></li>
 	  <li><a href="{{ route('contact') }}">Liên hệ</a> </li>

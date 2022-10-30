@@ -82,7 +82,25 @@
             </div>
             <div>
                 <h3 style="margin: 20px; font-weight: 600;">{{ $detail->product_name}}</h3>
-                <p style="margin: 0 20px; color: #333; font-size: 14px;">{{ $detail->describe  }}</p>
+                <p class="docthem">{{ $detail->describe  }} </p>
+                <button 
+                        id="btn" 
+                        style=
+                        "border:rgb(29, 25, 25) 1px solid;
+                        font-size:15px;
+                        padding: 5px 10px;
+                        text-align: center;
+                        margin: 0 auto;
+                        display: block;
+                        margin-top: 10px;
+                        background-color: #1a8849;
+                        color: #fff;
+                        border-radius: 4px;
+                        font-family: Arial;"
+                        date-url="Thu gọn"
+                        >
+                        Đọc thêm
+                </button>
         </div>
         </div>
                 
@@ -100,6 +118,27 @@
         </div>
     <br>
     <br>
+    {{-- <script type="text/javascript" src="{{ URL::asset('js/jquery.js') }}">
+        const btnDocThem = document.querySelector('#btn');
+        const describe = document.querySelector('#describe');
+        btnDocThem.addEventListener('click', ()=> {
+            // describe.classList.toggle('active');
+            alert('123')
+        })
+    </script> --}}
+    <script src = "https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.js"></script>
+    <script type="text/javascript">
+        function click(){
+            $('.docthem').toggleClass('active_');  
+        }
+        $(function (){
+            $('#btn').on('click',click)
+        })
+
+
+
+        
+    </script> 
 
 @include('include.footer')
 </x-app-layout>
@@ -210,6 +249,7 @@
         $(function (){
             $('#btn').on('click',click)
         })
+
 
 
 

@@ -1,15 +1,16 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\Usercontroller;
 use App\Http\Controllers\Admin\AdminController;
-use Illuminate\Foundation\Auth\EmailVerificationRequest;
-use App\Http\Controllers\Admin\ListingController;
-use App\Http\Controllers\Admin\CatetoryController;
 use App\Http\Controllers\Admin\AuthorController;
-use App\Http\Controllers\Admin\PublisherController;
 use App\Http\Controllers\Admin\SliderController;
+use App\Http\Controllers\Admin\ListingController;
+use App\Http\Controllers\Admin\ProductController;
+use App\Http\Controllers\Admin\CatetoryController;
+use App\Http\Controllers\Admin\PublisherController;
+use App\Http\Controllers\Auth\ProductUserController;
+use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -48,7 +49,7 @@ Route::get('/contact', function () {
 Route::get('/detail', function () {
     return view('detail');
 })->name('detail');
-
+Route::get('/detail/{id}', [ProductUserController::class, 'detail'])->name('detail-product');
 // Route::get('/productbycart', function () {
 //     return view('productbycart');
 // })->name('productbycart');
@@ -145,9 +146,9 @@ Route::prefix('ad')->group(function(){
 // Route::get('/produ
 require __DIR__.'/auth.php';
 
-Route::get('/welcomee', function () {
-    return view('welcome');
-});
+// Route::get('/welcomee', function () {
+//     return view('welcome');
+// });
 
 // test 
 //Route::get('/{slug}-{id}.html', function ($slug, $id) {

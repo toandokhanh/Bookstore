@@ -66,6 +66,7 @@
 | 20  | [Done CURD Admin](https://github.com/toanvippro/boookstore_laravel/commit/fb8fbc83ab2a55c7bc47406521d65c6149ba5922)               |29/10/2022            |
 | 21  | [Detail product](https://github.com/toanvippro/boookstore_laravel/commit/329e0140f5c77b3928653269e047aae058ffd90a)               |30/10/2022            |
 | 22  | [Join DB](https://github.com/toanvippro/boookstore_laravel/commit/329e0140f5c77b3928653269e047aae058ffd90a)               |30/10/2022            |
+| 23  | [Read more in detail product](https://github.com/toanvippro/boookstore_laravel/commit/94077deb12dfc4fe5b5c7b3606f1425951f191ba)               |30/10/2022            |
 
 * * *
 ### Database

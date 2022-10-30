@@ -33,6 +33,8 @@
     <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>  
     <li><a href="https://viblo.asia/questions">Viblo</a></li>  
     <li><a href="https://docs.google.com/document/d/1wAZIA48LzvGLFMF3uposRs82h2dnQ34NNUMXgX3-Wiw/edit">Bài thực hành 6 của Thầy Nguyễn Thanh Hải</a></li>  
+    <li><a href="https://drive.google.com/file/d/1MLPe2fEwyyuMEHmnx7Zx1r8yupZqqRX4/view">Source code frontend</a></li>  
+    
 
 </ul>
 <h4>Lịch cập nhật các chức năng </h4>

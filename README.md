@@ -6,19 +6,21 @@
     <img src="https://cdn.sussmanconsultants.com/wp-content/uploads/2018/09/logo-laravel.png" height="100" width="250" alt="Laravel Logo">
 </p>
 
-<h4>Những ngôn ngữ được sữ dụng</h4>
+<!-- <h4>Những ngôn ngữ được sữ dụng</h4>
 <ul>
     <li>PHP</li>
     <li>HTMl</li>
     <li>CSS</li>
     <li>Javascript</li>
     <li>MySql</li>
-</ul>
-<h4>Những tính năng và công nghệ được sữ dụng</h4>
+</ul> -->
+
+<h4>Những công nghệ và tính năng được sữ dụng</h4>
 <ul>
     <li>Laravel</li>
     <li>Jquery</li>
     <li>Tailwind Css</li>
+    <li>Mysql</li>
     <li>Laravel Breeze</li>
     <li>lordicon</li>   
     <li>Github</li>   

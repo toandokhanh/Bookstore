@@ -47,7 +47,7 @@
 | 01  | [register](https://github.com/toanvippro/boookstore_laravel/commit/e4fe3b2c8471062cb13703d752ed6fffc85aaf56)                               | 27/09/2022          |
 | 02  | [login](https://github.com/toanvippro/boookstore_laravel/commit/759bcf2071a9cda0de5cbee092cec11264a2af5d)                              | 25/09/2022               |
 | 03  | fix-bug-account                              | 28/09/2022            |
-| 04  | [Home user](https://github.com/toanvippro/boookstore_laravel/commit/aae6fbf3f1a13d6446f26cf6d71a2abaaa9b6362)                               | 02/10/2022         |
+| 04  | [Home user](https://github.com/toanvippro/boookstore_laravel/commit/759cd2c090b1eeb7a755fbaf61a66ee86ba53f20)                               | 02/10/2022         |
 | 05  | [Profile user](https://github.com/toanvippro/boookstore_laravel/commit/c98dba810713b68db9f86117b5d0949a7cbeaaaf)                             | 03/10/2022            |
 | 06  | [Admin home page](https://github.com/toanvippro/boookstore_laravel/commit/ee4dd5ff41dbd4c104a761434cd831bcd7ac4fa9)                            | 05/10/2022            |
 | 07  | [Database Account](https://github.com/toanvippro/boookstore_laravel/commit/297888744c90609da87502d2239ca1994c42b9bc)                          | 18/10/2022            |

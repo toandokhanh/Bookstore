@@ -44,8 +44,8 @@
 
 |  Stt  | Chức năng                                                                                                              | Ngày cập nhật                                                                       |
 | :-: | ---------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
-| 01  | [register](https://github.com/toanvippro/boookstore_laravel/commit/759bcf2071a9cda0de5cbee092cec11264a2af5d)                               | 27/09/2022          |
-| 02  | [login](https://github.com/toanvippro/boookstore_laravel/commit/e011498746c10e15a55c37cfe41d96916a543c9a)                              | 25/09/2022               |
+| 01  | [register](https://github.com/toanvippro/boookstore_laravel/commit/e4fe3b2c8471062cb13703d752ed6fffc85aaf56)                               | 27/09/2022          |
+| 02  | [login](https://github.com/toanvippro/boookstore_laravel/commit/759bcf2071a9cda0de5cbee092cec11264a2af5d)                              | 25/09/2022               |
 | 03  | fix-bug-account                              | 28/09/2022            |
 | 04  | [Home user](https://github.com/toanvippro/boookstore_laravel/commit/aae6fbf3f1a13d6446f26cf6d71a2abaaa9b6362)                               | 02/10/2022         |
 | 05  | [Profile user](https://github.com/toanvippro/boookstore_laravel/commit/c98dba810713b68db9f86117b5d0949a7cbeaaaf)                             | 03/10/2022            |

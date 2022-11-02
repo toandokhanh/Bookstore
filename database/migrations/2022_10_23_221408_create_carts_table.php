@@ -15,7 +15,7 @@ return new class extends Migration
     {
         Schema::create('carts', function (Blueprint $table) {
             $table->id();
-            // $table->unsignedBigInteger('ac_id');
+            $table->unsignedBigInteger('ac_id');
             // $table->foreign('ac_id')
             //     ->references('id')->on('accounts');
             $table->timestamps();

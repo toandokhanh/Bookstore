@@ -13,9 +13,13 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('roles', function (Blueprint $table) {
+        Schema::create('bills', function (Blueprint $table) {
             $table->id();
-            $table->string('role_name');
+            $table->unsignedBigInteger('ac_id');
+            $table->foreign('ac_id')
+                ->references('id')->on('accounts');
+            $table->float('total', 12, 2);
+            $table->tinyInteger('bill_amount');
             $table->timestamps();
         });
     }
@@ -27,6 +31,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('roles');
+        Schema::dropIfExists('bills');
     }
 };

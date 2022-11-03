@@ -68,9 +68,13 @@
 | 22  | [Join DB](https://github.com/toanvippro/boookstore_laravel/commit/329e0140f5c77b3928653269e047aae058ffd90a)               |30/10/2022            |
 | 23  | [Read more in detail product](https://github.com/toanvippro/boookstore_laravel/commit/94077deb12dfc4fe5b5c7b3606f1425951f191ba)               |30/10/2022            |
 | 24  | [Select products by category](https://github.com/toanvippro/boookstore_laravel/commit/b221b5ad9e89ec8d1d0cba09e8405d9603b15598)               |30/10/2022            |
-* * *
+<!-- * * *
 ### Database
-- php artisan migrate:refresh
+- php artisan migrate:refresh 
+* * *
+### Tailwind Css
+- npm run dev
+-->
 * * *
 ### Laravel Breeze
 - composer require laravel/breeze --dev
@@ -79,12 +83,9 @@
 - npm install
 - npm run dev
 * * *
-### Tailwind Css
-- npm run dev
-* * *
 ### Artisan list 
-- php artisan down  => dừng chương trình để upload phiên bản mới
-- php artisan up => chạy lại chương trình
+- php artisan down  
+- php artisan up 
 - php artisan make:controller PhotoController --resource
 * * *
 ### Routing (30/09/2022)

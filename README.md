@@ -70,7 +70,10 @@
 | 24  | [Select products by category](https://github.com/toanvippro/boookstore_laravel/commit/b221b5ad9e89ec8d1d0cba09e8405d9603b15598)               |30/10/2022            |
 * * *
 ### Database
-- php artisan migrate:refresh
+- php artisan migrate:fresh --seed --seeder=UserSeeder
+- php artisan migrate --seed --seeder=CatetorySeeder
+- php artisan migrate --seed --seeder=SliderSeeder
+- php artisan migrate --seed --seeder=RoleSeeder
 * * *
 ### Laravel Breeze
 - composer require laravel/breeze --dev

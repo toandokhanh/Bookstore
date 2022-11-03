@@ -76,6 +76,12 @@
 - npm run dev
 -->
 * * *
+### Database
+- php artisan migrate:fresh --seed --seeder=UserSeeder
+- php artisan migrate --seed --seeder=CatetorySeeder
+- php artisan migrate --seed --seeder=RoleSeeder
+- php artisan migrate --seed --seeder=SliderSeeder
+* * *
 ### Laravel Breeze
 - composer require laravel/breeze --dev
 - php artisan breeze:install

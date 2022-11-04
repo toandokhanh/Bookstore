@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CatetoryController;
 use App\Http\Controllers\Admin\PublisherController;
 use App\Http\Controllers\Auth\ProductUserController;
+use App\Http\Controllers\CartController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
 |--------------------------------------------------------------------------
@@ -37,9 +38,7 @@ return view('home');
 Route::get('/topbrands', function () {
     return view('topbrands');
 })->name('topbrands');
-Route::get('/cart', function () {
-    return view('cart');
-})->name('cart');
+
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
@@ -65,6 +64,15 @@ Route::group(['middleware' => 'auth'], function(){
     //hồ sơ của user
     Route::view('/profile', 'profile')->name('profile');
     // Route::put('profile', [])->name('profile.update');
+    Route::post('/cart/{cart_id}', [CartController::class, 'index'])->name('order');
+    Route::get('/cart/delete{id}', [CartController::class, 'delete'])->name('cart-delete');
+    // trang vỏ hàng
+    Route::get('/cart', function () {
+        return view('cart');
+    })->name('cart');
+
+    // order
+    
 });
 
 

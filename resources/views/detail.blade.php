@@ -1,4 +1,7 @@
-   
+
+@if (isset(Auth::user()->cart_id))
+    <div hidden >{{ $cart_id = Auth::user()->cart_id }}</div>
+@endif
 <div hidden >
     {{ $details = DB::table('products')
     ->join('catetorys', 'products.cate_id', '=', 'catetorys.id')
@@ -11,7 +14,8 @@
     {{ 
         $catetorys = DB::table('catetorys')
         ->get()
-        ;}}
+    ;}}
+
 </div>
 <style>
     .docthem{
@@ -39,6 +43,7 @@
         <div class="section group">
                 <div class="cont-desc span_1_of_2">				
                     <div class="grid images_3_of_2">
+                      
                         <img src="{{ $detail->image }}" alt="" />
                     </div>
                 <div class="desc span_3_of_2">
@@ -50,10 +55,12 @@
                         <p style="font-weight: 600;">Tác giả: <span>{{ $detail->author_name}}</span></p>
                     </div>
                 <div class="add-cart">
-                    <form action="cart.php" method="post">
-                        <input type="number" class="buyfield" name="" value="1"/>
+                    <form action={{ route('order',['cart_id'=>$cart_id])}} method="post" enctype="multipart/form-data">
+                        @csrf
+                        <input type="hidden" class="" name="product_id" value="{{ $id }}"/>
+                        <input type="number" class="buyfield" name="quantity" value="1"/>
                         <input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
-                    </form>				
+                    </form>			    	
                 </div>
             </div>
             <div class="product-desc">
@@ -108,8 +115,9 @@
                 <div class="rightsidebar span_3_of_1">
                     <h2>NHỮNG THỂ LOẠI SÁCH HAY, NÊN ĐỌC</h2> <br>
                     <ul>
+                        
                         @foreach ($catetorys as $catetory)
-                            <li><a href="#">{{ $catetory->cate_name}}</a></li>
+                        <li><a href="{{ route('productsCate', $catetory->id) }}">{{ $catetory->cate_name}}</a></li>
                         @endforeach
                     </ul>
         
@@ -165,10 +173,10 @@
                         <p style="font-weight: 600;">Tác giả: <span>{{ $detail->author_name}}</span></p>
                     </div>
                 <div class="add-cart">
-                    <form action="cart.php" method="post">
-                        <input type="number" class="buyfield" name="" value="1"/>
+                    <form action="{{ route('login') }}" method="get">
+                        <input type="number" class="buyfield" name="quantity" value="1"/>
                         <input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
-                    </form>				
+                    </form>					
                 </div>
             </div>
             <div class="product-desc">
@@ -224,7 +232,7 @@
                     <h2>NHỮNG THỂ LOẠI SÁCH HAY, NÊN ĐỌC</h2> <br>
                     <ul>
                         @foreach ($catetorys as $catetory)
-                            <li><a href="#">{{ $catetory->cate_name}}</a></li>
+                            <li><a href="{{ route('productsCate', $catetory->id) }}">{{ $catetory->cate_name}}</a></li>
                         @endforeach
                     </ul>
         

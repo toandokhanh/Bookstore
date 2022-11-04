@@ -50,7 +50,11 @@
 				<div class="content">
 					<div class="content_top">
 						<div class="heading">
-						<h3>Trang chủ</h3>
+							@if(isset($cate_name))
+								<h3>{{ $cate_name }}</h3>
+							@else
+								<h3>Trang chủ</h3>
+							@endif
 						</div>
 						<div class="clear"></div>
 					</div>
@@ -58,7 +62,7 @@
 						@foreach($products as $product)
 						<div class="grid_1_of_4 images_1_of_4 ">
 							<a href="#"><img src={{ $product->image }} alt="" /></a>
-							<h2 class="product_name"">	
+							<h2 class="product_name">	
 										{{ $product->product_name }}
 							</h2>
 							<p class="describe">

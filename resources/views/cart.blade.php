@@ -1,18 +1,15 @@
+<div hidden>{{ $total = 0; }}</div>
 @if (isset(Auth::user()->cart_id))
     <div hidden >{{ $cart_id = Auth::user()->cart_id }}</div>
 @endif
 <div hidden >
     {{ $cart_details = DB::table('cart_details')
     ->join('products', 'cart_details.product_id', '=', 'products.id')
-    // ->whereIn('cart_details.cart_id', [$cart_id])
-    ->get();
-    }}
-    {{ $carts = DB::table('cart_details')
-    // ->whereIn('id', [$cart_id])
+    ->join('carts', 'cart_details.cart_id', '=', 'carts.id')
+    ->whereIn('cart_details.cart_id',[$cart_id])
     ->get();
     }}
 </div>
-
     
 
 @if (isset(Auth::user()->use_name))
@@ -36,41 +33,47 @@
                                         <th width="20%">Thành tiền</th>
                                         <th width="10%">Xóa</th>
                                     </tr>
+                                    @foreach ($cart_details as $cart_detail)
                                     <tr>
-                                        @foreach ($cart_details as $cart_detail)
+                                        
                                         <td>{{ $cart_detail->product_name }}</td>
                                         <td><img src="{{ $cart_detail->image }}" alt=""/></td>
-                                        <td>{{number_format($cart_detail->product_price)." VND"}}</td>
+                                        <td>{{number_format($cart_detail->product_price)."VND"}}</td>
                                         <td>
-                                            <form action="" method="post">
-                                                <input type="number" name="" value="{{ $cart_detail->quantity }}"/>
+                                            <form action="{{ route('cart-update',['cart_detail_id' => $cart_detail->cart_detail_id]) }}" method="post">
+                                                @csrf
+                                                <input type="hidden" class="" name="product_id" value="{{ $cart_detail->product_id}}"/>
+                                                <input type="hidden" class="" name="cart_id" value="{{ $cart_id}}"/>
+                                                <input type="number" name="quantity" value="{{ $cart_detail->quantity }}"/>
                                                 <input type="submit" name="submit" value="Update"/>
                                             </form>
                                         </td>
                                         <td>{{ number_format($cart_detail->total_price)." VND" }}</td>
                                         
                                         <td>
-                                            
-                                            @foreach ($carts as $cart)
-                                            <a href="{{ route('cart-delete',['id'=>$cart->id]) }}">X</a>
-                                            @endforeach
+                                            <a href="{{ route('cart-delete',['id'=>$cart_detail->cart_detail_id]) }}">X</a>
                                         </td>
-                                        
+                                        <div hidden >
+                                            
+                                            @if ($cart_detail->total_price)
+                                                {{$total += $cart_detail->total_price}}
+                                            @endif
+                                        </div>
                                     </tr>
                                     @endforeach
                                 </table>
                                 <table style="float:right;text-align:left;font-size: 15px;margin:10px 50px" width="25%">  <br>
                                     <tr style="display: flex; justify-content: space-between;">
                                         <th>- TỔNG PHỤ	 : </th>
-                                        <td>{{ number_format($cart_detail->total_price += $cart_detail->total_price).' VNĐ' }}</td>
+                                        <td>{{number_format($total).' VND' }}</td>
                                     </tr>
                                     <tr style="display: flex; justify-content: space-between;">
                                         <th>- PHÍ SHIP :       </th>
-                                        <td>{{ number_format(30000) .' VNĐ' }}</td>
+                                        <td>{{ number_format($ship = 30000) .' VNĐ' }}</td>
                                     </tr>
                                     <tr style="display: flex; justify-content: space-between;">
                                         <th>- TỔNG CỘNG:</th>
-                                        <td style="color: red">241500 VNĐ </td>
+                                        <td style="color: red">{{ number_format($ship + $total) .' VNĐ' }}</td>
                                     </tr>
                                </table>
                             </div>

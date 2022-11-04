@@ -11,18 +11,18 @@
 .product_name{
 	height: 20px;
 }
-@media only screen and (max-width: 640px)  {
+/* @media only screen and (max-width: 640px)  {
 	.product_name{
 	height: 30px;
 	}
 	.grid_1_of_4:nth-child(12) { 
 		display:none;
 	} 
-}
+} */
 
-.grid_1_of_4:nth-child(12) { 
+/* .grid_1_of_4:nth-child(12) { 
 		margin-top: -410px; 
-} 
+}  */
 .dropbtn {
   background-color: #1a8849;
   color: white;

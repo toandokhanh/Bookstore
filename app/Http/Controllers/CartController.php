@@ -16,21 +16,45 @@ class CartController extends Controller
         ->get();
         foreach($products as $product)
         $tatol = $product->product_price * $request->quantity;
-        $cart_detail = new Cart_detail;
-        $cart_detail->{'product_id'} = $request->product_id;
-        $cart_detail->{'cart_id'} = $cart_id;
-        $cart_detail->{'quantity'} = $request->quantity;
-        $cart_detail->{'total_price'} = $tatol;
-        $cart_detail->save();
+        $cart_details = new Cart_detail;
+        $cart_details->{'product_id'} = $request->product_id;
+        $cart_details->{'cart_id'} = $cart_id;
+        $cart_details->{'quantity'} = $request->quantity;
+        $cart_details->{'total_price'} = $tatol;
+        $cart_details->save();
         // return "Giỏ hàng $cart_id chứa sản phẩm $request->product_id với số lượng $request->quantity có tổng giá là $tatol";
-        return redirect()->route('cart')->with('alert','Thêm sản phẩm vào giỏ hàng thành công');
+        return redirect()->route('cart',['cart_id'=>$cart_id])->with('alert','Thêm sản phẩm vào giỏ hàng thành công');
     }
+
+    public function update(Request $request, $cart_detail_id){
+        $cart_details = new Cart_detail;
+        $cart_details = Cart_detail::find($cart_detail_id);
+        // $cart_details->intersect(Cart_detail::whereIn('cart_detail_id',$cart_detail_id)->get());
+        // $cart_details = Cart_detail::where ('cart_detail_id', '=',$cart_detail_id)->first();
+        // $cart_details = DB::table('cart_details')
+        // ->whereIn('cart_detail_id',[$cart_detail_id])
+        // ->get();
+        $products = DB::table('products')
+        ->whereIn('products.id', [$request->product_id])
+        ->get();
+        foreach($products as $product)
+        $tatol = $product->product_price * $request->quantity;
+        $cart_details->{'product_id'} =  $request->product_id;
+        $cart_details->{'cart_id'} =  $request->cart_id;
+        $cart_details->{'quantity'} = $request->quantity;
+        $cart_details->{'total_price'} = $tatol;
+        $cart_details->update();
+        $cart_details->save();
+        return redirect()->route('cart')->with('alert','Cập nhật giỏ hàng thành công');
+    }
+
+
 
 
     public function delete($id)
     {
         $cart_detail = new Cart_detail;
-        $cart_detail::where('id', $id)->delete();
+        $cart_detail::where('cart_detail_id', $id)->delete();
         return redirect()->route('cart');
     }
 }

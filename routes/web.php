@@ -66,6 +66,7 @@ Route::group(['middleware' => 'auth'], function(){
     // Route::put('profile', [])->name('profile.update');
     Route::post('/cart/{cart_id}', [CartController::class, 'index'])->name('order');
     Route::get('/cart/delete{id}', [CartController::class, 'delete'])->name('cart-delete');
+    Route::post('/cart/update/{cart_detail_id}', [CartController::class, 'update'])->name('cart-update');
     // trang vỏ hàng
     Route::get('/cart', function () {
         return view('cart');

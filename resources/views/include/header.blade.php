@@ -147,7 +147,7 @@ a #catetorys::hover{
 				    </form>
 			    </div>
 			    <div class="shopping_cart">
-					<div class="cart"><a href="#"><x-icon-cart class="bg-red-100"/></a>
+					<div class="cart"><a href="{{ route('cart') }}"><x-icon-cart class="bg-red-100"/></a>
 						{{-- <a style="color: black; display: flex; justify-content: center; align-items: center;" href="../cart.php"><span style="color: red; font-size: 12px; font-weight: 600;">99+</span> <ion-icon class="cart__icon" name="cart-outline"></ion-icon> </a>  --}}
 					   <!-- <a href="../cart.php" title="View my shopping cart" rel="nofollow">
 								<span class="cart_title"></span>

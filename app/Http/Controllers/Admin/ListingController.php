@@ -46,11 +46,6 @@ class ListingController extends Controller
     }
     
 
-  
-
- 
-
-
     //update User
 
     // xóa 

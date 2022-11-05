@@ -1,7 +1,7 @@
 {{-- trang chủ --}}
 @vite('resources/css/app.css')
 <div hidden >{{ $products = DB::table('products')
-										->whereIn('id', [5,1,2,3])	
+										->whereIn('id', [1,2,3,4])	
 										->get()
 										;}}
 </div>

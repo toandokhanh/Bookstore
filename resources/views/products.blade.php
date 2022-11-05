@@ -17,7 +17,7 @@
 						</div>
 						<div class="clear"></div>
 					</div>
-					<div class="section group sm:ml-20 ">
+					<div style="margin-left: 90px"  class="section group sm:ml-20 ">
 						@foreach($products as $product)
 						<div class="grid_1_of_4 images_1_of_4 ">
 							<a href="{{ route('detail-product',['id'=>$product->id]) }}"><img src={{ $product->image }} alt="" /></a>
@@ -58,9 +58,9 @@
 						</div>
 						<div class="clear"></div>
 					</div>
-					<div class="section group sm:ml-20 ">
+					<div style="margin-left: 90px" class="section group sm:ml-20 ">
 						@foreach($products as $product)
-						<div class="grid_1_of_4 images_1_of_4 ">
+						<div  class="grid_1_of_4 images_1_of_4 ">
 							<a href="{{ route('detail-product',['id'=>$product->id]) }}"><img src={{ $product->image }} alt="" /></a>
 							<h2 class="product_name">	
 										{{ $product->product_name }}

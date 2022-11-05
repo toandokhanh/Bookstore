@@ -6,11 +6,12 @@
     {{ $cart_details = DB::table('cart_details')
     ->join('products', 'cart_details.product_id', '=', 'products.id')
     ->join('carts', 'cart_details.cart_id', '=', 'carts.id')
+    ->select('cart_details.*','products.product_name','products.image','products.product_price')
     ->whereIn('cart_details.cart_id',[$cart_id])
     ->get();
     }}
 </div>
-    
+    {{-- {{ dd($cart_details) }} --}}
 
 @if (isset(Auth::user()->use_name))
     <x-app-layout>
@@ -40,18 +41,26 @@
                                         <td><img src="{{ $cart_detail->image }}" alt=""/></td>
                                         <td>{{number_format($cart_detail->product_price)."VND"}}</td>
                                         <td>
-                                            <form action="{{ route('cart-update',['cart_detail_id' => $cart_detail->cart_detail_id]) }}" method="post">
+                                            <form action="{{ route('cart-update',['id' => $cart_detail->id]) }}" method="post">
                                                 @csrf
                                                 <input type="hidden" class="" name="product_id" value="{{ $cart_detail->product_id}}"/>
                                                 <input type="hidden" class="" name="cart_id" value="{{ $cart_id}}"/>
-                                                <input type="number" name="quantity" value="{{ $cart_detail->quantity }}"/>
+                                                <input min="1" max="10" type="number" name="quantity" value="{{ $cart_detail->quantity }}"/>
                                                 <input type="submit" name="submit" value="Update"/>
                                             </form>
                                         </td>
                                         <td>{{ number_format($cart_detail->total_price)." VND" }}</td>
                                         
                                         <td>
-                                            <a href="{{ route('cart-delete',['id'=>$cart_detail->cart_detail_id]) }}">X</a>
+                                            <a href="{{ route('cart-delete',['id'=>$cart_detail->id]) }}">
+                                                <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
+                                                <lord-icon
+                                                    src="https://cdn.lordicon.com/kfzfxczd.json"
+                                                    trigger="hover"
+                                                    colors="primary:#c71f16"
+                                                    style="width:22px;height:22px">
+                                                </lord-icon>
+                                            </a>
                                         </td>
                                         <div hidden >
                                             

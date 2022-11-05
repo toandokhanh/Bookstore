@@ -69,7 +69,7 @@
 | 23  | [Read more in detail product](https://github.com/toanvippro/boookstore_laravel/commit/94077deb12dfc4fe5b5c7b3606f1425951f191ba)               |30/10/2022            |
 | 24  | [Select products by category](https://github.com/toanvippro/boookstore_laravel/commit/b221b5ad9e89ec8d1d0cba09e8405d9603b15598)               |30/10/2022            |
 | 25  | [Seeder](https://github.com/toanvippro/boookstore_laravel/commit/f3e811b61e222f13d672d2b5e8bd7e51196fd8e9)               |03/11/2022            |
-| 26  | [Cart 1]()               |04/11/2022            |
+| 26  | [Cart 1](https://github.com/toanvippro/boookstore_laravel/commit/ab11a2744bd2504aebeb9f23735ec312702cab46)               |04/11/2022            |
 
 
 

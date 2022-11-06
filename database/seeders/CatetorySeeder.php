@@ -33,6 +33,7 @@ class CatetorySeeder extends Seeder
             ['cate_name' => 'Đồ chơi trẻ em 3+'],
             ['cate_name' => 'Máy tính bỏ túi'],
             ['cate_name' => 'Bách hóa online - Lưu niệm'],
+            ['cate_name' => 'Văn phòng phẩm'],
         );
         DB::table('catetorys')->insert($data);
     }

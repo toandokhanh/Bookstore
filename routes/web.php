@@ -10,6 +10,7 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CatetoryController;
 use App\Http\Controllers\Admin\PublisherController;
 use App\Http\Controllers\Auth\ProductUserController;
+use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
@@ -71,7 +72,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/cart', function () {
         return view('cart');
     })->name('cart');
-
+    Route::get('/checkout/cart{cart_id}', [BillController::class, 'index'])->name('checkout');
     // order
     
 });

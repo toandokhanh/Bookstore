@@ -69,6 +69,7 @@
                                             @endif
                                         </div>
                                     </tr>
+                                    <div hidden >{{ $cart_id = $cart_detail->cart_id }}</div>
                                     @endforeach
                                 </table>
                                 <table style="float:right;text-align:left;font-size: 15px;margin:10px 50px" width="25%">  <br>
@@ -82,7 +83,7 @@
                                     </tr>
                                     <tr style="display: flex; justify-content: space-between;">
                                         <th>- TỔNG CỘNG:</th>
-                                        <td style="color: red">{{ number_format($ship + $total) .' VNĐ' }}</td>
+                                        <td style="color: red">{{ number_format($db_total = $ship + $total) .' VNĐ' }}</td>
                                     </tr>
                                </table>
                             </div>
@@ -92,7 +93,7 @@
                                     <a href="{{ route('products') }}"> <img src="images/shop.png" alt="" /></a>
                                 </div>
                                 <div class="shopright">
-                                    <a href=""> <img src="images/check.png" alt="" /></a>
+                                        <a href="{{ route('checkout',['cart_id'=>$cart_id]) }}"> <img src="images/check.png" alt="" /></a>
                                 </div>
                             </div>
                 </div>  	

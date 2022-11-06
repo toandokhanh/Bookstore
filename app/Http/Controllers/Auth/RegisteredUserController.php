@@ -8,6 +8,7 @@ use App\Providers\RouteServiceProvider;
 use Illuminate\Auth\Events\Registered;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Validation\Rules;
 
@@ -33,7 +34,11 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        
+        // tạo 1 cart mới
+        DB::table('carts')
+        ->insert(['id'=>null,'ac_id'=>null]);
+        // select ra id của cart mới tạo
+        $cart_id = DB::table('carts')->max('id');
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:accounts'],
@@ -42,7 +47,7 @@ class RegisteredUserController extends Controller
         // var_dump($request); exit;
         $user = User::create([
             
-            'cart_id' => $request->cart_id,
+            'cart_id' => $cart_id,
             'use_name' => $request->name,
             'address' => $request->address,
             'phone' => $request->phone,

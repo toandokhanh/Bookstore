@@ -9,6 +9,8 @@ use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Password;
 use Illuminate\Support\Str;
 use Illuminate\Auth\Events\PasswordReset;
+use Illuminate\Support\Facades\DB;
+
 class Usercontroller extends Controller
 {
     public function adduser(Request $request){
@@ -42,7 +44,13 @@ class Usercontroller extends Controller
  */
     //
     public function store(Request $request)
-    {
+    {   
+        // tạo 1 cart mới
+        DB::table('carts')
+        ->insert(['id'=>null,'ac_id'=>null]);
+        // select ra id của cart mới tạo
+        $cart_id = DB::table('carts')->max('id');
+        // tạo mới người dùng
         $model = 'App\Models\User';
         $model = new $model;
         $validate = $request->validate([
@@ -53,6 +61,7 @@ class Usercontroller extends Controller
         $hash = $request->input('password');
         $hashed = Hash::make($hash);
         // var_dump($hashed);exit;
+        $model->{'cart_id'} = $cart_id;
         $model->{'use_name'} = $request->input('use_name');
         $model->{'address'} = $request->input('address');
         $model->{'phone'} = $request->input('phone');

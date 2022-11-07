@@ -40,18 +40,21 @@
 
 </ul>
 <h4>Extensions</h4>
-- Laravel Artisan
-- Laravel Blade Snippets
-- Laravel Blade Spacer
-- Laravel goto view
-- Laravel Extra Intellisense
-- Live Sass Compiler
-- Beautify css/sass/scss/less
-- PHP IntelliSense
-- Getter and Setter Generator
-- Bracket Pair Colorization Toggler
-- JavaScript (ES6) code snippets
-- vscode-icons
+<ul>
+    <li>Laravel Artisan</li> 
+    <li>Laravel Blade Snippets</li> 
+    <li>Laravel Blade Spacer</li> 
+    <li>Laravel goto view</li> 
+    <li>Laravel Extra Intellisense</li> 
+    <li>Live Sass Compiler</li> 
+    <li>Beautify css/sass/scss/less</li> 
+    <li>PHP IntelliSense</li> 
+    <li>Getter and Setter Generator</li> 
+    <li>Bracket Pair Colorization Toggler</li> 
+    <li>JavaScript (ES6) code snippets</li> 
+    <li>Vscode-icons</li> 
+</ul>
+
 
 <h4>Lịch cập nhật các chức năng </h4>
 

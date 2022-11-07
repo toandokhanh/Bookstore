@@ -39,6 +39,20 @@
     
 
 </ul>
+<h4>Extensions</h4>
+- Laravel Artisan
+- Laravel Blade Snippets
+- Laravel Blade Spacer
+- Laravel goto view
+- Laravel Extra Intellisense
+- Live Sass Compiler
+- Beautify css/sass/scss/less
+- PHP IntelliSense
+- Getter and Setter Generator
+- Bracket Pair Colorization Toggler
+- JavaScript (ES6) code snippets
+- vscode-icons
+
 <h4>Lịch cập nhật các chức năng </h4>
 
 

@@ -15,7 +15,7 @@
     <li>MySql</li>
 </ul> -->
 
-<h4>Những công nghệ và tính năng được sữ dụng</h4>
+<h4>Những công nghệ hỗ trợ cho đồ án</h4>
 <ul>
     <li>Laravel</li>
     <li>Jquery</li>

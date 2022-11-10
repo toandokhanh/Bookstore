@@ -2,7 +2,7 @@
 <h5 align="center">Giảng viên hướng dẫn: TS. Nguyễn Thanh Hải </h5>
 
 <p align="center">
-    <img src="https://clipart.info/images/ccovers/1499794875html-css-php-mysql-logo-png-transparent.png"height="80" width="250" alt="Laravel Logo">
+    <img src="https://clipart.info/images/ccovers/1499794875html-css-php-mysql-logo-png-transparent.png" height="80" width="250" alt="Laravel Logo">
     <img src="https://cdn.sussmanconsultants.com/wp-content/uploads/2018/09/logo-laravel.png" height="100" width="250" alt="Laravel Logo">
 </p>
 

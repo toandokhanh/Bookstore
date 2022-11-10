@@ -58,7 +58,7 @@
                     <form action={{ route('order',['cart_id'=>$cart_id])}} method="post" enctype="multipart/form-data">
                         @csrf
                         <input type="hidden" class="" name="product_id" value="{{ $id }}"/>
-                        <input type="number" class="buyfield" name="quantity" value="1"/>
+                        <input type="number" class="buyfield" max="10" min="1" name="quantity" value="1"/>
                         <input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
                     </form>			    	
                 </div>

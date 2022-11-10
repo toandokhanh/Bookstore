@@ -18,15 +18,11 @@ class SliderSeeder extends Seeder
         $data = array(
             [
                 'slider_name' => 'banner1',
-                'slider_image' => 'https://muasachhay.vn/wp-content/uploads/2021/11/bo-sach-lich-su-chau-phi-858x450.jpg'
+                'slider_image' => '/storage/banner1.jpg'
             ],
             [
                 'slider_name' => 'banner2',
-                'slider_image' => 'https://muasachhay.vn/wp-content/uploads/2021/11/Bo-Mon-qua-linh-hon-FB-2-1.jpg'
-            ],
-            [
-                'slider_name' => 'banner3',
-                'slider_image' => 'https://muasachhay.vn/wp-content/uploads/2021/11/banner-20210413012456.png'
+                'slider_image' => '/storage/banner2.jpg'
             ],
             [
                 'slider_name' => 'banner4',

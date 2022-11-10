@@ -20,6 +20,7 @@
 <script type="text/javascript" src="../js/nav-hover.js"></script>
 <link href='http://fonts.googleapis.com/css?family=Monda' rel='stylesheet' type='text/css'>
 <link href='http://fonts.googleapis.com/css?family=Doppio+One' rel='stylesheet' type='text/css'>
+<script src="https://cdn.lordicon.com/qjzruarw.js"></script>
 <script type="text/javascript">
   $(document).ready(function($){
     $('#dc_mega-menu-orange').dcMegaMenu({rowItems:'4',speed:'fast',effect:'fade'});
@@ -143,7 +144,8 @@ a #catetorys::hover{
 			  <div class="header_top_right">
 			    <div class="search_box">
 				    <form>
-				    	<input type="text" value="Nhập tên sách hoặc tác giả bạn muốn tìm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Search for Products';}"><input class="bottom-0" type="submit" value="TÌM KIẾM">
+				    	<input type="text" value="Nhập tên sách hoặc tác giả bạn muốn tìm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nhập tên sách hoặc tác giả bạn muốn tìm';}">
+						<input class="bottom-0" type="submit" value="TÌM KIẾM">
 				    </form>
 			    </div>
 			    <div class="shopping_cart">

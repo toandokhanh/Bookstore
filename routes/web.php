@@ -24,8 +24,8 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 |
 */
 
-Route::get('/hi', function () {
-    return view('welcome');
+Route::get('/test', function () {
+    return view('checkout');
 });
 
 // Route::get('/dashboard', function () {
@@ -72,7 +72,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/cart', function () {
         return view('cart');
     })->name('cart');
-    Route::get('/checkout/cart{cart_id}', [BillController::class, 'index'])->name('checkout');
+    Route::get('/checkout{cart_id}', [BillController::class, 'index'])->name('checkout');
     // order
     
 });

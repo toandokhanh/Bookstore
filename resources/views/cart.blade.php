@@ -1,4 +1,5 @@
-<div hidden>{{ $total = 0; }}</div>
+<div hidden>{{ $total = 0}}</div>
+<div hidden>{{ $amount = 0}}</div>
 @if (isset(Auth::user()->cart_id))
     <div hidden >{{ $cart_id = Auth::user()->cart_id }}</div>
 @endif
@@ -62,14 +63,20 @@
                                                 </lord-icon>
                                             </a>
                                         </td>
-                                        <div hidden >
+                                        <div  hidden>
                                             
                                             @if ($cart_detail->total_price)
                                                 {{$total += $cart_detail->total_price}}
+                                                
+                                            @endif
+                                            @if ($cart_detail->quantity)
+                                                {{$amount += $cart_detail->quantity}}
+                                                
                                             @endif
                                         </div>
                                     </tr>
                                     <div hidden >{{ $cart_id = $cart_detail->cart_id }}</div>
+
                                     @endforeach
                                 </table>
                                 <table style="float:right;text-align:left;font-size: 15px;margin:10px 50px" width="25%">  <br>
@@ -93,7 +100,7 @@
                                     <a href="{{ route('products') }}"> <img src="images/shop.png" alt="" /></a>
                                 </div>
                                 <div class="shopright">
-                                        <a href="{{ route('checkout',['cart_id'=>$cart_id]) }}"> <img src="images/check.png" alt="" /></a>
+                                        <a href="{{ route('checkout',['cart_id'=>$cart_id,'db_total' => $db_total,'amount' => $amount]) }}"> <img src="images/check.png" alt="" /></a>
                                 </div>
                             </div>
                 </div>  	
@@ -104,7 +111,6 @@
         
         @include('include.footer')
     </x-app-layout>
-	 
 @else
     
 @endif

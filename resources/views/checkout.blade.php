@@ -12,9 +12,7 @@
     }}
 </div> --}}
     {{-- {{ dd($cart_details) }} --}}
-{{-- {{ dd($cart_id); }} --}}
-{{-- {{ dd($cart_detail) }} --}}
-@vite('resources/css/app.css')
+
 @if (isset(Auth::user()->use_name))
     <x-app-layout>
         @include('include.header')
@@ -42,8 +40,6 @@
                                 <button class="buysubmit"> <a href="{{ route('products') }}">Tiếp tục mua hàng</a> </button>
                             </div>  
                     </div>  	
-
-                     
                <div class="clear"></div>
             </div>
          </div>

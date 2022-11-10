@@ -19,7 +19,7 @@ return new class extends Migration
             $table->foreign('ac_id')
                 ->references('id')->on('accounts');
             $table->float('total', 12, 2);
-            $table->tinyInteger('bill_amount');
+            $table->tinyInteger('bill_amount')->nullable();
             $table->timestamps();
         });
     }

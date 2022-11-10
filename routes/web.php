@@ -72,7 +72,7 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/cart', function () {
         return view('cart');
     })->name('cart');
-    Route::get('/checkout{cart_id}', [BillController::class, 'index'])->name('checkout');
+    Route::get('/checkout{cart_id}/{db_total}{amount}', [BillController::class, 'index'])->name('checkout');
     // order
     
 });

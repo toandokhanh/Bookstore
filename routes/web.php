@@ -25,7 +25,7 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 */
 
 Route::get('/test', function () {
-    return view('checkout');
+    return view('orderhistory');
 });
 
 // Route::get('/dashboard', function () {
@@ -56,7 +56,6 @@ Route::get('/detail/product{id}', [ProductUserController::class, 'detail'])->nam
 //     return view('productbycart');
 // })->name('productbycart');
 
-
 Route::group(['middleware' => 'auth'], function(){ 
     //đã đăng nhập
     Route::get('/dashboard', function () {
@@ -72,14 +71,13 @@ Route::group(['middleware' => 'auth'], function(){
     Route::get('/cart', function () {
         return view('cart');
     })->name('cart');
-    Route::get('/checkout{cart_id}/{db_total}{amount}', [BillController::class, 'index'])->name('checkout');
+    Route::get('/checkout{cart_id}/{db_total}-{amount}', [BillController::class, 'index'])->name('checkout');
     // order
-    
+    Route::get('/orderhistory', function () {
+        return view('orderhistory');
+    })->name('orderhistory');
+    //
 });
-
-
-
-
 
 //admin
 Route::prefix('ad')->group(function(){
@@ -101,12 +99,17 @@ Route::prefix('ad')->group(function(){
     //phản hồi của khách hành trả vè admin
     Route::get('/feedback', function(){
         return view('admin.feedback');
-    })->name('admin-feedback');
-
+    })->name('admin-feedback')->middleware('admin');
+    // trang duyệt đơn
+    Route::get('/confirmed', function(){
+        return view('admin.confirmed');
+    })->name('admin-confirmed')->middleware('admin');
+    // duyệt đơn cho khách hàng
+    Route::get('/confirmed/{id}', [BillController::class, 'update'])->name('confirmed_bill');
     //quản lý sản phẩm
     Route::get('/listing/addproduct', [ProductController::class, 'addproduct'])->name('listing-addproduct');
     Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store-addproduct');
-    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('listing-update-product');
+    Route::post('/product/update/{id}', [ProductController::class, 'update'])->name('listing-update-product')->middleware('admin');
     //ok
 
     // Quản lý danh mục
@@ -147,6 +150,9 @@ Route::prefix('ad')->group(function(){
     Route::get('/listing/edit/{model}/{id}', [ListingController::class, 'edit'])->name('listing-edit');
     //delete
     Route::get('/listing/delete/{model}/{id}', [ListingController::class, 'delete'])->name('listing-delete');
+
+    
+
     
 });
 

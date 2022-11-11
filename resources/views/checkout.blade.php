@@ -26,7 +26,7 @@
                             <div>
                                 <p class="mb-2">Đơn hàng của bạn đã được xử lý thanh công</p>
                                 <p>Bạn có thể xem lại lịch sử đặt hàng bằng cách truy cập vào 
-                                    <a class="text-[18px] text-[#359761] font-semibold border-[1px] border-black " href="#">đơn hàng của tôi
+                                    <a class="text-[18px] text-[#359761] font-semibold border-[1px] border-black " href="{{ route('orderhistory') }}">Lịch sử đặt hàng của tôi
                                         <lord-icon
                                             src="https://cdn.lordicon.com/hyhnpiza.json"
                                             trigger="loop"

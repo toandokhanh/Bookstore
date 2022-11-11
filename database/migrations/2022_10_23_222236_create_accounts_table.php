@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('address')->nullable();
             $table->string('phone')->nullable();
             $table->string('email')->unique();
-            $table->tinyInteger('gender')->default(0);
+            $table->tinyInteger('gender')->default(0)->nullable();
             $table->tinyInteger('role');
             $table->timestamp('email_verified_at')->nullable();
             $table->string('password');

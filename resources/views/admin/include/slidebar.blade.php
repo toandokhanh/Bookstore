@@ -4,11 +4,11 @@
     <div class="box sidemenu">
         <div class="block" id="section-menu">
             <ul class="section menu">
-               <li><a class="menuitem">Tùy chọn trang web</a>
+               <li><a class="menuitem">Chăm sóc khách hàng</a>
                     <ul class="submenu">
-                        <li><a href="#titleslogan">Tiêu đề & Khẩu hiệu</a></li>
-                        <li><a href="#social">Truyền thông xã hội</a></li>
-                        <li><a href="#copyright">Bản quyền</a></li>
+                        <li><a href="#titleslogan">Thông báo</a></li>
+                        <li><a href="#social">Phản hổi khách hàng</a></li>
+                        <li><a href="{{ route('admin-confirmed') }}">Duyệt đơn khách hàng</a></li>
                         
                     </ul>
                 </li>

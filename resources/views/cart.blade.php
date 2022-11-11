@@ -63,7 +63,7 @@
                                                 </lord-icon>
                                             </a>
                                         </td>
-                                        <div  hidden>
+                                        <div hidden>
                                             
                                             @if ($cart_detail->total_price)
                                                 {{$total += $cart_detail->total_price}}
@@ -111,6 +111,6 @@
         
         @include('include.footer')
     </x-app-layout>
-@else
+    @else
     
-@endif
+    @endif

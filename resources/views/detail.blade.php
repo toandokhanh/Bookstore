@@ -174,11 +174,7 @@
                     </div>
                 <div class="add-cart">
                     <form action="{{ route('login') }}" method="get">
-<<<<<<< HEAD
-                        <input max=10 min=1 type="number" class="buyfield" name="quantity" value="1"/>
-=======
                         <input min=1 max=10 type="number" class="buyfield" name="quantity" value="1"/>
->>>>>>> 7b46cdc53941d077324f355552398a05d0551603
                         <input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
                     </form>					
                 </div>

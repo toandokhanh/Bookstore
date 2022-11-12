@@ -145,7 +145,7 @@ a #catetorys::hover{
 			    <div class="search_box">
 				    <form method="GET" action="{{ route('search-product') }}">
 						@csrf
-				    	<input name="search" type="text" placeholder="Tìm kiếm theo tên sản phẩm hoặc tên tác giả">
+				    	<input required name="search" type="text" placeholder="Tìm kiếm theo tên sản phẩm hoặc tên tác giả">
 						<input class="bottom-0" type="submit" value="TÌM KIẾM">
 				    </form>
 			    </div>

@@ -174,7 +174,7 @@
                     </div>
                 <div class="add-cart">
                     <form action="{{ route('login') }}" method="get">
-                        <input type="number" class="buyfield" name="quantity" value="1"/>
+                        <input max=10 min=1 type="number" class="buyfield" name="quantity" value="1"/>
                         <input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
                     </form>					
                 </div>
@@ -257,10 +257,6 @@
         $(function (){
             $('#btn').on('click',click)
         })
-
-
-
-
     </script> 
 
 @include('include.footer')

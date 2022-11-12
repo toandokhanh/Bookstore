@@ -174,7 +174,7 @@
                     </div>
                 <div class="add-cart">
                     <form action="{{ route('login') }}" method="get">
-                        <input type="number" class="buyfield" name="quantity" value="1"/>
+                        <input min=1 max=10 type="number" class="buyfield" name="quantity" value="1"/>
                         <input type="submit" class="buysubmit" name="submit" value="Mua ngay"/>
                     </form>					
                 </div>

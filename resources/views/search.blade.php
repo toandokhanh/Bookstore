@@ -45,7 +45,11 @@
     <div class="content">
     	<div class="content_top">
     		<div class="heading">
-    		<h3>Trang chủ</h3>
+    		@if(count($products) == 0)
+                <h3>Không tìm thấy sản phẩm nào liên quan đến "{{ $keys }}"</h3>
+            @else
+                <h3>Tìm thấy {{ count($products) }} sản phẩm liên quan đến "{{ $keys }}"</h3>
+            @endif
     		</div>
     		<div class="clear"></div>
     	</div>

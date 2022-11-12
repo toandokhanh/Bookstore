@@ -27,7 +27,7 @@ class CatetorySeeder extends Seeder
             ['cate_name' => 'Thiếu nhi'],
             ['cate_name' => 'Sách học ngoại ngữ'],
             ['cate_name' => 'Nuôi dạy con'],
-            ['cate_name' => 'Sách mới'],
+            ['cate_name' => 'Sách giáo khoa'],
             ['cate_name' => 'Chính trị'],
             ['cate_name' => 'Nghệ thuật'],
             ['cate_name' => 'Đồ chơi trẻ em 3+'],

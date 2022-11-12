@@ -12,13 +12,14 @@
     <li><a href="#cong-nghe"> Công Nghệ </a></li>
     <li><a href="#extensions"> Extensions </a></li>
     <li><a href="#tinh-nang"> Tính năng </a></li>
+    <li><a href="#cai-dat"> Cài đặt </a></li>
     <li><a href="#gd-khach"> Giới thiệu giao diện khách hàng</a></li>
     <li><a href="#gd-admin"> Giới thiệu giao diện quản trị</a></li>
     <li><a href="#nguon"> Nguồn tham khảo </a></li>
     <li><a href="#lich-cap-nhat"> Lịch cập nhật chức năng </a></li>
 </ul>
 
-* * *
+
 
 <h4 id="cong-nghe">Những công nghệ hỗ trợ cho đồ án</h4>
 <ul>
@@ -32,7 +33,7 @@
     <li>Notion</li>   
 </ul>
 
-* * *
+
 
 <h4 id="extensions">Extensions</h4>
 <ul>
@@ -51,7 +52,7 @@
 </ul>
 
 
-* * *
+
 
 <h4 id="tinh-nang">Tính năng</h4>
 <ul>
@@ -76,7 +77,10 @@
     
 </ul>
 
-* * *
+<h4 id="cai-dat">Cài đặt</h4>
+<ul>
+    <li></li> 
+</ul>
 
 <h4 align="start" id="gd-khach" >Giao diện trang khách hàng</h4>
 <img src="https://user-images.githubusercontent.com/98395447/201471936-6c628bd5-2a3f-4525-b8af-de9e0c693d09.png" alt="">
@@ -84,11 +88,11 @@
 <h4 align="start" id="gd-admin">Giao diện trang quản trị</h4>
 <img src="https://user-images.githubusercontent.com/98395447/201474598-6dd76041-3aa2-4438-a74f-3d84cccab6c1.png" alt="">
 
-* * *
+
 
 <h4 id="nguon">Nguồn tham khảo</h4>
 <ul>
-    <li><a href="https://laravel.com/">Laravel</a></li>  
+    <li><a href="https://laravel.com/docs/9.x">Documentation Laravel 9</a></li>  
     <li><a href="https://www.youtube.com/playlist?list=PL8y3hWbcppt2nWBglaxrQm_A5sRjstdnK">Hoang An unicode</a></li>  
     <li><a href="https://www.youtube.com/watch?v=iSsFV9hmxDk&t=4622s">Học laravel cơ bản 3 tiếng</a></li>  
     <li><a href="https://www.youtube.com/watch?v=NJy-LuemNww&list=PLzrVYRai0riRnmKWhDEYixPDLs3CCk2lO">Học laravel của Khoa Phạm</a></li>  

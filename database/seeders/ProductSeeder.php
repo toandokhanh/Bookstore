@@ -443,7 +443,7 @@ class ProductSeeder extends Seeder
                 'ac_id' =>  1,
                 'cate_id' => 5,
                 'publisher_id' => 1,
-                'author_id' => 18,
+                'author_id' => 19,
                 'product_name' => 'Thiên Tài Bên Trái, Kẻ Điên Bên Phải (Tái Bản 2021)',
                 'describe' => 'NẾU MỘT NGÀY ANH THẤY TÔI ĐIÊN, THỰC RA CHÍNH LÀ ANH ĐIÊN ĐẤY!
 
@@ -465,7 +465,7 @@ class ProductSeeder extends Seeder
                 'ac_id' =>  1,
                 'cate_id' => 3,
                 'publisher_id' => 4,
-                'author_id' => 19,
+                'author_id' => 18,
                 'product_name' => 'Làm Đĩ (Tái Bản 2022)',
                 'describe' => 'Vũ Trọng Phụng sinh năm 1912 tại Hà Nội trong một gia đình nghèo. Chính quê nhà văn ở làng Hảo (tức Bần, Yên Nhân, huyện Mỹ Hào, tỉnh Hưng Yên).
 
@@ -510,7 +510,7 @@ class ProductSeeder extends Seeder
                 'ac_id' =>  1,
                 'cate_id' => 1,
                 'publisher_id' => 3,
-                'author_id' => 21,
+                'author_id' => 20,
                 'product_name' => 'Hello Các Bạn Mình Là Tôi Đi Code Dạo - Kèm Chữ Ký Tác Giả',
                 'describe' => 'Cho tới thời điểm hiện tại, IT vẫn đang là một ngành hot và là sự lựa chọn của rất nhiều các bạn học sinh, sinh viên. Tuy nhiên, cho đến nay, những nguồn tài nguyên học tập trong ngành còn quá ít. Ngoài những tài liệu học tập của trường học thì những tài liệu khác chủ yếu vẫn là các thông tin trên internet hoặc từ những kinh nghiệm của những người đi trước. Để bạn đọc có cái nhìn chân thực và rõ nét hơn về ngành IT, thông qua cuốn sách này, tác giả Phạm Huy Hoàng đã tóm tắt và chia sẻ lại những câu chuyện, bài học kinh nghiệm đã gặp, đã đúc rút được để bạn đọc tham khảo và tìm ra những điểm tương đồng với những gì mình gặp trong khi học tập và làm việc để từ đó rút ra được bài học cho riêng mình.
 
@@ -722,7 +722,7 @@ class ProductSeeder extends Seeder
                 'ac_id' =>  1,
                 'cate_id' => 4,
                 'publisher_id' => 7,
-                'author_id' => 23,
+                'author_id' => 24,
                 'product_name' => 'Lịch Sử Quân Sự - Bách Khoa Thư Các Loại Vũ Khí Định Hình Thế Giới',
                 'describe' => 'Lịch Sử Quân Sự - Bách Khoa Thư Các Loại Vũ Khí Định Hình Thế Giới
 
@@ -764,7 +764,7 @@ class ProductSeeder extends Seeder
                 'ac_id' =>  1,
                 'cate_id' => 11,
                 'publisher_id' => 13,
-                'author_id' => 25,
+                'author_id' => 23,
                 'product_name' => 'Sách Giáo Khoa Bộ Lớp 12 - Sách Bài Học (Bộ 14 Cuốn) (2022)',
                 'describe' => 'Bộ sách bao gôm:
                 1	Giáo dục Quốc phòng - An ninh 12
@@ -793,7 +793,7 @@ class ProductSeeder extends Seeder
                 'ac_id' =>  1,
                 'cate_id' => 11,
                 'publisher_id' => 13,
-                'author_id' => 25,
+                'author_id' => 23,
                 'product_name' => 'Sách Giáo Khoa Bộ Lớp 11 - Sách Bài Tập (Bộ 11 Cuốn) (2022)',
                 'describe' => '
                 STT	Tên sản phẩm

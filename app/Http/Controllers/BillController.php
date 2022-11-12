@@ -48,4 +48,9 @@ class BillController extends Controller
         }
         
     }
+    public function delete($id){
+        $bill = new Bill;
+        $bill::where('id', $id)->delete();
+        return redirect()->route('orderhistory');
+    }
 }

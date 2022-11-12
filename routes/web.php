@@ -43,18 +43,15 @@ Route::get('/topbrands', function () {
 Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
-Route::get('/detail', function () {
-    return view('detail');
-})->name('detail');
+
 //select ra tất cẩ sản phẩm
 Route::get('/products', [ProductUserController::class, 'index'])->name('products');
 // select sản phẩm theo danh mục
 Route::get('/products/cate{id}', [ProductUserController::class, 'productsCate'])->name('productsCate');
 //select chi tiết từng sản phẩm
 Route::get('/detail/product{id}', [ProductUserController::class, 'detail'])->name('detail-product');
-// Route::get('/productbycart', function () {
-//     return view('productbycart');
-// })->name('productbycart');
+// tìm kiếm sản phẩm theo tên sản phẩm hoặc tên tác giả
+Route::get('/search', [ProductUserController::class, 'search'])->name('search-product');
 
 Route::group(['middleware' => 'auth'], function(){ 
     //đã đăng nhập
@@ -77,6 +74,7 @@ Route::group(['middleware' => 'auth'], function(){
         return view('orderhistory');
     })->name('orderhistory');
     //
+    Route::get('/delete/{id}', [BillController::class, 'delete'])->name('delete_bill');
 });
 
 //admin

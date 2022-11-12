@@ -39,6 +39,7 @@
                               <th>Mã vận đơn</th>
                               <th>Hành động</th>
                               <th>Tổng tiền</th>
+                              <th>Hủy đơn hàng</th>
                             </tr>
                             <div hidden >
                                 {{ $bills = DB::table('bills')
@@ -56,6 +57,16 @@
                               <td>{{ $bill->id }}</td>
                               <td style="color:rgb(44, 44, 253)"><a href="#chua-duoc-update">Chi tiết đơn hàng</a></td>
                               <td class="text-red-600">{{ $bill->total }}</td>
+                              <td>
+                                <a href="{{ route('delete_bill', ['id'=>$bill->id ]) }}">
+                                    <lord-icon
+                                        src="https://cdn.lordicon.com/nhfyhmlt.json"
+                                        trigger="hover"
+                                        colors="primary:#e83a30"
+                                        style="width:22px;height:22px;margin-left:10px;">
+                                    </lord-icon>
+                                </a>
+                              </td>
                               
                             </tr>
                             @endforeach
@@ -85,7 +96,7 @@
                               
                               <td>{{ $bill->created_at }}</td>
                               <td>{{ $bill->bill_amount }}</td>
-                              <td>Đang chờ giao hàng</td>
+                              <td>Chờ giao hàng</td>
                               <td>{{ $bill->id }}</td>
                               <td style="color:rgb(44, 44, 253)"><a href="#chua-duoc-update">Chi tiết đơn hàng</a></td>
                               <td class="text-red-600">{{ $bill->total }}</td>
@@ -98,6 +109,7 @@
                                         style="width:22px;height:22px;margin-left:10px;">
                                     </lord-icon>
                                 </a>
+                                
                             </td>
                               
                             </tr>

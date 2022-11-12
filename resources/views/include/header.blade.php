@@ -143,8 +143,9 @@ a #catetorys::hover{
 			</div>
 			  <div class="header_top_right">
 			    <div class="search_box">
-				    <form>
-				    	<input type="text" value="Nhập tên sách hoặc tác giả bạn muốn tìm " onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Nhập tên sách hoặc tác giả bạn muốn tìm';}">
+				    <form method="GET" action="{{ route('search-product') }}">
+						@csrf
+				    	<input name="search" type="text" placeholder="Tìm kiếm theo tên sản phẩm hoặc tên tác giả">
 						<input class="bottom-0" type="submit" value="TÌM KIẾM">
 				    </form>
 			    </div>

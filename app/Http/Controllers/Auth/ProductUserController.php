@@ -30,5 +30,16 @@ class ProductUserController extends Controller
         $cate = $products[0]->cate_name;
         return view('products',['products'=>$products],['cate_name'=>$cate]);
     }
-    
+    public function search(Request $request){
+        $keys = $request->input('search');
+        $products = DB::table('products')
+        ->join('authors', 'products.author_id', '=', 'authors.id')
+        ->join('catetorys', 'products.cate_id', '=', 'catetorys.id')
+        ->select('products.*','authors.author_name','catetorys.cate_name')
+        ->where('product_name','like','%'.$keys.'%')
+        ->orWhere('author_name','like','%'.$keys.'%')
+        ->orWhere('cate_name','like','%'.$keys.'%')
+        ->get();
+        return view('search',compact('products'),compact('keys'));
+    }
 }

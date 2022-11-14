@@ -68,12 +68,12 @@
     <li>Thông tin cá nhân</li>
     <li>Phân quyền</li> 
     <li>Quản lý đơn đặt hàng</li>
-    <li>Quản lý đơn thanh trượt</li>
-    <li>Quản lý đơn sản phẩm</li>
-    <li>Quản lý đơn danh mục</li>
-    <li>Quản lý đơn tác giả</li>
-    <li>Quản lý đơn nhà xuất bản</li>
-    <li>Quản lý đơn người dùng</li>
+    <li>Quản lý thanh trượt</li>
+    <li>Quản lý sản phẩm</li>
+    <li>Quản lý danh mục</li>
+    <li>Quản lý tác giả</li>
+    <li>Quản lý nhà xuất bản</li>
+    <li>Quản lý người dùng</li>
     
 </ul>
 

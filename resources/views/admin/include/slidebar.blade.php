@@ -1,5 +1,18 @@
 
-
+<div hidden >
+    {{ $messages = DB::table('messages')
+    ->whereIn('messages.seen',['0'])
+    ->get();
+    }}
+</div> 
+<div hidden >
+    {{ $bills = DB::table('bills')
+    ->join('accounts', 'bills.ac_id', '=', 'accounts.id')
+    ->select('bills.*','accounts.use_name','accounts.email','accounts.phone')
+    ->whereIn('bills.confirmed',[0])
+    ->get();
+    }}
+</div>   
 <div class="grid_2">
     <div class="box sidemenu">
         <div class="block" id="section-menu">
@@ -7,8 +20,28 @@
                <li><a class="menuitem">Chăm sóc khách hàng</a>
                     <ul class="submenu">
                         <li><a href="#titleslogan">Thông báo</a></li>
-                        <li><a href="#social">Phản hổi khách hàng</a></li>
-                        <li><a href="{{ route('admin-confirmed') }}">Duyệt đơn khách hàng</a></li>
+                        <li><a href="{{ route('admin-reply') }}">Phản hồi
+                        @if (count($messages) >= 1)
+                        <lord-icon
+                            src="https://cdn.lordicon.com/dnmvmpfk.json"
+                            trigger="loop"
+                            delay="1000"
+                            colors="primary:#c71f16"
+                            style="width:22px;height:22px;margin-left:10px;">
+                        </lord-icon>
+                        @endif
+                        </a></li>
+                        <li><a href="{{ route('admin-confirmed') }}">Duyệt đơn 
+                            @if (count($bills) >= 1)
+                            <lord-icon
+                                src="https://cdn.lordicon.com/dnmvmpfk.json"
+                                trigger="loop"
+                                delay="1000"
+                                colors="primary:#c71f16"
+                                style="width:22px;height:22px;margin-left:10px;">
+                            </lord-icon>
+                        @endif
+                        </a></li>
                         
                     </ul>
                 </li>
@@ -43,14 +76,7 @@
                     </ul>
                 </li>
                 @if (Auth::guard('admin')->user()->role === 3)
-                     <li><a class="menuitem">Quản lý người dùng <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
-                        <lord-icon
-                            src="https://cdn.lordicon.com/dnmvmpfk.json"
-                            trigger="loop"
-                            delay="1000"
-                            colors="primary:#c71f16"
-                            style="width:22px;height:22px;margin-left:10px;">
-                        </lord-icon></a>
+                     <li><a class="menuitem">Quản lý người dùng <script src="https://cdn.lordicon.com/pzdvqjsp.js"></script></a>
                     <ul class="submenu">
                         {{--  --}}
                         <li><a href={{ route('listing-adduser')}}>Thêm Người dùng</a> </li>

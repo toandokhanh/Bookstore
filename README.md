@@ -77,10 +77,20 @@
 </ul>
 
 <h4 id="cai-dat">Cài đặt</h4>
+
+###### Lưu ý: Để chạy được bookstore project cần cài đặt các phiên bản mới nhất
+
 <ul>
+    <li>Cài đặt php</li>
     <li>Cài đặt node</li> 
     <li>Cài đặt composer</li> 
-    <li>git clone https://github.com/toandokhanh/boookstore_laravel</li> 
+    <li>git clone https://github.com/toandokhanh/boookstore_laravel</li>
+    <li>Mở và tạo một database tên Bookstore trên phpAdmin(xammp)</li>
+    <li>cd boookstore_laravel</li>
+    <li>Mở terminal chạy lệnh php artisan migrate:fresh --seed để thêm bảng vào Bookstore database</li>
+    <li>Mở terminal chạy lệnh php artisan serve</li>
+    <li>Mở thêm một terminal mới chạy lệnh npm run dev</li>
+    <li>Mở trình duyệt nhập địa chỉ http://127.0.0.1:8000 để mở trang chủ dự án</li>
 </ul>
 
 <h4 align="start" id="gd-khach" >Giao diện trang khách hàng</h4>

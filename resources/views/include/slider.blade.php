@@ -18,7 +18,7 @@
 				    <div class="text list_2_of_1">
 						<h2 style="font-size: 15px; margin-bottom: 5px;" class="product_name">{{ $product->product_name }}</h2>
 						<p style="height: 59px; text-align: start;" class="describe">{{ $product->describe }}</p>
-						<div style="margin-left: 20px; margin-bottom: 5px;" class="button"><span><a href="{{ route('detail-product',['id'=>$product->id]) }}">Thêm <span class="fix-icon-in-slider"><ion-icon style="width: 20px;" class="cart__icon" name="cart-outline"></ion-icon> </span></a></span></div>
+						<div style="margin-bottom: 5px;" class="button"><span><a href="{{ route('detail-product',['id'=>$product->id]) }}">Thêm <span class="fix-icon-in-slider"><ion-icon style="width: 20px;" class="cart__icon" name="cart-outline"></ion-icon> </span></a></span></div>
 				   </div>
 			   </div>
 			   @endforeach		

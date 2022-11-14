@@ -12,8 +12,8 @@
     ->get();
     }}
 </div>
-    {{-- {{ dd($cart_details) }} --}}
 
+    {{-- {{ dd($cart_details) }} --}}
 @if (isset(Auth::user()->use_name))
     <x-app-layout>
         @include('include.header')

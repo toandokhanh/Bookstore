@@ -63,7 +63,6 @@
     <li>Đăng nhập</li> 
     <li>Đăng xuất</li> 
     <li>Giỏ hàng</li> 
-    <li>Đặt hàng</li>
     <li>Liên hệ</li> 
     <li>Thông tin cá nhân</li>
     <li>Phân quyền</li> 

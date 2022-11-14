@@ -1,3 +1,4 @@
+<!--  -->
 <h1 align="center"> ĐỒ ÁN PHÁT TRIỂN HỆ THỐNG WEB - CT299</h1>
 <h5 align="center">Giảng viên hướng dẫn: TS. Nguyễn Thanh Hải </h5>
 
@@ -6,16 +7,21 @@
     <img src="https://cdn.sussmanconsultants.com/wp-content/uploads/2018/09/logo-laravel.png" height="100" width="250" alt="Laravel Logo">
 </p>
 
-<!-- <h4>Những ngôn ngữ được sữ dụng</h4>
+<h4>Nội dung</h4>
 <ul>
-    <li>PHP</li>
-    <li>HTMl</li>
-    <li>CSS</li>
-    <li>Javascript</li>
-    <li>MySql</li>
-</ul> -->
+    <li><a href="#cong-nghe"> Công Nghệ </a></li>
+    <li><a href="#extensions"> Extensions </a></li>
+    <li><a href="#tinh-nang"> Tính năng </a></li>
+    <li><a href="#cai-dat"> Cài đặt </a></li>
+    <li><a href="#gd-khach"> Giới thiệu giao diện khách hàng</a></li>
+    <li><a href="#gd-admin"> Giới thiệu giao diện quản trị</a></li>
+    <li><a href="#nguon"> Nguồn tham khảo </a></li>
+    <li><a href="#lich-cap-nhat"> Lịch cập nhật chức năng </a></li>
+</ul>
 
-<h4>Những công nghệ hỗ trợ cho đồ án</h4>
+
+
+<h4 id="cong-nghe">Những công nghệ hỗ trợ cho đồ án</h4>
 <ul>
     <li>Laravel</li>
     <li>Jquery</li>
@@ -26,20 +32,10 @@
     <li>Github</li>   
     <li>Notion</li>   
 </ul>
-<h4>Nguồn tham khảo</h4>
-<ul>
-    <li><a href="https://laravel.com/">Laravel</a></li>  
-    <li><a href="https://www.youtube.com/playlist?list=PL8y3hWbcppt2nWBglaxrQm_A5sRjstdnK">Hoang An unicode</a></li>  
-    <li><a href="https://www.youtube.com/watch?v=iSsFV9hmxDk&t=4622s">Học laravel cơ bản 3 tiếng</a></li>  
-    <li><a href="https://www.youtube.com/watch?v=NJy-LuemNww&list=PLzrVYRai0riRnmKWhDEYixPDLs3CCk2lO">Học laravel của Khoa Phạm</a></li>  
-    <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>  
-    <li><a href="https://viblo.asia/questions">Viblo</a></li>  
-    <li><a href="https://docs.google.com/document/d/1wAZIA48LzvGLFMF3uposRs82h2dnQ34NNUMXgX3-Wiw/edit">Bài thực hành 6 của Thầy Nguyễn Thanh Hải</a></li>  
-    <li><a href="https://drive.google.com/file/d/1MLPe2fEwyyuMEHmnx7Zx1r8yupZqqRX4/view">Source code frontend</a></li>  
-    
 
-</ul>
-<h4>Extensions</h4>
+
+
+<h4 id="extensions">Extensions</h4>
 <ul>
     <li>Laravel Artisan</li> 
     <li>Laravel Blade Snippets</li> 
@@ -56,7 +52,61 @@
 </ul>
 
 
-<h4>Lịch cập nhật các chức năng </h4>
+
+
+<h4 id="tinh-nang">Tính năng</h4>
+<ul>
+    <li>Đặt sách</li> 
+    <li>Xem sách</li> 
+    <li>Tìm kiếm sản phẩm theo tên sản phẩm, tên tác giả, tên danh mục</li>
+    <li>Đăng ký</li> 
+    <li>Đăng nhập</li> 
+    <li>Đăng xuất</li> 
+    <li>Giỏ hàng</li> 
+    <li>Đặt hàng</li>
+    <li>Liên hệ</li> 
+    <li>Thông tin cá nhân</li>
+    <li>Phân quyền</li> 
+    <li>Quản lý đơn đặt hàng</li>
+    <li>Quản lý thanh trượt</li>
+    <li>Quản lý sản phẩm</li>
+    <li>Quản lý danh mục</li>
+    <li>Quản lý tác giả</li>
+    <li>Quản lý nhà xuất bản</li>
+    <li>Quản lý người dùng</li>
+    
+</ul>
+
+<h4 id="cai-dat">Cài đặt</h4>
+<ul>
+    <li>Cài đặt node</li> 
+    <li>Cài đặt composer</li> 
+    <li>git clone https://github.com/toandokhanh/boookstore_laravel</li> 
+</ul>
+
+<h4 align="start" id="gd-khach" >Giao diện trang khách hàng</h4>
+<img src="https://user-images.githubusercontent.com/98395447/201471936-6c628bd5-2a3f-4525-b8af-de9e0c693d09.png" alt="">
+
+<h4 align="start" id="gd-admin">Giao diện trang quản trị</h4>
+<img src="https://user-images.githubusercontent.com/98395447/201474598-6dd76041-3aa2-4438-a74f-3d84cccab6c1.png" alt="">
+
+
+
+<h4 id="nguon">Nguồn tham khảo</h4>
+<ul>
+    <li><a href="https://laravel.com/docs/9.x">Documentation Laravel 9</a></li>  
+    <li><a href="https://www.youtube.com/playlist?list=PL8y3hWbcppt2nWBglaxrQm_A5sRjstdnK">Hoang An unicode</a></li>  
+    <li><a href="https://www.youtube.com/watch?v=iSsFV9hmxDk&t=4622s">Học laravel cơ bản 3 tiếng</a></li>  
+    <li><a href="https://www.youtube.com/watch?v=NJy-LuemNww&list=PLzrVYRai0riRnmKWhDEYixPDLs3CCk2lO">Học laravel của Khoa Phạm</a></li>  
+    <li><a href="https://stackoverflow.com/">Stackoverflow</a></li>  
+    <li><a href="https://viblo.asia/questions">Viblo</a></li>  
+    <li><a href="https://docs.google.com/document/d/1wAZIA48LzvGLFMF3uposRs82h2dnQ34NNUMXgX3-Wiw/edit">Bài thực hành 6 của Thầy Nguyễn Thanh Hải</a></li>  
+    <li><a href="https://drive.google.com/file/d/1MLPe2fEwyyuMEHmnx7Zx1r8yupZqqRX4/view">Source code frontend</a></li>  
+    
+
+</ul>
+
+<h4 id="lich-cap-nhat">Lịch cập nhật các chức năng </h4>
 
 
 |  Stt  | Chức năng                                                                                                              | Ngày cập nhật                                                                       |
@@ -97,6 +147,32 @@
 
 
 
+
+<!-- <div>
+    <h5>Trang đăng ký<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472298-d0ef719b-d3fc-4f13-835c-fa394450d4b5.png" alt="">
+    <h5>Trang đăng nhập<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472326-287f893f-6722-4bab-893a-4e888b484280.png" alt="">
+    <h5>Trang chủ<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201471936-6c628bd5-2a3f-4525-b8af-de9e0c693d09.png" alt="">
+    <h5>Trang sản phẩm<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472421-c34c56c2-8f70-4e2d-922e-8c052874f6ff.png" alt="">
+    <h5>Trang chi tiết sản phẩm<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472459-f130d613-947f-4762-a600-4362c53dcc63.png" alt="">
+    <h5>Trang giỏ hàng<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472482-089ea289-352b-42b2-bb83-ff354981b119.png" alt="">
+    <h5>Trang thanh toán<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472507-8ff2bde3-507c-4fe1-a93b-a6bc19d188e3.png" alt="">
+    <h5>Trang liên hệ<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201472532-35826b43-6e3c-452c-b396-5e4da56c7b1d.png" alt="">
+</div> -->
+    
+    
+    
+    
+    
+<!-- <h5>Trang quản trị<h5>
+    <img src="https://user-images.githubusercontent.com/98395447/201471798-a63a40f6-40a3-454c-8dd5-40a7282d2761.png" alt=""> -->
 
 
 

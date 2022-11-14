@@ -79,7 +79,9 @@
 
 <h4 id="cai-dat">Cài đặt</h4>
 <ul>
-    <li></li> 
+    <li>Cài đặt node</li> 
+    <li>Cài đặt composer</li> 
+    <li>git clone https://github.com/toandokhanh/boookstore_laravel</li> 
 </ul>
 
 <h4 align="start" id="gd-khach" >Giao diện trang khách hàng</h4>

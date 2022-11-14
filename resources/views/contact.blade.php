@@ -122,7 +122,17 @@
 							<p>Phone:(+84) 0916814948</p>
 							<p>Fax: (+84) 0335000275</p>
 							<p>Email: <span>toanb2012046@student.ctu.edu.vns</span></p>
-							<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p>
+							<p>Follow on: <span>Facebook</span>, <span>Twitter</span></p> <br>
+							<iframe
+										src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d15715.73357121595!2d105.77034015000001!3d10.0223554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x31a0895a51d60719%3A0x9d76b0035f6d53d0!2zVHLGsOG7nW5nIMSQ4bqhaSBo4buNYyBD4bqnbiBUaMah!5e0!3m2!1svi!2s!4v1668423858919!5m2!1svi!2s"
+										width="350"
+										height="260"
+										style="border:0;"
+										allowfullscreen=""
+										loading="lazy"
+										referrerpolicy="no-referrer-when-downgrade"
+										>
+									</iframe>
 					</div>
 					</div>
 				</div>    	

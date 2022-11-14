@@ -15,31 +15,13 @@
 				<div class="section group">
 						<div class="col span_2_of_3">
 						<div class="contact-form">
-							<h2>Liên hệ với chúng tôi</h2>
-								<form class="text-[20px]" method="POST" action="{{ route('admin-feedback') }}">
-									<div>
-										<span><label>Họ và Tên</label></span>
-										<span ><input type="text" value="{{ Auth::user()->use_name }} "></span>
-									</div>
-									<div>
-										<span><label>Email</label></span>
-										<span><input type="text" value="{{ Auth::user()->email }}"></span>
-									</div>
-									<div>
-										<span><label>Số điện thoại</label></span>
-										<span><input type="text" value="{{ Auth::user()->phone }}"></span>
-									</div>
-									<div>
-										<span><label>Địa chỉ</label></span>
-										<span><input type="text" value="{{ Auth::user()->address }}"></span>
-									</div>
-									<div>
-										<span><label>Lời nhắn</label></span>
-										<span><textarea> </textarea></span>
-									</div>
-								<div>
-										<span><input type="submit" value="Gửi"></span>
-								</div>
+							<h2>Liên hệ với chúng tôi</h2> <br>
+								<form class="text-[20px]" method="POST" action="{{ route('feedback') }}">
+									@csrf
+									<input style="display: none"  type="text" name="ac_id" value="{{ Auth::user()->id }}">
+									<span><label>Lời nhắn</label></span> 
+									<span><textarea name="feedback"> </textarea></span> <br>
+									<span><input type="submit" value="Gửi"></span>
 								</form>
 						</div>
 						</div>
@@ -90,22 +72,23 @@
 					<div class="col span_2_of_3">
 					<div class="contact-form">
 						<h2>Liên hệ với chúng tôi</h2>
-							<form>
+							<form class="text-[20px]" method="POST" action="{{ route('feedbackUse') }}">
+								@csrf
 								<div>
 									<span><label>Họ và Tên</label></span>
-									<span><input type="text" value=""></span>
+									<span><input name="use_name" type="text" value=""></span>
 								</div>
 								<div>
 									<span><label>Email</label></span>
-									<span><input type="text" value=""></span>
+									<span><input name="email" type="text" value=""></span>
 								</div>
 								<div>
 									<span><label>Số điện thoại</label></span>
-									<span><input type="text" value=""></span>
+									<span><input name="phone" type="text" value=""></span>
 								</div>
 								<div>
 									<span><label>Lời nhắn</label></span>
-									<span><textarea> </textarea></span>
+									<span><textarea name="feedback"> </textarea></span>
 								</div>
 							<div>
 									<span><input type="submit" value="GỨI"></span>

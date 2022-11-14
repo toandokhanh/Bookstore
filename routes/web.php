@@ -9,6 +9,7 @@ use App\Http\Controllers\Admin\ListingController;
 use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CatetoryController;
 use App\Http\Controllers\Admin\PublisherController;
+use App\Http\Controllers\Auth\MessageController;
 use App\Http\Controllers\Auth\ProductUserController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
@@ -44,6 +45,8 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
+Route::post('/postcontact1', [MessageController::class, 'feedbackAccount'])->name('feedbackAccount');
+Route::post('/postcontact2', [MessageController::class, 'feedbackUse'])->name('feedbackUse');
 //select ra tất cẩ sản phẩm
 Route::get('/products', [ProductUserController::class, 'index'])->name('products');
 // select sản phẩm theo danh mục
@@ -102,6 +105,12 @@ Route::prefix('ad')->group(function(){
     Route::get('/confirmed', function(){
         return view('admin.confirmed');
     })->name('admin-confirmed')->middleware('admin');
+    // phản hồi khách hàng
+    Route::get('/reply', function(){
+        return view('admin.reply');
+    })->name('admin-reply')->middleware('admin');
+
+    Route::get('/reply{id}', [MessageController::class, 'update'])->name('replyuse')->middleware('admin');
     // duyệt đơn cho khách hàng
     Route::get('/confirmed/{id}', [BillController::class, 'update'])->name('confirmed_bill');
     //quản lý sản phẩm

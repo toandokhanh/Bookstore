@@ -63,4 +63,24 @@ class RegisteredUserController extends Controller
 
         return redirect(RouteServiceProvider::HOME);
     }
+
+
+    public function update(Request $request)
+    {
+        
+        $account = User::find($request->id);
+        $validate = $request->validate([
+            'use_name' => 'required',
+            'email' => 'required|email',
+            'address' => 'required|max:100',
+            'phone' => 'required|numeric',
+        ]);
+        $account->{'use_name'} = $request->use_name;
+        $account->{'email'} = $request->email;
+        $account->{'address'} = $request->address;
+        $account->{'phone'} = $request->phone;
+        $account->update();
+        $account->save();
+        return back()->withInput();
+    }
 }

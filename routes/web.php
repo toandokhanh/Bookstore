@@ -10,7 +10,9 @@ use App\Http\Controllers\Admin\ProductController;
 use App\Http\Controllers\Admin\CatetoryController;
 use App\Http\Controllers\Admin\PublisherController;
 use App\Http\Controllers\Auth\MessageController;
+use App\Http\Controllers\Auth\NewPasswordController;
 use App\Http\Controllers\Auth\ProductUserController;
+use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
@@ -63,6 +65,14 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('dashboard');
     //hồ sơ của user
     Route::view('/profile', 'profile')->name('profile');
+    // cập nhật lại hồ sơ
+    Route::post('/updateprofile', [RegisteredUserController::class, 'update'])->name('postProfile');
+    //form đổi mật khẩu
+    Route::get('/changePasswd',function () {
+        return view('forgotpasswd');
+    })->name('changePasswd');
+    // đổi mật khẩu post
+    Route::post('/updatepasswd', [NewPasswordController::class, 'index'])->name('postPasswd');
     // Route::put('profile', [])->name('profile.update');
     Route::post('/cart/{cart_id}', [CartController::class, 'index'])->name('order');
     Route::get('/cart/delete{id}', [CartController::class, 'delete'])->name('cart-delete');
@@ -78,6 +88,8 @@ Route::group(['middleware' => 'auth'], function(){
     })->name('orderhistory');
     //
     Route::get('/delete/{id}', [BillController::class, 'delete'])->name('delete_bill');
+
+    
 });
 
 //admin

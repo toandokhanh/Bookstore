@@ -1,4 +1,4 @@
-<script src="https://cdn.lordicon.com/pzdvqjsp.js">
+<script src="https://cdn.lordicon.com/pzdvqjsp.js"></script>
 <div hidden >
     {{ $messages = DB::table('messages')
     ->whereIn('messages.seen',['0'])
@@ -76,7 +76,7 @@
                     </ul>
                 </li>
                 @if (Auth::guard('admin')->user()->role === 3)
-                     <li><a class="menuitem">Quản lý người dùng </script></a>
+                     <li><a class="menuitem">Quản lý người dùng</a>
                     <ul class="submenu">
                         {{--  --}}
                         <li><a href={{ route('listing-adduser')}}>Thêm Người dùng</a> </li>

@@ -13,7 +13,7 @@
                             <label>Tên nhân viên</label>
                         </td>
                         <td>
-                            <input type="text" class="medium" value="{{  Auth::guard('admin')->user()->use_name  }}" />
+                            <input disabled style="background-color: #ccc" type="text" class="medium" value="{{  Auth::guard('admin')->user()->use_name  }}" />
                         </td>
                     </tr>
                     
@@ -22,7 +22,7 @@
                             <label>Địa chỉ</label>
                         </td>
                         <td>
-                            <input size="56" type="text" name="address" id="address" value="{{  Auth::guard('admin')->user()->address  }}">
+                            <input disabled style="background-color: #ccc" size="56" type="text" name="address" id="address" value="{{  Auth::guard('admin')->user()->address  }}">
     
                         </td>
                     </tr>
@@ -31,7 +31,7 @@
                             <label>Số điện thoại</label>
                         </td>
                         <td>
-                            <input type="text" value={{ Auth::guard('admin')->user()->phone }} class="medium" />
+                            <input disabled style="background-color: #ccc" type="text" value={{ Auth::guard('admin')->user()->phone }} class="medium" />
                         </td>
                     </tr>
                     <tr>
@@ -39,7 +39,7 @@
                             <label>Email</label>
                         </td>
                         <td>
-                            <input style="background-color: #ccc" disabled type="text" value={{ Auth::guard('admin')->user()->email }} class="medium" />
+                            <input  style="background-color: #ccc" disabled type="text" value={{ Auth::guard('admin')->user()->email }} class="medium" />
                         </td>
                     </tr>
                     <tr>

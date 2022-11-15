@@ -31,6 +31,7 @@ class ProductUserController extends Controller
         return view('products',['products'=>$products],['cate_name'=>$cate]);
     }
     public function search(Request $request){
+        
         $keys = $request->input('search');
         $products = DB::table('products')
         ->join('authors', 'products.author_id', '=', 'authors.id')
@@ -39,6 +40,7 @@ class ProductUserController extends Controller
         ->where('product_name','like','%'.$keys.'%')
         ->orWhere('author_name','like','%'.$keys.'%')
         ->orWhere('cate_name','like','%'.$keys.'%')
+        ->orWhere('product_price','like',$keys)
         ->get();
         return view('search',compact('products'),compact('keys'));
     }

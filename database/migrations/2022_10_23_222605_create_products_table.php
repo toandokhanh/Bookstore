@@ -29,7 +29,7 @@ return new class extends Migration
                 ->references('id')->on('authors');
             $table->string('product_name');
             $table->longText('describe');
-            $table->double('product_price', 10, 2);
+            $table->integer('product_price');
             $table->string('size')->nullable();
             $table->string('translater')->nullable();
             $table->string('image');

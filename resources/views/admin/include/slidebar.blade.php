@@ -19,7 +19,7 @@
             <ul class="section menu">
                <li><a class="menuitem">Chăm sóc khách hàng</a>
                     <ul class="submenu">
-                        <li><a href="#titleslogan">Thông báo</a></li>
+                        <li><a href="{{ route('amdin-turnover') }}">Doanh thu</a></li>
                         <li><a href="{{ route('admin-reply') }}">Phản hồi
                         @if (count($messages) >= 1)
                         <lord-icon

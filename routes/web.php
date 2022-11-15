@@ -15,6 +15,7 @@ use App\Http\Controllers\Auth\ProductUserController;
 use App\Http\Controllers\Auth\RegisteredUserController;
 use App\Http\Controllers\BillController;
 use App\Http\Controllers\CartController;
+use App\Http\Controllers\TurnoverController;
 use Illuminate\Foundation\Auth\EmailVerificationRequest;
 /*
 |--------------------------------------------------------------------------
@@ -125,6 +126,9 @@ Route::prefix('ad')->group(function(){
     Route::get('/reply{id}', [MessageController::class, 'update'])->name('replyuse')->middleware('admin');
     // duyệt đơn cho khách hàng
     Route::get('/confirmed/{id}', [BillController::class, 'update'])->name('confirmed_bill');
+    // quản ly daonh thu
+    Route::get('/turnover', [TurnoverController::class, 'select'])->name('amdin-turnover');
+    
     //quản lý sản phẩm
     Route::get('/listing/addproduct', [ProductController::class, 'addproduct'])->name('listing-addproduct');
     Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store-addproduct');

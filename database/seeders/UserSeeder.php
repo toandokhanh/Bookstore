@@ -60,8 +60,8 @@ class UserSeeder extends Seeder
         [   
             'cart_id' => '5',
             'use_name' => 'Khach',
-            'address' => 'demo',
-            'phone' => 'demo',
+            'address' => 'test địa chỉ',
+            'phone' => '0931231723',
             'email' => 'demo@localhost.com',
             'gender' => '1',
             'role' => '1',

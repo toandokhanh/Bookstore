@@ -1,7 +1,7 @@
 <div hidden >
     {{ $bills = DB::table('bills')
     ->join('accounts', 'bills.ac_id', '=', 'accounts.id')
-    ->select('bills.*','accounts.use_name','accounts.email','accounts.phone')
+    ->select('bills.*','accounts.use_name','accounts.email','accounts.phone','accounts.address')
     ->whereIn('bills.confirmed',[0])
     ->get();
     }}
@@ -35,6 +35,7 @@
                         <th>Tên khách hàng</th>
                         <th>Email</th>
                         <th>Số điện thoại</th>
+                        <th>Địa chỉ</th>
                         <th>Ngày tạo</th>
                         <th>Hành động</th>
                         <th>Tổng tiền</th>
@@ -48,6 +49,7 @@
                         <td>{{ $bill->use_name }}</td>
                         <td>{{ $bill->email }}</td>
                         <td>{{ $bill->phone }}</td>
+                        <td>{{ $bill->address }}</td>
                         <td>{{ $bill->created_at }}</td>
                         <td><a style="color: rgb(59, 59, 246)" href="#chua-update">Chi tiết đơn hàng</a></td>
                         <td>{{ $bill->total }}</td>

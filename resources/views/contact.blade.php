@@ -16,7 +16,7 @@
 						<div class="col span_2_of_3">
 						<div class="contact-form">
 							<h2>Liên hệ với chúng tôi</h2> <br>
-								<form class="text-[20px]" method="POST" action="{{ route('feedback') }}">
+								<form class="text-[20px]" method="POST" action="{{ route('feedbackAccount') }}">
 									@csrf
 									<input style="display: none"  type="text" name="ac_id" value="{{ Auth::user()->id }}">
 									<span><label>Lời nhắn</label></span> 

@@ -152,6 +152,9 @@
 | 32  | [Bill 3](https://github.com/toanvippro/boookstore_laravel/commit/778203165a53fa592b3cb0413233ff58c7be6fa1)               |11/11/2022            |
 | 33  | [Search](https://github.com/toandokhanh/boookstore_laravel/commit/89946478d5abd7817031df622a3b4bde56558c5f)               |12/11/2022            |
 | 34  | [Map](https://github.com/toandokhanh/boookstore_laravel/commit/b4aabfd5c2a1309b4264bb7ebe3626fe634d66b3)               |15/11/2022            |
+| 35  | [Change password](https://github.com/toandokhanh/boookstore_laravel/commit/e69ddb67f6d992955a9c27cb91905f0cc75fe6af)               |15/11/2022            |
+
+
 
 
 

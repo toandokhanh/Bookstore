@@ -64,15 +64,14 @@ class ProductController extends Controller
         ]);
         if($request->hasFile('image')){
             $name = $request->file('image')->getClientOriginalName();
-            $path = $request->file('image')->storeAs(
-                'public',$name
-            );
-            $path = '/'.str_replace("public", "storage", $path);
-            
+            $path = $request->file('image')->move(public_path('storage'), $name);
+            $request->merge(['product_image' => $name]);
+            $image = '/storage/'.$request->product_image;
         }
+        
         $model->{'ac_id'} = $request->input('ac_id');
         $model->{'product_name'} = $request->input('product_name');
-        $model->{'image'} = $path;
+        $model->{'image'} = $image;
         $model->{'cate_id'} = $request->input('cate_id');
         $model->{'publisher_id'} = $request->input('publisher_id');
         $model->{'author_id'} = $request->input('author_id');

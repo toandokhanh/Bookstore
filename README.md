@@ -83,7 +83,7 @@
 <ul>
     <li>Cài node</li> 
     <li>Cài composer</li> 
-    <li>git clone https://github.com/toandokhanh/boookstore_laravel</li>
+    <li>git clone https://github.com/toandokhanh/bookstore_laravel</li>
     <li>Tạo 1 Database đặt tên là bookstore</li>
     <li>cd boookstore_laravel</li>
     <li>Chạy lệnh php artisan migrate:fresh --seed </li>

@@ -51,13 +51,13 @@ class SliderController extends Controller
         
         if($request->hasFile('slider_image')){
             $name = $request->file('slider_image')->getClientOriginalName();
-            $path = $request->file('slider_image')->storeAs(
-                'public',$name
-            );
-            $path = '/'.str_replace("public", "storage", $path);
+            $path = $request->file('slider_image')->move(public_path('storage'), $name);
+            // $path = '/'.str_replace("public", "storage", $path);
+            $request->merge(['image' => $name]);
+            $image = '/storage/'.$request->image;
         }
         $model->{'slider_name'} = $request->input('slider_name');
-        $model->{'slider_image'} = $path;
+        $model->{'slider_image'} = $image;
         $model->save();
         return view('admin.addslider')."<span class='suc'>Thêm Thanh trượt thành công</span>";
         exit;

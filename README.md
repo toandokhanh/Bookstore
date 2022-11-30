@@ -78,7 +78,7 @@
 
 <h4 id="cai-dat">Cài đặt</h4>
 
-###### Lưu ý: Để chạy được bookstore project cần cài đặt các phiên bản mới nhất
+###### Lưu ý: Để chạy được bookstore project cần cài đặt php 8.0.19 trở lên
 
 <ul>
     <li>Cài node</li> 

@@ -63,7 +63,7 @@
 
 
 
-
+<!--  
 <h4 id="tinh-nang">Tính năng</h4>
 <ul>
     <li>Đặt sách</li> 
@@ -85,7 +85,7 @@
     <li>Quản lý người dùng</li>
     
 </ul>
-
+-->
 <h4 id="cai-dat">Cài đặt</h4>
 
 ###### Lưu ý: Để chạy được bookstore project cần cài đặt php 8.0.19 trở lên
@@ -108,7 +108,7 @@
 <img src="https://user-images.githubusercontent.com/98395447/201474598-6dd76041-3aa2-4438-a74f-3d84cccab6c1.png" alt="">
 
 
-
+<!-- 
 <h4 id="nguon">Nguồn tham khảo</h4>
 <ul>
     <li><a href="https://laravel.com/docs/9.x">Documentation Laravel 9</a></li>  
@@ -122,7 +122,8 @@
     
 
 </ul>
-
+-->
+<!-- 
 <h4 id="lich-cap-nhat">Lịch cập nhật các chức năng </h4>
 
 
@@ -167,8 +168,7 @@
 
 
 
-
-
+-->
 
 <!-- <div>
     <h5>Trang đăng ký<h5>

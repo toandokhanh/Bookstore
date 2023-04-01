@@ -12,7 +12,6 @@
 <ul>
     <li><a href="#tech-stack">Tech Stack</a></li>
     <li><a href="#extensions">Extensions</a></li>
-    <li><a href="#features">Features</a></li>
     <li><a href="#installation">Installation</a></li>
     <li><a href="#customer-ui">Introduction to Customer UI</a></li>
     <li><a href="#admin-ui">Introduction to Admin UI</a></li>
@@ -42,15 +41,6 @@
     <li>Bracket Pair Colorization Toggler</li> 
     <li>JavaScript (ES6) code snippets</li> 
     <li>Vscode-icons</li> 
-</ul>
-<h4 id="features">Features</h4>
-The bookstore project is a web-based application designed to provide users with a convenient way to purchase books online. Some of its features include:
-<ul>
-    <li>User registration and login</li>
-    <li>Browsing and searching books</li>
-    <li>Adding books to cart</li>
-    <li>Viewing cart and adjusting quantity</li>
-    <li>Viewing order history and details</li>
 </ul>
 <h4 id="installation">Installation</h4>
 <p><strong>Note:</strong> To run the Bookstore project, you need to install PHP 8.0.19 or higher.</p>

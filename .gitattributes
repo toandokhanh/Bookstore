@@ -1,7 +1,7 @@
 * text=auto
 
 *.blade.php linguist-language=php
-*.js linguist-language=php
+*.js linguist-language=javascript
 *.css linguist-language=css
 *.html linguist-language=html
 *.md diff=markdown

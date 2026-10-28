@@ -4,7 +4,7 @@
     ->whereIn('messages.seen',['0'])
     ->get();
     }}
-</div> 
+</div>
 <div hidden >
     {{ $bills = DB::table('bills')
     ->join('accounts', 'bills.ac_id', '=', 'accounts.id')
@@ -12,7 +12,7 @@
     ->whereIn('bills.confirmed',[0])
     ->get();
     }}
-</div>   
+</div>
 <div class="grid_2">
     <div class="box sidemenu">
         <div class="block" id="section-menu">
@@ -31,7 +31,7 @@
                         </lord-icon>
                         @endif
                         </a></li>
-                        <li><a href="{{ route('admin-confirmed') }}">Duyệt đơn 
+                        <li><a href="{{ route('admin-confirmed') }}">Duyệt đơn
                             @if (count($bills) >= 1)
                             <lord-icon
                                 src="https://cdn.lordicon.com/dnmvmpfk.json"
@@ -42,7 +42,7 @@
                             </lord-icon>
                         @endif
                         </a></li>
-                        
+
                     </ul>
                 </li>
                 <li><a class="menuitem">Tác giả</a>
@@ -57,7 +57,7 @@
                         <li><a href="{{ route('listing-index',['model'=>'Publisher'])}}">Danh nhà xuất bản</a></li>
                     </ul>
                 </li>
-				<li><a class="menuitem">Tùy chọn thanh trượt</a>
+        <li><a class="menuitem">Tùy chọn thanh trượt</a>
                     <ul class="submenu">
                         <li><a href={{ route('listing-addslider')}}>Thêm thanh trượt</a> </li>
                         <li><a href={{ route('listing-index',['model'=>'Slider'])}}>Danh sách thanh trượt</a> </li>
@@ -66,13 +66,13 @@
                 <li><a class="menuitem">Danh mục</a>
                     <ul class="submenu">
                         <li><a href={{ route('listing-addcatetory')}}>Thêm danh mục</a> </li>
-                        <li><a href={{ route('listing-index',['model'=>'Catetorys'])}}>Danh sách danh mục</a> </li>
+                        <li><a href={{ route('listing-index',['model'=>'Category'])}}>Danh sách danh mục</a> </li>
                     </ul>
                 </li>
                 <li><a class="menuitem">Tùy chọn sản phẩm</a>
                     <ul class="submenu">
                         <li><a href={{ route('listing-addproduct')}}>Thêm sản phẩm</a> </li>
-                        <li><a href={{ route('listing-index',['model'=>'Products'])}}>Danh sách sản phẩm</a> </li>
+                        <li><a href={{ route('listing-index',['model'=>'Product'])}}>Danh sách sản phẩm</a> </li>
                     </ul>
                 </li>
                 @if (Auth::guard('admin')->user()->role === 3)

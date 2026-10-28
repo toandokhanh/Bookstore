@@ -4,7 +4,7 @@ use App\Models\Publisher;
 use App\Models\Role;
 use Database\Seeders\AuthorSeeder;
 use Database\Seeders\CartSeeder;
-use Database\Seeders\CatetorySeeder;
+use Database\Seeders\CategorySeeder;
 use Database\Seeders\ProductSeeder;
 use Database\Seeders\PublisherSeeder;
 use Database\Seeders\RoleSeeder;
@@ -21,7 +21,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        $this->call(CatetorySeeder::class);
+        $this->call(CategorySeeder::class);
         $this->call(SliderSeeder::class);
         $this->call(AuthorSeeder::class);
         $this->call(PublisherSeeder::class);

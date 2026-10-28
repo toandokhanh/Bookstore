@@ -1,13 +1,13 @@
 <?php
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Admin\Usercontroller;
+use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\Admin\AdminController;
 use App\Http\Controllers\Admin\AuthorController;
 use App\Http\Controllers\Admin\SliderController;
 use App\Http\Controllers\Admin\ListingController;
 use App\Http\Controllers\Admin\ProductController;
-use App\Http\Controllers\Admin\CatetoryController;
+use App\Http\Controllers\Admin\CategoryController;
 use App\Http\Controllers\Admin\PublisherController;
 use App\Http\Controllers\Auth\MessageController;
 use App\Http\Controllers\Auth\NewPasswordController;
@@ -134,15 +134,15 @@ Route::prefix('ad')->group(function(){
     //ok
 
     // Quản lý danh mục
-    Route::get('/listing/addcatetory', [CatetoryController::class, 'addcatetory'])->name('listing-addcatetory');
-    Route::post('/listing/addcatetory', [CatetoryController::class, 'store'])->name('listing-store-addcatetory');
-    Route::post('/catetory/update/{id}', [CatetoryController::class, 'update'])->name('listing-update-catetory');
+    Route::get('/listing/addcatetory', [CategoryController::class, 'addcatetory'])->name('listing-addcatetory');
+    Route::post('/listing/addcatetory', [CategoryController::class, 'store'])->name('listing-store-addcatetory');
+    Route::post('/catetory/update/{id}', [CategoryController::class, 'update'])->name('listing-update-catetory');
     //ok
 
     //Quản lý người dùng
-    Route::get('/listing/adduser', [Usercontroller::class, 'adduser'])->name('listing-adduser');
-    Route::post('/listing/adduser', [Usercontroller::class, 'store'])->name('listing-store-adduser');
-    Route::post('/user/update/{id}', [Usercontroller::class, 'update'])->name('listing-update-user');
+    Route::get('/listing/adduser', [UserController::class, 'adduser'])->name('listing-adduser');
+    Route::post('/listing/adduser', [UserController::class, 'store'])->name('listing-store-adduser');
+    Route::post('/user/update/{id}', [UserController::class, 'update'])->name('listing-update-user');
     //ok
 
     //Quản lý tác giả

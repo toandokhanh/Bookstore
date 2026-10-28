@@ -28,7 +28,7 @@
 <div class="grid_10">
     <div class="box round first grid">
         <h2>Sửa sản phẩm</h2>
-        <div class="block">               
+        <div class="block">
          <form action="{{ route('listing-update-product',['id'=>$id])}}" method="post" enctype="multipart/form-data" >
             @csrf
             {{-- @method('put') --}}
@@ -38,7 +38,7 @@
                         <label hidden>Mã người tạo</label>
                     </td>
                     <td>
-                            <input hidden name="ac_id" type="text" value="{{ Auth::guard('admin')->user()->id; }}" class="medium" />   
+                            <input hidden name="ac_id" type="text" value="{{ Auth::guard('admin')->user()->id; }}" class="medium" />
                     </td>
                 </tr>
                 <tr>
@@ -46,13 +46,13 @@
                         <label>Tên sản phẩm</label>
                     </td>
                     <td>
-                        @foreach ($products as $product) 
-                        
+                        @foreach ($products as $product)
+
                         <input required name="product_name" type="text" value="{{$product->product_name }}" placeholder="Nhập tên sản phẩm" class="medium" />
-                        
+
                     </td>
                 </tr>
-				<tr>
+        <tr>
                     <td>
                         <label>Thể loại</label>
                     </td>
@@ -61,15 +61,15 @@
                             <option>Chọn thể loại sách</option>
                             @foreach ($catetorys as $catetory)
                                 @if ($catetory->id === $product->cate_id)
-                                <option  selected value="{{ $product->cate_id }}">{{ $catetory->cate_name }}</option>   
+                                <option  selected value="{{ $product->cate_id }}">{{ $catetory->cate_name }}</option>
                                 @endif
-                                <option value="{{ $catetory->id }}">{{ $catetory->cate_name }}</option>   
+                                <option value="{{ $catetory->id }}">{{ $catetory->cate_name }}</option>
                             @endforeach
-                            
+
                         </select>
                     </td>
                 </tr>
-				<tr>
+        <tr>
                     <td>
                         <label>Nhà xuất bản</label>
                     </td>
@@ -78,7 +78,7 @@
                             <option>Chọn nhà xuất bản</option>
                             @foreach ($publishers as $publisher)
                             @if ($publisher->id === $product->publisher_id)
-                                <option selected value="{{ $product->publisher_id }}">{{ $publisher->publisher_name }}</option>   
+                                <option selected value="{{ $product->publisher_id }}">{{ $publisher->publisher_name }}</option>
                             @endif
                             <option  value="{{ $publisher->id }}">{{ $publisher->publisher_name }}</option>
                             @endforeach
@@ -86,7 +86,7 @@
                         </select>
                     </td>
                 </tr>
-				<tr>
+        <tr>
                     <td>
                         <label>Tác giả</label>
                     </td>
@@ -95,14 +95,14 @@
                             <option>Chọn tác giả</option>
                             @foreach ($authors as $author)
                             @if ($author->id === $product->author_id)
-                                <option selected value="{{ $product->author_id }}">{{ $author->author_name }}</option>   
+                                <option selected value="{{ $product->author_id }}">{{ $author->author_name }}</option>
                             @endif
                             <option value="{{ $author->id }}">{{ $author->author_name }}</option>
                             @endforeach
                         </select>
                     </td>
                 </tr>
-				 <tr>
+         <tr>
                     <td style="vertical-align: top; padding-top: 9px;">
                         <label>Mô tả</label>
                     </td>
@@ -110,7 +110,7 @@
                         <textarea rows="5" cols="66" aria-valuemax="123" required name="describe" width='100px' class="tinymce">{{ $product->describe }}</textarea>
                     </td>
                 </tr>
-				<tr>
+        <tr>
                     <td>
                         <label>Giá</label>
                     </td>
@@ -173,7 +173,7 @@
                     </td>
                     @endforeach
                 </tr>
-				<tr>
+        <tr>
                     <td></td>
                     <td>
                         <input type="submit" name="submit" Value="Thêm" />

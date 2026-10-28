@@ -4,8 +4,8 @@ namespace App\Http\Controllers;
 
 use App\Models\Bill;
 use App\Models\Cart;
-use App\Models\Cart_detail;
-use App\Models\Products;
+use App\Models\CartItem;
+use App\Models\Product;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -16,13 +16,13 @@ class BillController extends Controller
         abort_unless((int) $cart_id === (int) $request->user()->cart_id, 403);
         DB::transaction(function () use ($request, $cart_id) {
             Cart::whereKey($cart_id)->lockForUpdate()->firstOrFail();
-            $details = Cart_detail::where('cart_id', $cart_id)->lockForUpdate()->get();
+            $details = CartItem::where('cart_id', $cart_id)->lockForUpdate()->get();
             abort_if($details->isEmpty(), 422, 'The cart is empty.');
             $total = 30000;
             $amount = 0;
             foreach ($details as $detail) {
                 abort_unless($detail->quantity > 0 && $detail->quantity <= 100, 422);
-                $product = Products::findOrFail($detail->product_id);
+                $product = Product::findOrFail($detail->product_id);
                 $total += $product->product_price * $detail->quantity;
                 $amount += $detail->quantity;
             }
@@ -33,7 +33,7 @@ class BillController extends Controller
             $bill->bill_amount = $amount;
             $bill->confirmed = false;
             $bill->save();
-            Cart_detail::where('cart_id', $cart_id)->delete();
+            CartItem::where('cart_id', $cart_id)->delete();
         });
         return view('checkout');
     }

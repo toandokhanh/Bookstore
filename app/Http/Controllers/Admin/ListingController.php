@@ -6,18 +6,18 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Redis;
-use App\Models\Products;
+use App\Models\Product;
 use App\Models\Author;
 use App\Models\Publisher;
 use App\Models\Slider;
-use App\Models\Catetorys;
+use App\Models\Category;
 use App\Models\User;
 
 class ListingController extends Controller
 {
     private function modelClass($name)
     {
-        $models = ['Products', 'Author', 'Publisher', 'Slider', 'Catetorys', 'User'];
+        $models = ['Product', 'Author', 'Publisher', 'Slider', 'Category', 'User'];
         $name = ucfirst($name);
         abort_unless(in_array($name, $models, true), 404);
         return '\\App\\Models\\'.$name;

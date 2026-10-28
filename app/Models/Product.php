@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Products extends Model
+class Product extends Model
 {
     use HasFactory;
     public function listingConfig(){
@@ -19,7 +19,7 @@ class Products extends Model
                 'field'=>'product_name',
                 'name'=>'Tên sản phẩm',
                 'type'=>'text'
-            ),  
+            ),
             array(
                 'field'=>'product_price',
                 'name'=>'Giá',

@@ -6,7 +6,7 @@ This is a historical academic prototype. The 2026 maintenance pass updates confi
 
 ## Stack and structure
 
-- Laravel 9, PHP 8, MySQL/PostgreSQL, Blade and Laravel Breeze.
+- Laravel 13, PHP 8.3+, MySQL/PostgreSQL, Blade and Laravel Breeze.
 - Tailwind CSS, jQuery and Vite for the interface and assets.
 - `app/Http/Controllers/`: customer and administration flows.
 - `database/`: schema migrations and synthetic demo seed data.
@@ -14,7 +14,7 @@ This is a historical academic prototype. The 2026 maintenance pass updates confi
 
 ## Local setup
 
-Use an isolated local database. Dependency versions in the lockfiles describe the original project; review compatibility before installing them on a modern runtime.
+Use an isolated local database. The updated lockfiles target PHP 8.3+ and Node.js 24.12+. Enable the PHP extensions required by Composer, including XMLWriter for PHPUnit.
 
 ```sh
 git clone https://github.com/toandokhanh/Bookstore.git
@@ -43,3 +43,12 @@ The seeders populate demo data and are intended for an empty local database. Acc
 ## Scope
 
 This coursework demonstrates a small store workflow. It does not integrate a payment provider or production fulfillment. The legacy schema stores order totals in a floating-point column; a production redesign should use fixed-precision amounts and order-item snapshots. See [third-party notices](THIRD_PARTY_NOTICES.md).
+
+
+## Dependency maintenance (2026-10-28)
+
+JavaScript lockfiles were regenerated for Node.js 24.12+. Frontend builds use Vite; run `npm ci` and then the documented development command from each package directory. Client configuration uses public `VITE_` variables; never place credentials there.
+
+Model classes use `Product`, `Category` and `CartItem`; their database table names remain compatible with the existing schema. The old Laravel application bootstrap layout is retained. No database migration or seed was executed during maintenance.
+
+Lockfile advisory checks, source parsing and lightweight regression tests were performed during maintenance. **No application dependency environment was installed, and no full frontend build, database integration, model inference or training was run.** These archived prototypes still need runtime/integration verification before deployment. GitHub notifications may remain in the inbox after an alert is resolved; review the current Dependabot alert state.

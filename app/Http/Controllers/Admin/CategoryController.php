@@ -3,9 +3,9 @@
 namespace App\Http\Controllers\Admin;
 use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\Controller;
-use App\Models\Catetorys;
+use App\Models\Category;
 use Illuminate\Http\Request;
-class CatetoryController extends Controller
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -42,7 +42,7 @@ class CatetoryController extends Controller
      */
     public function store(Request $request)
     {
-        $model = 'App\Models\Catetorys';
+        $model = 'App\Models\Category';
         $model = new $model;
         $validate = $request->validate([
             'cate_name' => 'required'
@@ -85,15 +85,15 @@ class CatetoryController extends Controller
      */
        //update Catetory
        public function update(Request $request, $id){
-        $catetorys = new Catetorys;
-        $catetorys = Catetorys::find($id);
+        $catetorys = new Category;
+        $catetorys = Category::find($id);
         $validate = $request->validate([
             'cate_name' => 'required',
         ]);
         $catetorys->{'cate_name'} = $request->input('cate_name');
         $catetorys->update();
         $catetorys->save();
-        return redirect()->route('listing-index',['model'=>'Catetorys'])->with('thongbao','Cập nhật thông tin danh mục thành công');
+        return redirect()->route('listing-index',['model'=>'Category'])->with('thongbao','Cập nhật thông tin danh mục thành công');
     }
 
     /**

@@ -23,7 +23,7 @@ class ProductController extends Controller
             return redirect()->route('admin-login');
         }
     }
-    
+
 
     public function index(Request $request)
     {
@@ -58,17 +58,18 @@ class ProductController extends Controller
         // var_dump($request->all());
         $model = 'App\Models\Products';
         $model = new $model;
-        
+
         $validate = $request->validate([
             'product_price' => 'required|numeric'
         ]);
+        $request->validate(['image' => 'required|file|mimes:jpg,jpeg,png,gif,webp|max:5120']);
         if($request->hasFile('image')){
-            $name = $request->file('image')->getClientOriginalName();
+            $name = (string) \Illuminate\Support\Str::uuid().'.'.$request->file('image')->extension();
             $path = $request->file('image')->move(public_path('storage'), $name);
             $request->merge(['product_image' => $name]);
             $image = '/storage/'.$request->product_image;
         }
-        
+
         $model->{'ac_id'} = $request->input('ac_id');
         $model->{'product_name'} = $request->input('product_name');
         $model->{'image'} = $image;

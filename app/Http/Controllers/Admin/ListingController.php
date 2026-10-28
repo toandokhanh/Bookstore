@@ -15,9 +15,17 @@ use App\Models\User;
 
 class ListingController extends Controller
 {
+    private function modelClass($name)
+    {
+        $models = ['Products', 'Author', 'Publisher', 'Slider', 'Catetorys', 'User'];
+        $name = ucfirst($name);
+        abort_unless(in_array($name, $models, true), 404);
+        return '\\App\\Models\\'.$name;
+    }
+
     //select
-    public function index(Request $request, $modelName){   
-        $model = '\App\Models\\'.ucfirst($modelName); 
+    public function index(Request $request, $modelName){
+        $model = $this->modelClass($modelName);
         $records = $model::paginate(100);
         $model = new $model;
         $configs = $model->listingConfig();
@@ -37,23 +45,23 @@ class ListingController extends Controller
     }
     //edit
     public function edit($model, $id){
-        $$model = '\App\Models\\'.ucfirst($model); 
+        $$model = $this->modelClass($model);
         // dd($$model); exit;
         return view('admin.edit'.strtolower($model),[
             'id' => $id,
             'model' => $model
         ], compact($model));
     }
-    
+
 
     //update User
 
-    // xóa 
+    // xóa
     public function delete($model ,$id)
     {
-        $$model = '\App\Models\\'.ucfirst($model); 
+        $$model = $this->modelClass($model);
         $$model::where('id', $id)->delete();
         return redirect()->route('listing-index',['model'=>$model]);
     }
-   
+
 }

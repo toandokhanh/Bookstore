@@ -3,7 +3,7 @@
     ->whereIn('messages.seen',['0'])
     ->get();
     }}
-</div>   
+</div>
 @include('admin.include.header')
 @include('admin.include.slidebar')
 <style>
@@ -12,13 +12,13 @@
       border-collapse: collapse;
       width: 100%;
     }
-    
+
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
-    
+
     tr:nth-child(even) {
       background-color: #dddddd;
     }
@@ -39,7 +39,7 @@
                     </tr>
                 </thead>
                 <tbody>
-    
+
                     @foreach ($messages as $ismessages)
                     <tr>
                         <td>{{ $ismessages->use_name }}</td>
@@ -48,20 +48,20 @@
                         <td>{{ $ismessages->created_at }}</td>
                         <td>{{ $ismessages->feedback }}</td>
                         <td>
-                                <a href="{{ route('replyuse',['id' =>$ismessages->id]) }}">
+                                <form method="POST" action="{{ route('replyuse',['id' =>$ismessages->id]) }}" style="display:inline">@csrf<button type="submit">
                                     <lord-icon
                                     src="https://cdn.lordicon.com/egiwmiit.json"
                                     trigger="hover"
                                     colors="primary:#30e849"
                                     style="width:22px;height:22px;margin-left:10px;">
                                     </lord-icon>
-                                </a>
+                                </button></form>
                         </td>
                     </tr>
-                    @endforeach	
+                    @endforeach
                 </tbody>
             </table>
-        </div> 
+        </div>
     </div>
 </div>
 

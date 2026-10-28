@@ -16,66 +16,70 @@ class UserSeeder extends Seeder
      */
     public function run()
     {
+        $demoPassword = env('DEMO_SEED_PASSWORD');
+        if (!$demoPassword || strlen($demoPassword) < 12) {
+            throw new \RuntimeException('Set DEMO_SEED_PASSWORD (at least 12 characters) before seeding.');
+        }
         $data = array(
-        [   
+        [
             'cart_id' => '1',
-            'use_name' => 'Do Khanh Toan',
-            'address' => 'An Khánh, Phường An Khánh, Ninh Kiều, Cần Thơ, Việt Nam',
-            'phone' => '0913682461',
-            'email' => 'toan@localhost.com',
+            'use_name' => 'Demo User',
+            'address' => 'Demo address',
+            'phone' => '0000000000',
+            'email' => 'demo1@example.com',
             'gender' => '1',
             'role' => '3',
-            'password' => Hash::make('REDACTED_DEMO_PASSWORD'),
+            'password' => Hash::make($demoPassword),
         ],
-        [   
+        [
             'cart_id' => '2',
-            'use_name' => 'Huynh Trung Tin',
-            'address' => '30/4, Phường 3, Ô Môn, Cần Thơ, Việt Nam',
-            'phone' => '0913682123',
-            'email' => 'tin@localhost.com',
+            'use_name' => 'Demo User',
+            'address' => 'Demo address',
+            'phone' => '0000000000',
+            'email' => 'demo2@example.com',
             'gender' => '1',
             'role' => '2',
-            'password' => Hash::make('REDACTED_DEMO_PASSWORD'),
+            'password' => Hash::make($demoPassword),
         ],
-        [   
+        [
             'cart_id' => '3',
-            'use_name' => 'Dinh Thai Hop',
-            'address' => 'ĐT927, Cây Dương, Phụng Hiệp, Hậu Giang, Việt Nam',
-            'phone' => '091368238',
-            'email' => 'hop@localhost.com',
+            'use_name' => 'Demo User',
+            'address' => 'Demo address',
+            'phone' => '0000000000',
+            'email' => 'demo3@example.com',
             'gender' => '1',
             'role' => '1',
-            'password' => Hash::make('REDACTED_DEMO_PASSWORD'),
+            'password' => Hash::make($demoPassword),
         ],
-        [   
+        [
             'cart_id' => '4',
-            'use_name' => 'Le Thanh Hoai',
-            'address' => '37 Nam Sông Hậu, Vĩnh phước, Vĩnh Châu, Sóc Trăng, Việt Nam',
-            'phone' => '091368230',
-            'email' => 'hoai@localhost.com',
+            'use_name' => 'Demo User',
+            'address' => 'Demo address',
+            'phone' => '0000000000',
+            'email' => 'demo4@example.com',
             'gender' => '1',
             'role' => '1',
-            'password' => Hash::make('REDACTED_DEMO_PASSWORD'),
+            'password' => Hash::make($demoPassword),
         ],
-        [   
+        [
             'cart_id' => '5',
-            'use_name' => 'Khach',
-            'address' => 'test địa chỉ',
-            'phone' => '0931231723',
-            'email' => 'demo@localhost.com',
+            'use_name' => 'Demo User',
+            'address' => 'Demo address',
+            'phone' => '0000000000',
+            'email' => 'demo5@example.com',
             'gender' => '1',
             'role' => '1',
-            'password' => Hash::make('REDACTED_DEMO_PASSWORD'),
+            'password' => Hash::make($demoPassword),
         ],
-        [   
+        [
             'cart_id' => '6',
-            'use_name' => 'Admin',
-            'address' => 'demo admin',
-            'phone' => 'demo admin',
-            'email' => 'admin@localhost.com',
+            'use_name' => 'Demo User',
+            'address' => 'Demo address',
+            'phone' => '0000000000',
+            'email' => 'demo6@example.com',
             'gender' => '1',
             'role' => '3',
-            'password' => Hash::make('REDACTED_DEMO_PASSWORD'),
+            'password' => Hash::make($demoPassword),
         ],
         );
         DB::table('accounts')->insert($data);

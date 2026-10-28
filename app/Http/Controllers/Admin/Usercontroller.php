@@ -44,19 +44,16 @@ class Usercontroller extends Controller
  */
     //
     public function store(Request $request)
-    {   
+    {
         // tạo 1 cart mới
-        DB::table('carts')
-        ->insert(['id'=>null,'ac_id'=>null]);
-        // select ra id của cart mới tạo
-        $cart_id = DB::table('carts')->max('id');
+        $cart_id = DB::table('carts')->insertGetId(['ac_id' => null]);
         // tạo mới người dùng
         $model = 'App\Models\User';
         $model = new $model;
         $validate = $request->validate([
             'phone' => 'required|numeric',
             'email'=> 'required|email',
-            'password'=> 'required|min:8'
+            'password'=> 'required|string|min:12'
         ]);
         $hash = $request->input('password');
         $hashed = Hash::make($hash);
@@ -111,7 +108,7 @@ class Usercontroller extends Controller
             'email' => 'required|email',
             'gender' => 'required|numeric',
             'role' => 'required|numeric',
-            'password' => 'required'
+            'password' => 'nullable|string|min:12'
         ]);
         $users->{'use_name'} = $request->input('use_name');
         $users->{'address'} = $request->input('address');
@@ -119,7 +116,9 @@ class Usercontroller extends Controller
         $users->{'email'} = $request->input('email');
         $users->{'gender'} = $request->input('gender');
         $users->{'role'} = $request->input('role');
-        $users->{'password'} = $request->input('password');
+        if ($request->filled('password')) {
+            $users->{'password'} = Hash::make($request->input('password'));
+        }
         $users->update();
         $users->save();
         return redirect()->route('listing-index',['model'=>'User'])->with('thongbao','Cập nhật thông tin Người dùng thành công');

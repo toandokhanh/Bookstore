@@ -5,7 +5,7 @@
         <div class="grid_10">
             <div class="box round first grid">
                 <h2>Danh sách</h2>
-                <div class="block">        
+                <div class="block">
                     <table class="data display datatable" id="example">
 					<thead>
 						<tr>
@@ -34,11 +34,11 @@
 											@case('1')
 											<td>Khách hàng</td>
 											@break
-											@case('2') 
+											@case('2')
 											<td>Nhân viên</td>
 											@break
-											@case('3') 
-											<td>Quản trị viên</td> 
+											@case('3')
+											<td>Quản trị viên</td>
 											@break
 										@endswitch
 									@break
@@ -46,12 +46,12 @@
 							@endforeach
 
 							<td>
-								<a href="{{ route('listing-edit',['model' => $model ,'id' => $record['id']]) }}">Sửa</a> || 
-								<a href="{{ route('listing-delete',['model' => $model,'id' => $record['id']]) }}">Xóa</a></td>
+								<a href="{{ route('listing-edit',['model' => $model ,'id' => $record['id']]) }}">Sửa</a> ||
+								<form method="POST" action="{{ route('listing-delete',['model' => $model,'id' => $record['id']]) }}" style="display:inline">@csrf<button type="submit">Xóa</button></form></td>
 							{{-- <td><a href="">Sửa</a> || <a href="">Xóa</a></td> --}}
 						</tr>
 						@endforeach
-						
+
 					</tbody>
 				</table>
                </div>

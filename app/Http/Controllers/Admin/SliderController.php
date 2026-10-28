@@ -3,13 +3,13 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
-use App\Models\slider;
+use App\Models\Slider;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 
 class SliderController extends Controller
 {
-    
+
     public function addslider(Request $request){
         if(Auth::guard('admin')->check()){
             return view('admin.addslider');
@@ -48,7 +48,7 @@ class SliderController extends Controller
         //
         $model = 'App\Models\Slider';
         $model = new $model;
-        
+
         if($request->hasFile('slider_image')){
             $name = $request->file('slider_image')->getClientOriginalName();
             $path = $request->file('slider_image')->move(public_path('storage'), $name);
@@ -92,10 +92,10 @@ class SliderController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-   
+
     // update Slider
     public function update(Request $request, $id){
-        $sliders = new slider;
+        $sliders = new Slider;
         $sliders = Slider::find($id);
         $validate = $request->validate([
             'slider_name' => 'required',

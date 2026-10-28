@@ -5,7 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class catetorys extends Model
+class Catetorys extends Model
 {
     use HasFactory;
     public function listingConfig(){
@@ -19,7 +19,7 @@ class catetorys extends Model
                 'field'=>'cate_name',
                 'name'=>'Tên danh mục',
                 'type'=>'text'
-            ),  
+            ),
         );
     }
 }

@@ -34,28 +34,26 @@ class RegisteredUserController extends Controller
      */
     public function store(Request $request)
     {
-        // tạo 1 cart mới
-        DB::table('carts')
-        ->insert(['id'=>null,'ac_id'=>null]);
-        // select ra id của cart mới tạo
-        $cart_id = DB::table('carts')->max('id');
         $request->validate([
             'name' => ['required', 'string', 'max:255'],
             'email' => ['required', 'string', 'email', 'max:255', 'unique:accounts'],
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);
         // var_dump($request); exit;
-        $user = User::create([
-            
+        $user = DB::transaction(function () use ($request) {
+            $cart_id = DB::table('carts')->insertGetId(['ac_id' => null]);
+            return User::create([
+
             'cart_id' => $cart_id,
             'use_name' => $request->name,
             'address' => $request->address,
             'phone' => $request->phone,
             'email' => $request->email,
             'gender' => $request->gender,
-            'role' => $request->role,
+            'role' => 1,
             'password' => Hash::make($request->password),
-        ]);
+            ]);
+        });
 
         event(new Registered($user));
 
@@ -67,8 +65,8 @@ class RegisteredUserController extends Controller
 
     public function update(Request $request)
     {
-        
-        $account = User::find($request->id);
+
+        $account = $request->user();
         $validate = $request->validate([
             'use_name' => 'required',
             'email' => 'required|email',

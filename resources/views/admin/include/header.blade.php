@@ -50,7 +50,7 @@
                         <ul class="inline-ul floatleft">
                             <li>Xin chào {{ Auth::guard('admin')->user()->use_name; }}</li>
                             <span class="text-[#fff]">|</span>
-                            <li><a href={{ route('admin-logout') }}>Đăng xuất</a></li>
+                            <li><form method="POST" action="{{ route('admin-logout') }}">@csrf<button type="submit">Đăng xuất</button></form></li>
                         </ul>
                     </div>
                 </div>

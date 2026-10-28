@@ -6,7 +6,7 @@
     ->whereIn('bills.confirmed',[1])
     ->get();
     }}
-</div>   
+</div>
 @include('admin.include.header')
 @include('admin.include.slidebar')
 <style>
@@ -15,13 +15,13 @@
       border-collapse: collapse;
       width: 100%;
     }
-    
+
     td, th {
       border: 1px solid #dddddd;
       text-align: left;
       padding: 8px;
     }
-    
+
     tr:nth-child(even) {
       background-color: #dddddd;
     }
@@ -42,7 +42,7 @@
                     </tr>
                 </thead>
                 <tbody>
-    
+
                     @foreach ($bills as $bill)
                     <tr>
                         <td>{{ $bill->use_name }}</td>
@@ -51,24 +51,24 @@
                         <td>{{ $bill->created_at }}</td>
                         <td>{{ $bill->total }}</td>
                         {{-- <td>
-                            <a href="{{ route('confirmed_bill', ['id'=>$bill->id ]) }}">
+                            <form method="POST" action="{{ route('confirmed_bill', ['id'=>$bill->id ]) }}" style="display:inline">@csrf<button type="submit">
                                 <lord-icon
                                     src="https://cdn.lordicon.com/egiwmiit.json"
                                     trigger="hover"
                                     colors="primary:#30e849"
                                     style="width:22px;height:22px;margin-left:10px;">
                                 </lord-icon>
-                            </a>
+                            </button></form>
                         </td> --}}
                     </tr>
                     <div hidden>{{ $total +=  $bill->total}}</div>
-                    @endforeach	
+                    @endforeach
                 </tbody>
             </table>
             <div>
                 Tổng doanh thu: <span style="color: red">{{number_format($total)." VNĐ" }}</span>
             </div>
-        </div> 
+        </div>
     </div>
 </div>
 

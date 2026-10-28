@@ -11,15 +11,17 @@ class AdminController extends Controller
 {
     //
     public function LoginPost(Request $request){
-        $credentials = $request->only('email', 'password');
+        $credentials = $request->validate(['email' => 'required|email', 'password' => 'required|string']);
+        $credentials['role'] = 2;
         if(Auth::guard('admin')->attempt($credentials)){
+            $request->session()->regenerate();
             return redirect()->route('admin');
             exit();
         }else{
             return view('admin.login').
-            "<span class='bug'>Thông tin đăng nhập không đúng !</span>"; 
+            "<span class='bug'>Thông tin đăng nhập không đúng !</span>";
             exit();
-        
+
         }
     }
     public function Dashboard(){
@@ -29,8 +31,10 @@ class AdminController extends Controller
             return redirect()->route('admin-login');
         }
     }
-    public function Logout(){
+    public function Logout(Request $request){
         Auth::guard('admin')->logout();
+        $request->session()->invalidate();
+        $request->session()->regenerateToken();
         return redirect()->route('admin-login');
     }
     public function Profile(){
@@ -40,16 +44,5 @@ class AdminController extends Controller
             return redirect()->route('admin-login');
         }
     }
-    public function Feedback(Request $request){
-        $credentials = $request->only('use_name', 'email');
-        if(Auth::guard('admin')->attempt($credentials)){
-            return redirect()->route('admin-feedback');
-            exit();
-        }else{
-            return view('admin.login').
-            "<span class='bug'>Thông tin đăng nhập không đúng !</span>"; 
-            exit();
-        
-        }
-    }
+
 }

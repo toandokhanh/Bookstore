@@ -12,7 +12,7 @@ class MessageController extends Controller
     //
     public function feedbackAccount(Request $request){
         $accounts = DB::table('accounts')
-        ->whereIn('accounts.id', [$request->ac_id])
+        ->whereIn('accounts.id', [$request->user()->id])
         ->get();
         foreach($accounts as $account)
         $Message = new Message;
@@ -37,7 +37,7 @@ class MessageController extends Controller
         $Message->save();
         return back()->withInput();
     }
-    
+
     public function update($id){
         $message = Message::find($id);
         // dd($id); exit;

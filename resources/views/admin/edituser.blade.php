@@ -21,12 +21,12 @@
     <div class="grid_10">
         <div class="box round first grid">
             <h2>Chỉnh sửa thông tin Người dùng</h2>
-            <div class="block">               
+            <div class="block">
              <form action={{ route('listing-update-user',['id'=>$id])}} method="post" enctype="multipart/form-data">
                 @csrf
                 @foreach ($users as $user)
                 <table class="form">
-                   
+
                     <tr>
                         <td>
                             <label>Tên người dùng</label>
@@ -35,14 +35,14 @@
                             <input required value="{{ $user->use_name }}" name="use_name" type="text" placeholder="Nhập tên người dùng" class="medium" />
                         </td>
                     </tr>
-                    
+
                      <tr>
                         <td style="vertical-align: top; padding-top: 9px;">
                             <label>Địa chỉ</label>
                         </td>
                         <td>
                             <textarea required name="address" width='100px' class="tinymce">{{ $user->address }}</textarea>
-    
+
                         </td>
                     </tr>
                     <tr>
@@ -72,7 +72,7 @@
                             <label>Giới tính</label>
                         </td>
                         <td>
-                            
+
                             <select value="{{ $user->gender }}" required name="gender" id="select" name="select">
                                 <option>Chọn giới tính</option>
                                 @if ($user->gender === 0)
@@ -115,12 +115,12 @@
                                 <label>Mật khẩu</label>
                             </td>
                             <td>
-                                <input hidden value="{{ $user->password }}" required name="password" type="password" class="medium @error('product_price') is-invalid @enderror" />
+                                <input name="password" type="password" autocomplete="new-password" class="medium" placeholder="Để trống để giữ mật khẩu hiện tại" />
                                 @error('password')
                                 <div style="color: red" class="alert alert-danger">{{ $message }}</div>
                                 @enderror
                             </td>
-                            
+
                         </tr>
                         <td></td>
                         <td>

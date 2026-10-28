@@ -64,7 +64,8 @@ class NewPasswordController extends Controller
                             ->withErrors(['email' => __($status)]);
     }
     public function index(Request $request){
-        $account = User::find($request->id);
+        $request->validate(['current_password' => ['required', 'current_password:web']]);
+        $account = $request->user();
         $request->validate([
             'password' => ['required', 'confirmed', Rules\Password::defaults()],
         ]);

@@ -17,12 +17,12 @@ class Admin
      */
     public function handle(Request $request, Closure $next)
     {
-        if(Auth::guard('admin')->check()){
+        if(Auth::guard('admin')->check() && (int) Auth::guard('admin')->user()->role === 2){
             return $next($request);
         }
         else{
             return redirect()->route('admin-login');
         }
-        
+
     }
 }

@@ -17,10 +17,10 @@
 @if (isset(Auth::user()->use_name))
     <x-app-layout>
         @include('include.header')
-        
+
         <div class="main">
             <div class="content">
-                <div class="cartoption">		
+                <div class="cartoption">
                     <div class="cartpage">
                         <div class="heading"> <br>
                             <h3>Giỏ hàng của bạn</h3> <br>
@@ -37,7 +37,7 @@
                                     </tr>
                                     @foreach ($cart_details as $cart_detail)
                                     <tr>
-                                        
+
                                         <td>{{ $cart_detail->product_name }}</td>
                                         <td><img src="{{ $cart_detail->image }}" alt=""/></td>
                                         <td>{{number_format($cart_detail->product_price)."VND"}}</td>
@@ -51,9 +51,9 @@
                                             </form>
                                         </td>
                                         <td>{{ number_format($cart_detail->total_price)." VND" }}</td>
-                                        
+
                                         <td>
-                                            <a href="{{ route('cart-delete',['id'=>$cart_detail->id]) }}">
+                                            <form method="POST" action="{{ route('cart-delete',['id'=>$cart_detail->id]) }}" style="display:inline">@csrf<button type="submit">
                                                 <script src="https://cdn.lordicon.com/qjzruarw.js"></script>
                                                 <lord-icon
                                                     src="https://cdn.lordicon.com/kfzfxczd.json"
@@ -61,17 +61,17 @@
                                                     colors="primary:#c71f16"
                                                     style="width:22px;height:22px">
                                                 </lord-icon>
-                                            </a>
+                                            </button></form>
                                         </td>
                                         <div hidden>
-                                            
+
                                             @if ($cart_detail->total_price)
                                                 {{$total += $cart_detail->total_price}}
-                                                
+
                                             @endif
                                             @if ($cart_detail->quantity)
                                                 {{$amount += $cart_detail->quantity}}
-                                                
+
                                             @endif
                                         </div>
                                     </tr>
@@ -100,17 +100,17 @@
                                     <a href="{{ route('products') }}"> <img src="images/shop.png" alt="" /></a>
                                 </div>
                                 <div class="shopright">
-                                        <a href="{{ route('checkout',['cart_id'=>$cart_id,'db_total' => $db_total,'amount' => $amount]) }}"> <img src="images/check.png" alt="" /></a>
+                                        <form method="POST" action="{{ route('checkout',['cart_id'=>$cart_id]) }}" style="display:inline">@csrf<button type="submit"> <img src="images/check.png" alt="" /></button></form>
                                 </div>
                             </div>
-                </div>  	
+                </div>
                <div class="clear"></div>
             </div>
          </div>
-        
-        
+
+
         @include('include.footer')
     </x-app-layout>
     @else
-    
+
     @endif

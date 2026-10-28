@@ -2,55 +2,53 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\Bill;
+use App\Models\Cart;
+use App\Models\Cart_detail;
+use App\Models\Products;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
-use App\Models\Cart_detail;
-use App\Models\Bill;
-use Illuminate\Support\Facades\Auth;
-use SebastianBergmann\Type\NullType;
 
 class BillController extends Controller
 {
-    //
-    public function index($cart_id, $db_total, $amount){
-            $cart_details = DB::table('cart_details')
-            ->whereIn('cart_id',[$cart_id])	
-            ->get();
-            foreach($cart_details as $cart_detail)
-            if(isset($cart_detail)){
-            $ship = 30000;
-            $total_bill = $cart_detail->total_price + $ship;
-            // tạo bill
+    public function index(Request $request, $cart_id)
+    {
+        abort_unless((int) $cart_id === (int) $request->user()->cart_id, 403);
+        DB::transaction(function () use ($request, $cart_id) {
+            Cart::whereKey($cart_id)->lockForUpdate()->firstOrFail();
+            $details = Cart_detail::where('cart_id', $cart_id)->lockForUpdate()->get();
+            abort_if($details->isEmpty(), 422, 'The cart is empty.');
+            $total = 30000;
+            $amount = 0;
+            foreach ($details as $detail) {
+                abort_unless($detail->quantity > 0 && $detail->quantity <= 100, 422);
+                $product = Products::findOrFail($detail->product_id);
+                $total += $product->product_price * $detail->quantity;
+                $amount += $detail->quantity;
+            }
+            abort_if($amount > 127, 422, 'Order quantity exceeds the legacy database limit.');
             $bill = new Bill;
-            $bill->{'ac_id'} = $cart_detail->cart_id;
-            $bill->{'total'} = $db_total;
-            $bill->{'bill_amount'} = $amount;
-            $bill->{'confirmed'} = false;
+            $bill->ac_id = $request->user()->id;
+            $bill->total = $total;
+            $bill->bill_amount = $amount;
+            $bill->confirmed = false;
             $bill->save();
-            // xóa đơn hàng khỏi cart
-            $cart_detail = new Cart_detail;
-            $cart_detail::where('cart_id', $cart_id)->delete();
-            return view('checkout', ['cart_detail' => $cart_detail]);
-        }
-        return redirect()->route('products');
-        
+            Cart_detail::where('cart_id', $cart_id)->delete();
+        });
+        return view('checkout');
     }
-    public function update($id){
-        if(Auth::guard('admin')->check()){
-            $bill = Bill::find($id);
-            $bill->confirmed = true;
-            $bill->update();
-            $bill->save();
-            return back()->withInput();
-        }
-        else{
-            return redirect()->route('admin-login');
-        }
-        
+
+    public function update($id)
+    {
+        $bill = Bill::findOrFail($id);
+        $bill->confirmed = true;
+        $bill->save();
+        return back();
     }
-    public function delete($id){
-        $bill = new Bill;
-        $bill::where('id', $id)->delete();
+
+    public function delete(Request $request, $id)
+    {
+        Bill::where('ac_id', $request->user()->id)->where('confirmed', false)->findOrFail($id)->delete();
         return redirect()->route('orderhistory');
     }
 }

@@ -28,9 +28,6 @@ use Illuminate\Foundation\Auth\EmailVerificationRequest;
 |
 */
 
-Route::get('/test', function () {
-    return view('orderhistory');
-});
 
 // Route::get('/dashboard', function () {
 //     return view('dashboard');
@@ -48,7 +45,7 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 
-Route::post('/postcontact1', [MessageController::class, 'feedbackAccount'])->name('feedbackAccount');
+Route::post('/postcontact1', [MessageController::class, 'feedbackAccount'])->middleware('auth')->name('feedbackAccount');
 Route::post('/postcontact2', [MessageController::class, 'feedbackUse'])->name('feedbackUse');
 //select ra tất cẩ sản phẩm
 Route::get('/products', [ProductUserController::class, 'index'])->name('products');
@@ -59,7 +56,7 @@ Route::get('/detail/product{id}', [ProductUserController::class, 'detail'])->nam
 // tìm kiếm sản phẩm theo tên sản phẩm hoặc tên tác giả
 Route::get('/search', [ProductUserController::class, 'search'])->name('search-product');
 
-Route::group(['middleware' => 'auth'], function(){ 
+Route::group(['middleware' => 'auth'], function(){
     //đã đăng nhập
     Route::get('/dashboard', function () {
         return view('home');
@@ -76,39 +73,40 @@ Route::group(['middleware' => 'auth'], function(){
     Route::post('/updatepasswd', [NewPasswordController::class, 'index'])->name('postPasswd');
     // Route::put('profile', [])->name('profile.update');
     Route::post('/cart/{cart_id}', [CartController::class, 'index'])->name('order');
-    Route::get('/cart/delete{id}', [CartController::class, 'delete'])->name('cart-delete');
+    Route::post('/cart/delete{id}', [CartController::class, 'delete'])->name('cart-delete');
     Route::post('/cart/update/{id}', [CartController::class, 'update'])->name('cart-update');
     // trang vỏ hàng
     Route::get('/cart', function () {
         return view('cart');
     })->name('cart');
-    Route::get('/checkout{cart_id}/{db_total}-{amount}', [BillController::class, 'index'])->name('checkout');
+    Route::post('/checkout/{cart_id}', [BillController::class, 'index'])->name('checkout');
     // order
     Route::get('/orderhistory', function () {
         return view('orderhistory');
     })->name('orderhistory');
     //
-    Route::get('/delete/{id}', [BillController::class, 'delete'])->name('delete_bill');
+    Route::post('/delete/{id}', [BillController::class, 'delete'])->name('delete_bill');
 
-    
+
 });
 
 //admin
 Route::prefix('ad')->group(function(){
-    //đã đăng nhập
-    Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin');
-
     //trang đăng nhập
     Route::get('/login', function () {
         return view('admin.login');
     })->name('admin-login');
-    Route::post('/login', [AdminController::class, 'LoginPost'])->name('admin-loginPost');
+    Route::post('/login', [AdminController::class, 'LoginPost'])->middleware('throttle:6,1')->name('admin-loginPost');
+
+    Route::middleware('admin')->group(function () {
+    //đã đăng nhập
+    Route::get('/dashboard', [AdminController::class, 'Dashboard'])->name('admin');
 
     //trang thông tin cá nhân của admin
     Route::get('/profile', [AdminController::class, 'Profile'])->name('admin-profile');
 
     //đăng xuất
-    Route::get('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
+    Route::post('/logout', [AdminController::class, 'Logout'])->name('admin-logout');
 
     //phản hồi của khách hành trả vè admin
     Route::get('/feedback', function(){
@@ -123,12 +121,12 @@ Route::prefix('ad')->group(function(){
         return view('admin.reply');
     })->name('admin-reply')->middleware('admin');
 
-    Route::get('/reply{id}', [MessageController::class, 'update'])->name('replyuse')->middleware('admin');
+    Route::post('/reply{id}', [MessageController::class, 'update'])->name('replyuse')->middleware('admin');
     // duyệt đơn cho khách hàng
-    Route::get('/confirmed/{id}', [BillController::class, 'update'])->name('confirmed_bill');
+    Route::post('/confirmed/{id}', [BillController::class, 'update'])->name('confirmed_bill');
     // quản ly daonh thu
     Route::get('/turnover', [TurnoverController::class, 'select'])->name('amdin-turnover');
-    
+
     //quản lý sản phẩm
     Route::get('/listing/addproduct', [ProductController::class, 'addproduct'])->name('listing-addproduct');
     Route::post('/listing/addproduct', [ProductController::class, 'store'])->name('listing-store-addproduct');
@@ -141,7 +139,7 @@ Route::prefix('ad')->group(function(){
     Route::post('/catetory/update/{id}', [CatetoryController::class, 'update'])->name('listing-update-catetory');
     //ok
 
-    //Quản lý người dùng 
+    //Quản lý người dùng
     Route::get('/listing/adduser', [Usercontroller::class, 'adduser'])->name('listing-adduser');
     Route::post('/listing/adduser', [Usercontroller::class, 'store'])->name('listing-store-adduser');
     Route::post('/user/update/{id}', [Usercontroller::class, 'update'])->name('listing-update-user');
@@ -172,11 +170,12 @@ Route::prefix('ad')->group(function(){
     //edit
     Route::get('/listing/edit/{model}/{id}', [ListingController::class, 'edit'])->name('listing-edit');
     //delete
-    Route::get('/listing/delete/{model}/{id}', [ListingController::class, 'delete'])->name('listing-delete');
+    Route::post('/listing/delete/{model}/{id}', [ListingController::class, 'delete'])->name('listing-delete');
 
-    
 
-    
+
+
+    });
 });
 
 
@@ -191,7 +190,7 @@ require __DIR__.'/auth.php';
 //     return view('welcome');
 // });
 
-// test 
+// test
 //Route::get('/{slug}-{id}.html', function ($slug, $id) {
 //     return "Slug:$slug <br> Id: $id";
 // });

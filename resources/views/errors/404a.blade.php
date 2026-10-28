@@ -57,7 +57,7 @@
       }
       p{
       font-size: 30px;
-    
+
       }
       }
       @media(max-width: 492px){
@@ -90,7 +90,7 @@
       <h2>DỪNG LẠI BẠN ĐANG XÂP KHÔNG ĐÚNG QUY ĐỊNH</h2>
       <BR></BR>
       <p>NẾU TIẾP TỤC BẠN SẼ GẶP RẮT RỐI LỚN</p>
-      <a href={{ route('admin-logout') }}>THOÁT</a>
+      <form method="POST" action="{{ route('admin-logout') }}">@csrf<button type="submit">THOÁT</button></form>
       {{-- <a href="#">Home</a> --}}
     </section>
   </body>

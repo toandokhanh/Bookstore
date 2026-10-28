@@ -2,15 +2,15 @@
 @vite('resources/css/app.css')
 
 <x-app-layout>
-    
+
     <x-slot name="header">
-        
+
         <h2 class="font-semibold text-xl text-gray-800 leading-tight flex justify-center">
             <a href="../dashboard">
                 @include('components.application-logo-new')
             </a>
         </h2>
-    </x-slot> 
+    </x-slot>
     <div class="py-12">
         <div class="sm:max-w-7xl sm:mx-auto sm:px-6 lg:px-8 w-xl p-7">
             <div class="bg-white overflow-hidden shadow-sm sm:rounded-lg p-7">
@@ -20,22 +20,23 @@
                 <form method="POST" action="{{ route('postPasswd') }}">
                     @csrf
                     <div class="max-w-4xl mx-auto mt-10">
-                        <!-- Name -->
-                        <input hidden name="id" type="text" value="{{ Auth::user()->id }}">
-                        
+                        <x-input-label for="current_password" :value="__('Mật khẩu hiện tại')" />
+                        <x-text-input id="current_password" type="password" name="current_password" required autocomplete="current-password" />
+                        <!-- Name -->id }}">
+
                         <div class="mt-6">
                             <x-input-label for="password" :value="__('Mật khẩu')" />
-                
+
                             <x-text-input id="password" class="block mt-1 w-full"
                                             type="password"
                                             name="password"
                                             required autocomplete="new-password" />
                         </div>
-                
+
                         <!-- Confirm Password -->
                         <div class="mt-6">
                             <x-input-label for="password_confirmation" :value="__('Xác nhận lại mật khẩu')" />
-                
+
                             <x-text-input id="password_confirmation" class="block mt-1 w-full"
                                             type="password"
                                             name="password_confirmation" required />
@@ -49,11 +50,11 @@
                                 </x-primary-button>
                             </div>
                         </div>
-                        
+
                     </div>
                 </form>
             </div>
         </div>
-    </div> 
-   
+    </div>
+
  </x-app-layout>
